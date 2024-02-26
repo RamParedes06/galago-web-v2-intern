@@ -1,0 +1,68 @@
+$color_1: #fff;
+$color2: var(--text-colors-text-primary, #333);
+$color3: #adadad;
+$color_4: #333333;
+$font-family1: "Satoshi", sans-serif;
+$font-family2: "General Sans";
+$font-family3: "General Sans", sans-serif;
+$background-color_1: #016e7f;
+$background-color_2: #e7eaeb;
+$background-color_3: transparent;
+
+@import "https://fonts.cdnfonts.com/css/general-sans";
+@import "https://fonts.cdnfonts.com/css/satoshi";
+
+.nav-container {
+  height: 100px;
+  padding: 0px 104px;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.nav-container-bg {
+  background-color: $background-color_1;
+}
+
+.nav-logo {
+  p {
+    margin: 0px;
+  }
+  img {
+    height: 39.142px;
+  }
+}
+.nav-links {
+  color: $color_1;
+  font-family: $font-family2;
+  font-size: 14px;
+  font-weight: 400;
+  display: flex;
+  p {
+    text-decoration: none;
+    color: $color_1;
+    padding: 8px 8px;
+    margin: 0px;
+    margin-right: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+  }
+  button {
+    border-radius: 6px;
+    padding: 8px;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: $background-color_1;
+    font-family: $font-family1;
+    size: 14px;
+    font-weight: 500;
+    color: $color_1;
+    width: 90px;
+  }
+}

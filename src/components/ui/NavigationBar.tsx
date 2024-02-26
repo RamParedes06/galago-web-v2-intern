@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import "../../styles/navigationbar.scss";
+import "../../styles/navigationbar.scss";
 import logo from '../../resources/GalaGO Logo 1.png'
 
 function NavigationBar() {
