@@ -5,6 +5,7 @@ import '../styles/homepage.scss'
 const Homepage = () => {
   return (
     <div>
+        
       <div className="hero-section">
         <div className="hero-details">
         <h1>Get ready to GO!</h1>
