@@ -1,0 +1,26 @@
+@import url("https://fonts.cdnfonts.com/css/satoshi");
+
+
+.default-btn{
+    background-color: #016e7f;
+    border: none;
+    padding: 12px 24px;
+}
+
+.border-btn{
+    
+    background-color: transparent;
+    border: 1px solid #016e7f;
+    padding: 10px 16px;
+    color: #016e7f;
+    width: fit-content;
+
+    p{
+        margin: 0;
+    }
+
+    &.border-btn:hover{
+        background-color:#016e7f;
+        border: none;
+    }
+}
