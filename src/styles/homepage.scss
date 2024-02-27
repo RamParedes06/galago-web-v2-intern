@@ -1,18 +1,15 @@
-
 @import url("https://fonts.cdnfonts.com/css/satoshi");
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   font-family: "Satoshi", sans-serif;
 }
 
-
-    
 
 .hero-section {
   background: url("https://galago-assets.s3.ap-southeast-1.amazonaws.com/galago-v1-web/galago-v1-web/src/resources/images/homepage/banner_IMG.webp");
@@ -32,6 +29,7 @@ body {
     gap: 3rem;
   }
 }
+
 
 
 // TAB 

@@ -1,0 +1,103 @@
+@import url("https://fonts.cdnfonts.com/css/general-sans");
+@import url("https://fonts.cdnfonts.com/css/satoshi");
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 60px 104px;
+
+  h1 {
+    margin-bottom: 32px;
+  }
+
+  p {
+    color: var(--text-colors-text-primary, #333);
+    font-family: "General Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 21px;
+  }
+
+  .title {
+    margin-bottom: 32px;
+  }
+
+  .complete-title {
+    padding-top: 42px;
+  }
+}
+
+.upcoming-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 16px;
+  column-gap: 42px;
+  border-bottom: 1px solid #e7eaeb;
+  padding-bottom: 42px;
+}
+
+.complete-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 16px;
+  column-gap: 42px;
+  border-bottom: 1px solid #e7eaeb;
+  margin-top: 42px;
+  padding-bottom: 60px;
+}
+
+.info-card {
+  width: 595px;
+  padding: 14px 24px 14px 14px;
+  display: flex;
+  border: 1px solid var(--border-colors-border-primary, #d9d9d9);
+  border-radius: 12px;
+  align-items: center;
+
+  .image-cont {
+    width: 146px;
+    height: 97px;
+    object-fit: fill;
+    margin-right: 24px;
+
+    img {
+      border-radius: 6px;
+      width: 146px;
+      height: 97px;
+    }
+  }
+
+  span {
+    background: var(--Color-Teal-Light-blue-800, #d0f0ef);
+  }
+
+  .card-status {
+    color: var(--background-colors-surface-secondary, #016e7f);
+    font-family: "Satoshi", sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    border-radius: 6px;
+    padding: 4px 10px;
+    margin-bottom: 6px;
+  }
+
+  .card-title {
+    margin: 0px;
+    color: var(--text-colors-text-primary, #333);
+    font-family: "General Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .card-date {
+    color: var(--text-colors-text-secondary, #adadad);
+    font-family: "General Sans";
+    font-size: 13px;
+    font-weight: 500;
+  }
+}
