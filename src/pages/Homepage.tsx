@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/homepage.scss";
-import NavigationBar from "../components/UI/NavigationBar";
+import NavigationBar from "../components/ui/NavigationBar";
 
 const Homepage = () => {
   return (
