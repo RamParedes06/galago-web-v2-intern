@@ -1,0 +1,156 @@
+@import "https://fonts.cdnfonts.com/css/general-sans";
+@import "https://fonts.cdnfonts.com/css/satoshi";
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+.title-container {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  height: 404px;
+  background-color: #016e7f;
+  color: #fff;
+  font-family: "Satoshi", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  h1 {
+    margin: 0px;
+  }
+}
+.dot1 {
+  position: absolute;
+  width: 671px;
+  height: 671px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  border-radius: 671px;
+  left: 1150px;
+  bottom: 240px;
+  background: rgba(217, 217, 217, 0.15);
+}
+
+.dot2 {
+  position: absolute;
+  width: 671px;
+  height: 671px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  border-radius: 671px;
+  background: rgba(217, 217, 217, 0.15);
+  top: 210px;
+  right: 1250px;
+}
+.dot3 {
+  position: absolute;
+  width: 671px;
+  height: 671px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  border-radius: 671px;
+  background: rgba(217, 217, 217, 0.15);
+  left: 1480px;
+  bottom: 50px;
+}
+.page {
+  display: flex;
+}
+
+.sidebar {
+  background-color: #e7eaeb;
+  padding: 100px 104px 100px 104px;
+  max-height: 685px;
+}
+.sidebar-text {
+  display: flex;
+  flex-direction: column;
+
+  height: 685px;
+  width: 267px;
+  p {
+    margin: 10px;
+    text-decoration: none;
+    color: #adadad;
+    display: flex;
+    flex-direction: column;
+    font-family: "General Sans", sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .text.active {
+    color: #333333;
+  }
+}
+.sidebar-title {
+  color: #333;
+  font-family: "General Sans", sans-serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px;
+  margin: 20px 10px;
+}
+
+// PAGE CONTENT
+.content-text {
+  padding: 100px 104px 100px 32px;
+  height: 685px;
+  width: 1500px;
+  h1 {
+    color: #333333;
+    font-family: "General Sans", sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    margin: 0px;
+    margin-bottom: 4px;
+  }
+  p {
+    color: #333;
+    font-family: "General Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: justify;
+    margin-bottom: 14px;
+  }
+}
+.accordion-item {
+  --bs-accordion-bg: #fff;
+  --bs-accordion-border-color: none;
+  --bs-accordion-active-bg: white;
+  --bs-accordion-active-color: #016e7f;
+  --bs-accordion-btn-focus-box-shadow: none;
+}
+.accordion {
+  .item {
+    .accordion-header {
+      button {
+        font-size: 17px;
+        font-family: "General Sans", sans-serif;
+        font-weight: 500;
+      }
+    }
+    .accordion-body {
+      h1 {
+        color: #333333;
+        font-size: 16px;
+        font-family: "General Sans", sans-serif;
+        font-weight: 500;
+      }
+      p {
+        color: #333333;
+        font-size: 14px;
+        font-family: "General Sans", sans-serif;
+        font-weight: 400;
+      }
+    }
+  }
+}
