@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../../styles/navigationbar.scss";
+import logo from '../../resources/GalaGO Logo 1.png'
 
 function NavigationBar() {
   const [color, setColor] = useState(false);
@@ -16,7 +17,7 @@ function NavigationBar() {
   return (
     <div className={color ? "nav-container nav-container-bg" : "nav-container"}>
       <div className="nav-logo">
-        <img src="" alt="Logo" />
+        <img src={logo} alt="Logo" />
       </div>
 
       <div className="nav-links">
