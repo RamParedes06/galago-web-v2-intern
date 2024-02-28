@@ -11,7 +11,6 @@ function ButtonComponent({ buttonText, buttonClass }: ButtonComponentProps) {
     <>
       <Button className={buttonClass}>
         <p>{buttonText}</p>
-
       </Button>
     </>
   );

@@ -1,14 +1,15 @@
 import { Container } from "react-bootstrap";
-import '../../styles/homepage.scss'
+import "../../styles/homepage.scss";
 
 type BannerTextsProps = {
   title: string;
   subtitle: string;
+  titleclass: string;
 };
-function BannerTexts({ title, subtitle }: BannerTextsProps) {
+function BannerTexts({ title, subtitle, titleclass }: BannerTextsProps) {
   return (
     <Container className="bannertexts-container">
-      <h1 className="title">{title}</h1>
+      <h1 className={titleclass}>{title}</h1>
       <p className="subtitle">{subtitle}</p>
     </Container>
   );

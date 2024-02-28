@@ -7,6 +7,7 @@ import BannerTexts from "../components/homepage/BannerTexts";
 import Adventure from "../components/homepage/Adventure";
 import phoneicon from "../resources/homepage/galago-logo-phone.png";
 import TravelGuides from "../components/homepage/TravelGuides";
+import Accreditations from "../components/homepage/Accreditations";
 
 const Homepage = () => {
   return (
@@ -47,18 +48,19 @@ const Homepage = () => {
       {/* Adventure  */}
       <div className="adventure-container">
         <BannerTexts
+          titleclass="title"
           title="Go on an adventure!"
           subtitle="Ready to explore the Philippines and the world? Check out our latest travel promos!"
         />
         <Adventure />
       </div>
 
-    {/* Middle Section Banner  */}
+      {/* Middle Section Banner  */}
       <div className="middle-section">
         <div className="banner-one">
           <p>
-            "Unforgettable experiences crafted for you by an <br/>all-Filipino team
-            of travel experts."
+            "Unforgettable experiences crafted for you by an <br />
+            all-Filipino team of travel experts."
           </p>
         </div>
         <div className="banner-two"></div>
@@ -75,7 +77,8 @@ const Homepage = () => {
 
       {/* Travel Guides  */}
 
-      <TravelGuides/>
+      <TravelGuides />
+      <Accreditations />
     </div>
   );
 };
