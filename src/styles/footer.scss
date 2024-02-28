@@ -1,0 +1,39 @@
+/* Footer  */
+footer {
+  padding: 0px 140px;
+  background-color: rgba(1, 110, 127, 1);
+  /* position: relative; */
+}
+
+.left-col {
+  display: flex;
+  color: white;
+  gap: 80px;
+}
+
+.cols {
+  display: grid;
+  gap: 8px;
+}
+
+.footer {
+  padding: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer img {
+  max-width: 300px;
+}
+
+footer hr {
+  width: 97%;
+}
+#copyright {
+  padding: 16px;
+  background-color: rgba(1, 110, 127, 1);
+  right: 0px;
+  color: white;
+  text-align: right;
+}
