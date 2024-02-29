@@ -1,0 +1,189 @@
+@import url("https://fonts.cdnfonts.com/css/satoshi");
+@import url("https://fonts.cdnfonts.com/css/general-sans");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Satoshi", sans-serif;
+  background-color: rgba(247, 247, 247, 1);
+}
+
+h1,
+p {
+  margin-bottom: 0;
+}
+
+hr {
+  margin: 1.5rem 0;
+}
+//*Flight Banner
+.flight-banner-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 29px 72px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border-radius: 12px;
+  width: 100%;
+  background-color: white;
+
+  .banners {
+    display: flex;
+    flex-wrap: wrap;
+    .flight-banner {
+      font-family: "General Sans", sans-serif;
+      justify-content: start;
+      padding: 0 4rem;
+
+      p {
+        color: #adadad;
+        font-size: 13px;
+        margin: 0;
+      }
+
+      h1 {
+        font-size: 16px;
+        margin: 0;
+
+        span {
+          color: #016e7f;
+        }
+      }
+    }
+    .flight-banner:not(:last-child) {
+      border-right: 1px solid #d9d9d9;
+    }
+  }
+}
+
+//*Flight Header
+.flight-header-container {
+  .flight-header {
+    background-color: #016e7f;
+    min-height: 142px;
+  }
+
+  .flight-overlap {
+    display: grid;
+    place-items: center;
+    transform: translateY(-70%);
+  }
+}
+
+//*Search Filter
+.search-filter-container {
+  max-width: 360px;
+  .search-header {
+    background-color: #016e7f;
+    color: white;
+    padding: 8px 30px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    p {
+      margin-bottom: 0;
+      font-weight: 600;
+    }
+  }
+
+  .text-grey {
+    color: #adadad;
+  }
+  .search-content {
+    padding: 30px;
+    background-color: white;
+    .duration-container {
+      margin-bottom: 1rem;
+      h1 {
+        font-size: 20px;
+        margin-bottom: 16px;
+      }
+      p {
+        font-size: 16px;
+        font-family: "General Sans", sans-serif;
+      }
+    }
+
+    .slider-container {
+      margin-bottom: 1rem;
+      //!SLIDER COMPONENT
+      .rs-slider-progress-bar {
+        background-color: #016e7f;
+        height: 3px;
+      }
+
+      .rs-slider-handle::before {
+        border: 2px solid #016e7f;
+        width: 22px;
+        height: 22px;
+        bottom: -14px;
+      }
+
+      .rs-slider-bar {
+        height: 3px;
+      }
+    }
+
+    .cabin-container {
+      .cabin-header {
+        display: flex;
+        justify-content: space-between;
+
+        h1 {
+          font-size: 20px;
+          font-weight: 700;
+        }
+      }
+    }
+
+    //!CHECKBOXES
+    .checkbox {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      .form-check-input:checked {
+        background-color: #016e7f;
+        border-color: #016e7f;
+      }
+
+      .form-check-input {
+        width: 24px;
+        height: 24px;
+        border-radius: 6px;
+      }
+
+      .form-check.form-check-inline {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 0.5rem;
+      }
+    }
+
+    .aircraft-container {
+      .aircraft-header {
+        display: flex;
+        justify-content: space-between;
+        h1 {
+          font-size: 20px;
+          font-weight: 700;
+        }
+      }
+    }
+
+    .time-container {
+      h1 {
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      .range-slider-container {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
