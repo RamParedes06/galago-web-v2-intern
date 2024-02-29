@@ -6,8 +6,6 @@ import slider3 from "../../../resources/homepage/slider3.png";
 import "../../../styles/slider.scss";
 
 const ScrollerComponent = () => {
-  // const imagesUrl = ASSETS_API().resources.images;
-
   useEffect(() => {
     const scrollers = document.querySelectorAll(".scroller");
 
@@ -34,7 +32,7 @@ const ScrollerComponent = () => {
   }, []);
 
   return (
-    <div className="scroller w-full" data-direction="right" data-speed="slow">
+    <div className="scroller w-full" data-direction="left" data-speed="fast">
       <div className="scroller__inner">
         <div className="scroller-img">
           <img src={slider1} alt="" loading="lazy" />

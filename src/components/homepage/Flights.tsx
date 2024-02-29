@@ -17,7 +17,6 @@ function Flights() {
           </div>
         </div>
 
-
         <div className="row-1">
           <div className="from-col">
             <p>From</p>
