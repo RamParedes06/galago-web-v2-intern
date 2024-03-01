@@ -11,13 +11,18 @@ function Accreditations() {
       <h1>Accreditations and Affiliations</h1>
 
       <div className="accreditations">
-        <img src={logo1} alt="" />
-
-        <img src={logo2} alt="" className="logo2-img" />
+        <div className="logo">
+          <img src={logo1} alt="" />
+        </div>
+        <div className="logo">
+          <img src={logo2} alt="" />
+        </div>
         <div className="logo3-img">
           <img src={logo3} alt="" />
         </div>
-        <img src={logo4} alt="" className="logo4-img" />
+        <div className="logo">
+          <img src={logo4} alt="" />
+        </div>
       </div>
     </Container>
   );

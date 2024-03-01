@@ -206,3 +206,20 @@ body {
     }
   }
 }
+
+// SLIDER PART
+.slider-container {
+  // padding-left: 5rem;
+  padding-top: 10rem;
+  padding-bottom: 8rem;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4rem;
+  h1 {
+    font-weight: 700;
+    font-size: 34;
+    max-width: 400px;
+  }
+}

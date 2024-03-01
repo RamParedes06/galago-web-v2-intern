@@ -1,0 +1,380 @@
+@import url("https://fonts.cdnfonts.com/css/satoshi");
+@import url("https://fonts.cdnfonts.com/css/general-sans");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Satoshi", sans-serif;
+  background-color: rgba(247, 247, 247, 1);
+}
+
+h1,
+p {
+  margin-bottom: 0;
+}
+
+hr {
+  margin: 1.5rem 0;
+}
+//*Flight Banner
+.flight-banner-container {
+  display: flex;
+  flex-wrap: wrap;
+  // justify-content: space-evenly;
+  padding: 29px 42px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border-radius: 12px;
+  width: 100%;
+  background-color: white;
+
+  .banners {
+    display: flex;
+    flex-wrap: wrap;
+    // width: 100%;
+    .flight-banner {
+      font-family: "General Sans", sans-serif;
+      justify-content: start;
+      padding: 0 2rem;
+
+      p {
+        color: #adadad;
+        font-size: 13px;
+        margin: 0;
+      }
+
+      h1 {
+        font-size: 16px;
+        margin: 0;
+
+        span {
+          color: #016e7f;
+        }
+      }
+    }
+    .flight-banner:not(:last-child) {
+      border-right: 1px solid #d9d9d9;
+    }
+  }
+}
+
+//*Flight Header
+.flight-header-container {
+  .flight-header {
+    background-color: #016e7f;
+    min-height: 142px;
+  }
+
+  .flight-overlap {
+    display: grid;
+    place-items: center;
+    transform: translateY(-70%);
+  }
+}
+
+//*Search Filter
+
+// .search-container {
+//   position: -webkit-sticky;
+//   position: sticky;
+//   top: 0;
+// }
+.search-filter-container {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  max-width: 360px;
+
+  .search-header {
+    background-color: #016e7f;
+    color: white;
+    padding: 8px 30px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    p {
+      margin-bottom: 0;
+      font-weight: 600;
+    }
+  }
+
+  .text-grey {
+    color: #adadad;
+  }
+  .search-content {
+    padding: 30px;
+    background-color: white;
+    .duration-container {
+      margin-bottom: 1rem;
+      h1 {
+        font-size: 20px;
+        margin-bottom: 16px;
+      }
+      p {
+        font-size: 16px;
+        font-family: "General Sans", sans-serif;
+      }
+    }
+
+    .slider-container {
+      margin-bottom: 1rem;
+
+      //!SLIDER COMPONENT
+      .rs-slider-progress-bar {
+        background-color: #016e7f;
+        height: 3px;
+      }
+
+      .rs-slider-handle::before {
+        border: 2px solid #016e7f;
+        width: 22px;
+        height: 22px;
+        bottom: -14px;
+      }
+
+      .rs-slider-bar {
+        height: 3px;
+      }
+    }
+
+    .cabin-container {
+      .cabin-header {
+        display: flex;
+        justify-content: space-between;
+
+        h1 {
+          font-size: 20px;
+          font-weight: 700;
+        }
+      }
+    }
+
+    //!CHECKBOXES
+    .checkbox {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      .form-check-input:checked {
+        background-color: #016e7f;
+        border-color: #016e7f;
+      }
+
+      .form-check-input {
+        width: 24px;
+        height: 24px;
+        border-radius: 6px;
+      }
+
+      .form-check.form-check-inline {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 0.5rem;
+      }
+    }
+
+    .aircraft-container {
+      .aircraft-header {
+        display: flex;
+        justify-content: space-between;
+        h1 {
+          font-size: 20px;
+          font-weight: 700;
+        }
+      }
+    }
+
+    .time-container {
+      h1 {
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      .range-slider-container {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+.flight-container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2rem;
+
+  .info-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+// Departure Info
+.return-flight-container {
+  .return-flight {
+    .text-grey {
+      color: #adadad;
+    }
+    p {
+      font-size: 15px;
+      font-family: "General Sans", sans-serif;
+    }
+
+    h1 {
+      margin-top: 0.5rem;
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    span {
+      color: #016e7f;
+    }
+  }
+
+  .sort-by {
+    font-family: "General Sans", sans-serif;
+    span {
+      color: #016e7f;
+      font-weight: 700;
+    }
+  }
+}
+
+// Sort by day
+.sort-day-container {
+  margin: 2rem 0;
+  display: flex;
+  gap: 1rem;
+
+  .day {
+    margin: 0;
+    text-align: center;
+    border: 1px solid #d9d9d9;
+    border-radius: 12px;
+    padding: 12px 24px;
+    width: 20%;
+    font-size: "General Sans", sans-serif;
+    cursor: pointer;
+    p {
+      font-size: 12px;
+      color: #adadad;
+    }
+
+    h1 {
+      font-size: 16px;
+    }
+
+    &.day:hover {
+      background-color: #016e7f;
+      border: 1px solid #016e7f;
+      color: white;
+
+      p {
+        color: white;
+      }
+    }
+  }
+}
+
+.flight-info-card-container {
+  display: flex;
+  flex-direction: column;
+
+  gap: 1rem;
+
+  .flight-info-card {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.2rem;
+    background-color: white;
+    padding: 20px 30px;
+    border-radius: 12px;
+    border: 1px solid #d9d9d9;
+
+    .text-grey {
+      color: #adadad;
+      font-size: 13px;
+      font-family: "General Sans", sans-serif;
+    }
+
+    .tags {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: "General Sans", sans-serif;
+      width: fit-content;
+      font-size: 8px;
+    }
+
+    .info {
+      display: flex;
+      gap: 2rem;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+
+      .airline {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        font-family: "General Sans", sans-serif;
+        font-size: 13px;
+        width: 143px;
+        .airline-img {
+          width: 54px;
+          height: 22px;
+
+          img {
+            width: 100%;
+          }
+        }
+      }
+
+      .info-col {
+        p:not(.text-grey) {
+          font-size: 16px;
+        }
+      }
+
+      .price-and-button {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+        h1 {
+          font-size: 16px;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
+
+.percentage {
+  background-color: #bffaff;
+  padding: 2px 4px;
+  border-radius: 12px;
+  padding-left: 20px;
+  font-weight: 600;
+  color: #016e7f;
+}
+
+.cheapest {
+  background-color: #d0f0ef;
+  border-radius: 6px;
+  padding: 2px 6px;
+  color: #016e7f;
+}
+
+.fastest {
+  background-color: #fc8f3a;
+  padding: 2px 6px;
+  border-radius: 6px;
+  color: white;
+}

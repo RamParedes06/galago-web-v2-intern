@@ -8,7 +8,8 @@ import Adventure from "../components/homepage/Adventure";
 import phoneicon from "../resources/homepage/galago-logo-phone.png";
 import TravelGuides from "../components/homepage/TravelGuides";
 import Accreditations from "../components/homepage/Accreditations";
-
+import ScrollerComponent from "../components/homepage/slider/ScrollerComponent";
+import FooterComponent from "../components/ui/FooterComponent";
 const Homepage = () => {
   return (
     <div>
@@ -79,6 +80,15 @@ const Homepage = () => {
 
       <TravelGuides />
       <Accreditations />
+
+      {/* Slider  */}
+      <div className="slider-container">
+        <h1>Discover the best of the Philippines and beyond!</h1>
+        <ScrollerComponent />
+      </div>
+
+      {/* Footer  */}
+      <FooterComponent />
     </div>
   );
 };
