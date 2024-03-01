@@ -7,7 +7,7 @@ import { useState } from "react";
 
 //! function for Time Slider using MUI
 function valuetext(value: number) {
-  return `${value}°C`;
+  return `${value}`;
 }
 
 const marks = [
@@ -17,20 +17,20 @@ const marks = [
   },
   {
     value: 20,
-    label: "20°C",
+    label: "6:30",
   },
   {
     value: 37,
-    label: "37°C",
+    label: "12:30",
   },
   {
     value: 100,
-    label: "100°C",
+    label: "6:30",
   },
 ];
 
 function SearchFilter() {
-  //!Additional function for Time Slider
+  //!TIME SLIDER (to be changed)
   const [value, setValue] = useState<number[]>([20, 37]);
 
   const handleChange = (event: Event, newValue: number | number[]) => {
@@ -142,9 +142,9 @@ function SearchFilter() {
           </div>
 
           {/* Progress */}
-          <div className="range-slider-container">
+          {/* <div className="range-slider-container">
             <Slider
-              getAriaLabel={() => "Temperature range"}
+              getAriaLabel={() => ""}
               value={value}
               onChange={handleChange}
               valueLabelDisplay="auto"
@@ -152,14 +152,14 @@ function SearchFilter() {
               disableSwap
               marks={marks}
             />
-          </div>
+          </div> */}
           <div className="time">
             <p className="text-grey">Arrival time</p>
             <p>00:00 - 12:30</p>
           </div>
-          <div className="range-slider-container">
+          {/* <div className="range-slider-container">
             <RangeSlider defaultValue={[0, 50]} />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

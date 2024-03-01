@@ -7,6 +7,7 @@ import mustbring from "../../resources/homepage/mustbring.png";
 import howtosurvive from "../../resources/homepage/howtosurvive.png";
 import ButtonComponent from "../ui/ButtonComponent";
 
+//Current
 const travelData = [
   {
     image: bohol,
