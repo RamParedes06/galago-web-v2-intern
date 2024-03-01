@@ -157,9 +157,6 @@ function SearchFilter() {
             <p className="text-grey">Arrival time</p>
             <p>00:00 - 12:30</p>
           </div>
-          {/* <div className="range-slider-container">
-            <RangeSlider defaultValue={[0, 50]} />
-          </div> */}
         </div>
       </div>
     </div>
