@@ -38,7 +38,7 @@
 
 .primary-traveler {
   max-width: 784px;
-  max-height: 662px;
+  max-height: fit-content;
   border: 1px solid #d9d9d9;
   border-radius: 12px;
   padding: 24px 32px 24px 32px;
@@ -95,16 +95,22 @@
 
 // FORMS
 form ::placeholder {
-  color: #4fa2b4;
+  color: #d9d9d9;
   font-family: "General Sans", sans-serif;
   font-size: 13px;
   font-weight: 500;
 }
 
-form input {
+input {
   border-radius: 12px;
-  border-color: #4fa2b4;
-  max-width: Fill (352px);
+  border: 1px solid #d9d9d9;
+  max-height: Fixed (56px);
+  padding: 12px 10px;
+}
+
+input :focus {
+  border-radius: 12px;
+  border: 1px solid #4fa2b4;
   max-height: Fixed (56px);
   padding: 12px 10px;
 }
