@@ -1,7 +1,6 @@
 import FlightBanner from "../components/flightresult/FlightBanner";
 import SearchFilter from "../components/flightresult/SearchFilter";
-// import "../styles/flightresult.scss";
-
+import "../styles/flightresult.scss";
 import { Container } from "react-bootstrap";
 import DepartureInfo from "../components/flightresult/DepartureInfo";
 import SortByDay from "../components/flightresult/SortByDay";
