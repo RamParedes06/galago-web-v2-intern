@@ -11,9 +11,7 @@ import FlightResultPage from "./FlightResultPage";
 const index = () => {
   return (
     <div>
-      <FlightResultPage />
-      {/* <Homepage /> */}
-      <UserProfile />
+      <Homepage />
     </div>
   );
 };

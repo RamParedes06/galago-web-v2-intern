@@ -61,7 +61,7 @@ const favorites = [
 const FavoritesPage = () => {
   return (
     <>
-      <div className="container">
+      <div className="favorite-wrapper">
         <div className="header">
           <h1>Favorites</h1>
           <a>+ Create new favorites</a>
