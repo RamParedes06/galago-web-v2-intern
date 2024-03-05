@@ -37,7 +37,9 @@ const UserProfile = () => {
                   <div className="d-flex justify-content-between align-items-center">
                     <div className="info-text">
                       <body>Legal Name</body>
-                      <p className="m-0 pb-2">Christian Mae Marichan</p>
+                      <p id="lname" className="m-0 pb-2">
+                        Christian Mae Marichan
+                      </p>
                     </div>
                     <a
                       className="edit-btn"
