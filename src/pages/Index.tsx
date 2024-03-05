@@ -12,7 +12,8 @@ const index = () => {
   return (
     <div>
       <FlightResultPage />
-      {/* <UserProfile /> */}
+      {/* <Homepage /> */}
+      <UserProfile />
     </div>
   );
 };
