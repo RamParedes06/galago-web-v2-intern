@@ -1,0 +1,118 @@
+@import url("https://fonts.cdnfonts.com/css/general-sans");
+@import url("https://fonts.cdnfonts.com/css/satoshi");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: 47px 104px 94px 104px;
+  gap: 47px;
+}
+.profile-info-grp {
+  max-width: Fixed (1, 232px);
+  max-height: Hug (100px);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  .profile-info {
+    max-width: Fixed (536px);
+    max-height: Hug (100px);
+    gap: 24px;
+    display: flex;
+    align-items: center;
+    .user-name {
+      font-family: "Satoshi", sans-serif;
+      font-weight: 700;
+      font-size: 34px;
+      color: #333333;
+    }
+    .body {
+      font-size: 17px;
+      font-weight: 500;
+    }
+  }
+}
+
+.primary-traveler {
+  max-width: 784px;
+  max-height: 662px;
+  border: 1px solid #d9d9d9;
+  border-radius: 12px;
+  padding: 24px 32px 24px 32px;
+  font-family: "General Sans", sans-serif;
+  gap: 32px;
+  a {
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    color: #016e7f;
+    cursor: pointer;
+  }
+
+  .header {
+    padding: 0;
+    align-items: baseline;
+    margin-bottom: 24px;
+    .title {
+      font-size: 24px;
+      font-weight: 600;
+    }
+  }
+
+  .info {
+    body {
+      font-weight: 500;
+    }
+  }
+  .legal-name {
+    padding: 12px 0px;
+    border-bottom: 1px solid #e7eaeb;
+  }
+  .email-address {
+    padding: 12px 0px;
+    border-bottom: 1px solid #e7eaeb;
+  }
+
+  .contact-number-grp {
+    padding: 12px 0px;
+    border-bottom: 1px solid #e7eaeb;
+  }
+  .nationality-grp {
+    padding: 12px 0px;
+    border-bottom: 1px solid #e7eaeb;
+  }
+  .travel-document-grp {
+    padding: 12px 0px;
+    border-bottom: 1px solid #e7eaeb;
+  }
+  .expiration-date-grp {
+    padding: 12px 0px;
+  }
+}
+
+// FORMS
+form ::placeholder {
+  color: #4fa2b4;
+  font-family: "General Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+form input {
+  border-radius: 12px;
+  border-color: #4fa2b4;
+  max-width: Fill (352px);
+  max-height: Fixed (56px);
+  padding: 12px 10px;
+}
+.btn {
+  background-color: #016e7f;
+  padding: 12px 40px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #ffff;
+}

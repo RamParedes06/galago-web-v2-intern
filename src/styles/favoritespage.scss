@@ -1,0 +1,195 @@
+@import url("https://fonts.cdnfonts.com/css/general-sans");
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 60px 104px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 42px;
+
+  h1 {
+    font-family: "Satoshi", sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+  }
+  a {
+    font-family: "General Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #016e7f;
+    cursor: pointer;
+  }
+}
+
+.favorites-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 32px;
+  row-gap: 64px;
+  justify-items: center;
+}
+
+.favorites-card {
+  .img-cont {
+    max-width: 284px;
+    max-height: 233px;
+    padding: 16px, 12px, 16px, 12px;
+    border: 5px solid white;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    box-shadow: 0px 3px 3px 0px #00000026;
+    overflow: hidden;
+
+    img {
+      border-radius: 6px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+  }
+}
+
+.favorite-info {
+  display: flex;
+  justify-content: space-between;
+
+  .title {
+    font-family: "General Sans", sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: #333333;
+    margin: 0px;
+  }
+  .desc {
+    font-family: "General Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #333333;
+    margin: 0px;
+  }
+}
+
+//DROPDOWN
+
+.dropdown {
+  .dropdown-toggle {
+    background-color: white;
+    border: none;
+    font-weight: 1000;
+    cursor: pointer;
+  }
+  .dropdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-decoration: none;
+    font-family: "General Sans", sans-serif;
+    color: #333333;
+    border: 1px solid #d9d9d9;
+    background-color: white;
+    font-weight: 500;
+    max-width: 204px;
+    max-height: 40px;
+    padding: 0px 12px 0px 12px;
+  }
+}
+
+// FAVORITES PAGE
+.fav-page {
+  padding: 60px 104px 60px 104px;
+
+  h3 {
+    margin: 0px;
+    font-family: "Satoshi", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+  }
+
+  p {
+    margin: 0px;
+    color: #016e7f;
+    font-family: "General Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  // .infocard-text{
+
+  // }
+
+  .favorites-infocard-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(458px, 1fr));
+    gap: 20px;
+    place-items: center;
+
+    .favorites-infocard {
+      display: flex;
+      gap: 15px;
+      max-width: 586px;
+      max-height: 176px;
+      border: 1px solid #d9d9d9;
+      border-radius: 12px;
+      padding: 16px 14px;
+    }
+
+    .infocard-img {
+      max-width: 159px;
+      max-height: 144px;
+
+      img {
+        object-fit: cover;
+        width: 159px;
+        height: 144px;
+        border-radius: 10px;
+      }
+    }
+
+    .title {
+      font-family: "General Sans", sans-serif;
+      font-weight: 600;
+      font-size: 20px;
+    }
+
+    p {
+      font-family: "General Sans", sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      color: #333333;
+    }
+
+    .infocard-text {
+      width: 100%;
+    }
+  }
+  .tag-div .tag {
+    padding: 4px 8px;
+    background-color: #d0f0ef;
+    color: #016e7f;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: clamp(10px, 10vw, 13px);
+    font-family: "General Sans", sans-serif;
+  }
+
+  .off-tag {
+    padding: 4px 8px;
+    background-color: #eb534b;
+    color: white;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: clamp(10px, 10vw, 13px);
+    font-family: "General Sans", sans-serif;
+  }
+}
