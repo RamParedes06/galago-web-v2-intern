@@ -3,7 +3,7 @@ import ButtonComponent from "../../components/ui/ButtonComponent";
 import { SwitchArrow } from "../ui/svg/SwitchArrow";
 import "../../styles/homepage.scss";
 import "../../styles/button.scss";
-
+//Incoming
 function Flights() {
   return (
     <Container>
@@ -16,7 +16,6 @@ function Flights() {
             <p>Round Trip</p>
           </div>
         </div>
-
 
         <div className="row-1">
           <div className="from-col">

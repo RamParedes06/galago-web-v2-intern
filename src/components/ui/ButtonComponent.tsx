@@ -5,11 +5,16 @@ import "../../styles/button.scss";
 type ButtonComponentProps = {
   buttonText: string;
   buttonClass?: string;
+  buttonStyle?: {};
 };
-function ButtonComponent({ buttonText, buttonClass }: ButtonComponentProps) {
+function ButtonComponent({
+  buttonText,
+  buttonClass,
+  buttonStyle,
+}: ButtonComponentProps) {
   return (
     <>
-      <Button className={buttonClass}>
+      <Button className={buttonClass} style={buttonStyle}>
         <p>{buttonText}</p>
       </Button>
     </>

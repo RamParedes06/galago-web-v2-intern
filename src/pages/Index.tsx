@@ -6,12 +6,13 @@ import NavigationBar from "../components/ui/NavigationBar";
 import FavoritesPage from "./FavoritesPage";
 import Favorites from "./FavoritePages/Favorites";
 import UserProfile from "./UserProfile";
+import FlightResultPage from "./FlightResultPage";
 
 const index = () => {
   return (
     <div>
-      {/* <Homepage /> */}
-      <UserProfile />
+      <FlightResultPage />
+      {/* <UserProfile /> */}
     </div>
   );
 };
