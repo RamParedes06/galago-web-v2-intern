@@ -2,14 +2,16 @@ import "../../styles/flightresult.scss";
 import airasia from "../../resources/flightresults/air-asia.png";
 import cebupacific from "../../resources/flightresults/cebu-pacific.png";
 import arrow from "../../resources/flightresults/arrow.png";
+import ButtonComponent from "../ui/ButtonComponent";
+
 //? Calling tags components
 import { Cheapest, Fastest, Percentage } from "./Tags";
-import * as Tags from "./Tags";
-import ButtonComponent from "../ui/ButtonComponent";
+import { useState } from "react";
+import FlightModal from "./FlightModal";
 
 const flightInfoData = [
   {
-    tags: "",
+    tags: ["percentage", "cheapest", "fastest"],
     image: airasia,
     airline: "Air Asia",
     flightNum: "2P 2129",
@@ -19,7 +21,7 @@ const flightInfoData = [
     price: "PHP 7,384",
   },
   {
-    // tags:
+    tags: ["fastest"],
     image: cebupacific,
     airline: "Cebu Pacific",
     flightNum: "2P 2869",
@@ -29,7 +31,7 @@ const flightInfoData = [
     price: "PHP 6,994",
   },
   {
-    // tags:
+    tags: ["percentage", "fastest"],
     image: airasia,
     airline: "Air Asia",
     flightNum: "2P 2129",
@@ -39,7 +41,7 @@ const flightInfoData = [
     price: "PHP 7,384",
   },
   {
-    // tags:
+    tags: ["percentage"],
     image: airasia,
     airline: "Air Asia",
     flightNum: "2P 2129",
@@ -49,7 +51,7 @@ const flightInfoData = [
     price: "PHP 7,384",
   },
   {
-    // tags:
+    tags: ["percentage"],
     image: cebupacific,
     airline: "Cebu Pacific",
     flightNum: "2P 2869",
@@ -59,7 +61,37 @@ const flightInfoData = [
     price: "PHP 6,994",
   },
   {
-    // tags:
+    tags: ["percentage", "cheapest", "fastest"],
+    image: cebupacific,
+    airline: "Cebu Pacific",
+    flightNum: "2P 2869",
+    from: "03:40 MNL",
+    to: "05:25 CEB",
+    time: "1h 22min",
+    price: "PHP 6,994",
+  },
+  {
+    tags: ["percentage", "cheapest", "fastest"],
+    image: cebupacific,
+    airline: "Cebu Pacific",
+    flightNum: "2P 2869",
+    from: "03:40 MNL",
+    to: "05:25 CEB",
+    time: "1h 22min",
+    price: "PHP 6,994",
+  },
+  {
+    tags: ["percentage", "cheapest", "fastest"],
+    image: cebupacific,
+    airline: "Cebu Pacific",
+    flightNum: "2P 2869",
+    from: "03:40 MNL",
+    to: "05:25 CEB",
+    time: "1h 22min",
+    price: "PHP 6,994",
+  },
+  {
+    tags: ["percentage", "cheapest", "fastest"],
     image: cebupacific,
     airline: "Cebu Pacific",
     flightNum: "2P 2869",
@@ -69,13 +101,17 @@ const flightInfoData = [
     price: "PHP 6,994",
   },
 ];
+
 function FlightInfoCard() {
+  const [modalShow, setModalShow] = useState(false);
   return (
     <div className="flight-info-card-container">
       {flightInfoData.map((flightInfo) => (
         <div className="flight-info-card">
           <div className="tags">
-            <Percentage /> <Cheapest /> <Fastest />
+            {flightInfo.tags?.includes("percentage") && <Percentage />}
+            {flightInfo.tags?.includes("cheapest") && <Cheapest />}
+            {flightInfo.tags?.includes("fastest") && <Fastest />}
           </div>
 
           <div className="info">
@@ -119,19 +155,21 @@ function FlightInfoCard() {
               <h1>{flightInfo.price} / pax</h1>
               <ButtonComponent
                 buttonText="SEE FLIGHT"
-                buttonClass="default-btn"
-                buttonStyle={{
+                className="default-btn"
+                style={{
                   padding: "12px 20px",
                   borderRadius: "12px",
                   maxWidth: "126px",
                   maxHeight: "40px",
                   fontSize: "12px",
                 }}
+                onClick={() => setModalShow(true)}
               />
             </div>
           </div>
         </div>
       ))}
+      <FlightModal show={modalShow} onHide={() => setModalShow(false)} />
     </div>
   );
 }

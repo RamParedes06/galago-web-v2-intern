@@ -34,11 +34,11 @@ function FlightBanner() {
         </div>
         <ButtonComponent
           buttonText="EDIT"
-          buttonClass="default-btn"
-          buttonStyle={{
+          className="default-btn"
+          style={{
             maxWidth: "94px",
-            padding: 12,
             borderRadius: "12px",
+            height: "min-content",
           }}
         />
       </div>

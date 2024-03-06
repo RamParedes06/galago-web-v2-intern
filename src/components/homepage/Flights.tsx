@@ -55,7 +55,7 @@ function Flights() {
           </div>
         </div>
         <div className="d-flex justify-content-end">
-          <ButtonComponent buttonText="SEARCH" buttonClass="default-btn" />
+          <ButtonComponent buttonText="SEARCH" className="default-btn" />
         </div>
       </div>
     </Container>

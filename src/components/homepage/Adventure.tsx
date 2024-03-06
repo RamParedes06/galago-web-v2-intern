@@ -52,7 +52,7 @@ function Adventure() {
               <p>{adventure.overlay}</p>
             </div>
             {/* <Link to={adventure.link} style={{ textDecoration: "none" }}> */}
-            <ButtonComponent buttonText="Learn More" buttonClass="border-btn" />
+            <ButtonComponent buttonText="Learn More" className="border-btn" />
             {/* </Link> */}
           </div>
         ))}

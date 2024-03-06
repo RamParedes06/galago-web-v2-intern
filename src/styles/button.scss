@@ -9,11 +9,16 @@
   p {
     margin: 0;
   }
+
+  &.default-btn:hover {
+    background-color: #01535f;
+  }
+
+  &.default-btn:active {
+    background-color: #01535f;
+  }
 }
 
-.default-btn:hover {
-  background-color: #01535f;
-}
 .border-btn {
   background-color: transparent;
   border: 1px solid #016e7f;
@@ -28,5 +33,21 @@
   &.border-btn:hover {
     background-color: #016e7f;
     border: 1px solid #016e7f;
+  }
+
+  &.border-btn:active {
+    background-color: #016e7f;
+    border: 1px solid #016e7f;
+  }
+}
+
+.btn-transparent {
+  background-color: transparent;
+  border: none;
+  color: #d9d9d9;
+  width: min-content;
+  &.btn-transparent:hover {
+    background-color: transparent;
+    color: #d9d9d9;
   }
 }

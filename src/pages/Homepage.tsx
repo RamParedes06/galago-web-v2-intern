@@ -82,7 +82,7 @@ const Homepage = () => {
       <Accreditations />
 
       {/* Slider  */}
-      <div className="slider-container">
+      <div className="swipper-container">
         <h1>Discover the best of the Philippines and beyond!</h1>
         <ScrollerComponent />
       </div>

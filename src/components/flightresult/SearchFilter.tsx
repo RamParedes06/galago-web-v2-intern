@@ -10,30 +10,122 @@ function valuetext(value: number) {
   return `${value}`;
 }
 
-const marks = [
+//! function for Time Slider using MUI
+function departureValueText(departureValue: number) {
+  return `${departureValue}`;
+}
+
+const arrivalMarks = [
   {
     value: 0,
     label: "00:00",
   },
   {
-    value: 20,
-    label: "6:30",
+    value: 25,
+    label: "6:00",
   },
   {
-    value: 37,
-    label: "12:30",
+    value: 50,
+    label: "12:00",
+  },
+  {
+    value: 75,
+    label: "18:00",
   },
   {
     value: 100,
-    label: "6:30",
+    label: "24:00",
+  },
+];
+
+const departureMarks = [
+  {
+    value: 0,
+    label: "00:00",
+  },
+  {
+    value: 25,
+    label: "6:00",
+  },
+  {
+    value: 50,
+    label: "12:00",
+  },
+  {
+    value: 75,
+    label: "18:00",
+  },
+  {
+    value: 100,
+    label: "24:00",
   },
 ];
 
 function SearchFilter() {
+  // Cabin Checkbox Selection
+  const [cabinCheckboxes, setCabinCheckboxes] = useState({
+    economy: false,
+    premiumEconomy: false,
+    business: false,
+  });
+
+  // Select all Button
+  const handleSelectAll = () => {
+    setCabinCheckboxes({
+      economy: true,
+      premiumEconomy: true,
+      business: true,
+    });
+  };
+
+  // Aircraft Selection
+  const [aircraftCheckboxes, setAircraftCheckboxes] = useState({
+    narrowBody: true,
+    wideBody: true,
+  });
+
+  // Unselect All Button
+  const handleUnselectAll = () => {
+    setAircraftCheckboxes({
+      narrowBody: false,
+      wideBody: false,
+    });
+  };
+
+  // Function to handle checkbox change
+  const handleCheckboxChangeAircraft = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const { name, checked } = event.target;
+    console.log("Checkbox name:", name);
+    console.log("Checkbox checked:", checked);
+    setAircraftCheckboxes((prevState) => ({
+      ...prevState,
+      [name]: checked,
+    }));
+  };
+
+  const handleCheckboxChangeCabin = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const { name, checked } = event.target;
+    console.log("Checkbox name:", name);
+    console.log("Checkbox checked:", checked);
+    setCabinCheckboxes((prevState) => ({
+      ...prevState,
+      [name]: checked,
+    }));
+  };
+
   //!TIME SLIDER (to be changed)
+  const [departureValue, setDepartureValue] = useState<number[]>([24, 37]);
   const [value, setValue] = useState<number[]>([20, 37]);
 
-  const handleChange = (event: Event, newValue: number | number[]) => {
+  const handleDepartureChange = (event: Event, newValue: number | number[]) => {
+    setDepartureValue(newValue as number[]);
+  };
+
+  const handleArrivalChange = (event: Event, newValue: number | number[]) => {
     setValue(newValue as number[]);
   };
 
@@ -63,37 +155,44 @@ function SearchFilter() {
             <h1>Cabin</h1>
             <ButtonComponent
               buttonText="Select All"
-              buttonClass="border-btn"
-              buttonStyle={{
+              className="border-btn"
+              style={{
                 fontSize: "10px",
                 padding: "6px 18px",
                 borderRadius: "12px",
               }}
+              onClick={handleSelectAll}
             />
           </div>
 
           <div className="cabin-content">
             <div className="checkbox">
               <MDBCheckbox
-                name="inlineCheck"
-                id="inlineCheckbox1"
+                name="economy"
+                id="economyCheckbox"
                 value="option1"
                 label="Economy"
                 inline
+                checked={cabinCheckboxes.economy}
+                onChange={handleCheckboxChangeCabin}
               />
               <MDBCheckbox
-                name="inlineCheck"
-                id="inlineCheckbox2"
+                name="premiumEconomy"
+                id="premiumEconomyCheckbox"
                 value="option2"
                 label="Premium Economy"
                 inline
+                checked={cabinCheckboxes.premiumEconomy}
+                onChange={handleCheckboxChangeCabin}
               />
               <MDBCheckbox
-                name="inlineCheck"
-                id="inlineCheckbox2"
-                value="option2"
+                name="business"
+                id="businessCheckbox"
+                value="option3"
                 label="Business or First Class"
                 inline
+                checked={cabinCheckboxes.business}
+                onChange={handleCheckboxChangeCabin}
               />
             </div>
           </div>
@@ -105,30 +204,35 @@ function SearchFilter() {
             <h1>Aircraft Type</h1>
             <ButtonComponent
               buttonText="Unselect All"
-              buttonClass="default-btn"
-              buttonStyle={{
+              className="default-btn"
+              style={{
                 fontSize: "10px",
                 width: "fit-content",
                 borderRadius: "12px",
                 padding: "6px 18px",
               }}
+              onClick={handleUnselectAll}
             />
           </div>
           <div className="aircraft-content">
             <div className="checkbox">
               <MDBCheckbox
-                name="inlineCheck"
-                id="inlineCheckbox2"
-                value="option2"
-                label="Premium Economy"
+                name="narrowBody"
+                id="narrowBodyCheckbox"
+                value="option1"
+                label="Narrow Body"
                 inline
+                checked={aircraftCheckboxes.narrowBody}
+                onChange={handleCheckboxChangeAircraft}
               />
               <MDBCheckbox
-                name="inlineCheck"
-                id="inlineCheckbox2"
+                name="wideBody"
+                id="wideBodyCheckbox"
                 value="option2"
-                label="Business or First Class"
+                label="Wide Body"
                 inline
+                checked={aircraftCheckboxes.wideBody}
+                onChange={handleCheckboxChangeAircraft}
               />
             </div>
           </div>
@@ -142,20 +246,32 @@ function SearchFilter() {
           </div>
 
           {/* Progress */}
-          {/* <div className="range-slider-container">
+          <div className="range-slider-container">
             <Slider
               getAriaLabel={() => ""}
-              value={value}
-              onChange={handleChange}
+              value={departureValue}
+              onChange={handleDepartureChange}
               valueLabelDisplay="auto"
-              getAriaValueText={valuetext}
+              getAriaValueText={departureValueText}
               disableSwap
-              marks={marks}
+              marks={departureMarks}
             />
-          </div> */}
+          </div>
           <div className="time">
             <p className="text-grey">Arrival time</p>
             <p>00:00 - 12:30</p>
+          </div>
+          {/* Progress */}
+          <div className="range-slider-container">
+            <Slider
+              getAriaLabel={() => ""}
+              value={value}
+              onChange={handleArrivalChange}
+              valueLabelDisplay="auto"
+              getAriaValueText={valuetext}
+              disableSwap
+              marks={arrivalMarks}
+            />
           </div>
         </div>
       </div>

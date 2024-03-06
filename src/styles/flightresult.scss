@@ -24,7 +24,7 @@ hr {
 .flight-banner-container {
   display: flex;
   flex-wrap: wrap;
-  // justify-content: space-evenly;
+  justify-content: space-evenly;
   padding: 29px 42px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   border-radius: 12px;
@@ -33,12 +33,13 @@ hr {
 
   .banners {
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
-    // width: 100%;
+
     .flight-banner {
       font-family: "General Sans", sans-serif;
       justify-content: start;
-      padding: 0 2rem;
+      padding: 0 3rem;
 
       p {
         color: #adadad;
@@ -65,7 +66,7 @@ hr {
 .flight-header-container {
   .flight-header {
     background-color: #016e7f;
-    min-height: 142px;
+    min-height: 200px;
   }
 
   .flight-overlap {
@@ -85,8 +86,8 @@ hr {
 .search-filter-container {
   position: -webkit-sticky;
   position: sticky;
-  top: 0;
-  max-width: 360px;
+  top: 3.5rem;
+  min-width: 360px;
 
   .search-header {
     background-color: #016e7f;
@@ -106,6 +107,8 @@ hr {
   .search-content {
     padding: 30px;
     background-color: white;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
     .duration-container {
       margin-bottom: 1rem;
       h1 {
@@ -182,7 +185,7 @@ hr {
         justify-content: space-between;
         h1 {
           font-size: 20px;
-          font-weight: 700;
+          font-weight: 600;
         }
       }
     }
@@ -205,6 +208,7 @@ hr {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 2rem;
+  margin-bottom: 6rem;
 
   .info-container {
     display: flex;
@@ -213,27 +217,27 @@ hr {
 }
 
 // Departure Info
-.return-flight-container {
-  .return-flight {
-    .text-grey {
-      color: #adadad;
-    }
-    p {
-      font-size: 15px;
-      font-family: "General Sans", sans-serif;
-    }
 
-    h1 {
-      margin-top: 0.5rem;
-      font-size: 22px;
-      font-weight: 700;
-    }
-
-    span {
-      color: #016e7f;
-    }
+.return-flight {
+  .text-grey {
+    color: #adadad;
+  }
+  p {
+    font-size: 15px;
+    font-family: "General Sans", sans-serif;
   }
 
+  h1 {
+    margin-top: 0.5rem;
+    font-size: 22px;
+    font-weight: 700;
+  }
+
+  span {
+    color: #016e7f;
+  }
+}
+.return-flight-container {
   .sort-by {
     font-family: "General Sans", sans-serif;
     span {
@@ -254,9 +258,9 @@ hr {
     text-align: center;
     border: 1px solid #d9d9d9;
     border-radius: 12px;
-    padding: 12px 24px;
-    width: 20%;
-    font-size: "General Sans", sans-serif;
+    padding: 12px 21px;
+    // width: 100%;
+    font-size: 16px;
     cursor: pointer;
     p {
       font-size: 12px;
@@ -357,12 +361,21 @@ hr {
 }
 
 .percentage {
+  display: flex;
+  gap: 0.3rem;
+  justify-content: center;
+  align-items: center;
   background-color: #bffaff;
   padding: 2px 4px;
   border-radius: 12px;
-  padding-left: 20px;
+  padding: 2px 4px;
   font-weight: 600;
   color: #016e7f;
+
+  img {
+    width: 16px;
+    height: 15px;
+  }
 }
 
 .cheapest {
