@@ -5,6 +5,7 @@ import FlightResultPage from "./pages/Flights/FlightResultPage";
 import HelpCenter from "./pages/HelpCenter";
 import SelectedFlights from "./pages/Flights/SelectedFlights";
 import PassengerDetails from "./pages/Flights/PassengerDetails";
+import UserProfile from "./pages/UserProfile";
 
 const router = createHashRouter([
   {
@@ -31,6 +32,10 @@ const router = createHashRouter([
   {
     path: "/passenger-details",
     element: <PassengerDetails />,
+  },
+  {
+    path: "/profile",
+    element: <UserProfile />,
   },
 ]);
 
