@@ -4,8 +4,8 @@ import Favorites from "./pages/FavoritePages/Favorites";
 import FlightResultPage from "./pages/Flights/FlightResultPage";
 import HelpCenter from "./pages/HelpCenter";
 import SelectedFlights from "./pages/Flights/SelectedFlights";
-import PassengerDetails from "./pages/Flights/PassengerDetails";
 import UserProfile from "./pages/UserProfile";
+import PassengerDetails from "./pages/Flights/FlightBookingDetails";
 
 const router = createHashRouter([
   {

@@ -6,7 +6,7 @@ import FlightBanner from "../../components/flightresult/FlightBanner";
 import ButtonComponent from "../../components/ui/ButtonComponent";
 import FooterComponent from "../../components/ui/FooterComponent";
 import { useState } from "react";
-import FlightLoadingModal from "../../components/flightresult/FlightLoadingModal";
+import FlightLoadingModal from "../../components/selectedflight/FlightLoadingModal";
 import { useNavigate } from "react-router-dom";
 
 const SelectedFlights = () => {
@@ -102,6 +102,7 @@ const SelectedFlights = () => {
             />
           </div>
           <FlightLoadingModal
+            modalText="Please wait while we process your booking!"
             show={modalShow}
             onHide={() => setModalShow(false)}
           />

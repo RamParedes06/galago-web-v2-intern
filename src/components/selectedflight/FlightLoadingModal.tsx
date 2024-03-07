@@ -2,17 +2,29 @@ import { Modal } from "react-bootstrap";
 import galago_logo from "../../resources/flightresults/galago_logo.png";
 import "../../styles/selectedflight.scss";
 
-function FlightLoadingModal(props: any) {
+type FlightLoadingModalProps = {
+  modalText?: string;
+  show: boolean;
+  onHide: () => void;
+};
+function FlightLoadingModal({
+  modalText,
+  show,
+  onHide,
+  ...props
+}: FlightLoadingModalProps) {
   return (
     <Modal
       {...props}
-      size="md"
+      show={show}
+      onHide={onHide}
+      // size="md"
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
       <Modal.Body className="loading-modal-body">
         <img src={galago_logo} alt="" />
-        <p>Please wait while we process your booking!</p>
+        <p> {modalText}</p>
       </Modal.Body>
     </Modal>
   );
