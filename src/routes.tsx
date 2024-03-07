@@ -1,8 +1,10 @@
 import { createHashRouter } from "react-router-dom";
 import Index from "./pages/Index";
 import Favorites from "./pages/FavoritePages/Favorites";
-import FlightResultPage from "./pages/FlightResultPage";
+import FlightResultPage from "./pages/Flights/FlightResultPage";
 import HelpCenter from "./pages/HelpCenter";
+import SelectedFlights from "./pages/Flights/SelectedFlights";
+import PassengerDetails from "./pages/Flights/PassengerDetails";
 import UserProfile from "./pages/UserProfile";
 
 const router = createHashRouter([
@@ -23,7 +25,14 @@ const router = createHashRouter([
     path: "/help-center",
     element: <HelpCenter />,
   },
-
+  {
+    path: "/selected-flight",
+    element: <SelectedFlights />,
+  },
+  {
+    path: "/passenger-details",
+    element: <PassengerDetails />,
+  },
   {
     path: "/profile",
     element: <UserProfile />,

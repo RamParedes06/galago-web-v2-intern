@@ -1,0 +1,157 @@
+.selected-flight-card {
+  background-color: white;
+  border-radius: 12px;
+  border: 1px solid #016e7f;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 40px;
+  margin: 2rem 0;
+  position: relative;
+
+  .selected-tag {
+    background-color: #016e7f;
+    color: white;
+    padding: 4px 16px;
+    border-radius: 8px 8px 8px 0px;
+    position: absolute;
+    top: -16px;
+    left: -1px;
+  }
+
+  h4 {
+    font-family: "General Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 13px;
+  }
+
+  h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #016e7f;
+  }
+
+  #broken-border {
+    border-bottom: 2px dashed #d9d9d9;
+    width: 160px;
+    // size: 10pxs;
+  }
+
+  .info-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.back-or-book {
+  display: flex;
+  justify-content: end;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+//* FlightLoadingModal.tsx ------------------------
+.loading-modal-body {
+  font-family: "General Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  min-width: 400px;
+  min-height: 400px;
+}
+
+//* ProgressLine.tsx -------------------------------
+.progress-line-container {
+  width: 100%;
+  display: flex;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: "General Sans", sans-serif;
+  background-color: #016e7f;
+  padding: 0 104px;
+  min-height: 117px;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  .element-line-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .line {
+    width: 65px;
+    background-color: white;
+    height: 1px;
+  }
+}
+
+//*PassengerDetails.tsx -------------------------------
+
+.booking-details-container {
+  margin-top: 2rem;
+  h1 {
+    font-size: 34px;
+    font-weight: 700;
+  }
+
+  p {
+    font-family: "General Sans", sans-serif;
+    font-size: 16px;
+  }
+}
+.booking-details-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 596px;
+  border: 1px solid #d9d9d9;
+  padding: 32px 32px 12px 32px;
+  .booking-details-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p {
+      color: #016e7f;
+      cursor: pointer;
+    }
+  }
+
+  .departure-date-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .airlines-flight-container {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .time-location-container {
+    display: flex;
+    justify-content: space-between;
+
+    .hours-direct {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .hours-direct-p {
+        border-bottom: 1.5px dashed #adadad;
+        width: 291px;
+      }
+    }
+  }
+}

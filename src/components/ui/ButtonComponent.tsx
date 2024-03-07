@@ -2,19 +2,14 @@ import React, { ButtonHTMLAttributes } from "react";
 import { Button } from "react-bootstrap";
 import "../../styles/button.scss";
 
-type ButtonComponentProps = {
+// Accept HTML button attributes
+type ButtonComponentProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   buttonText: string;
-  buttonClass?: string;
-  buttonStyle?: {};
 };
-function ButtonComponent({
-  buttonText,
-  buttonClass,
-  buttonStyle,
-}: ButtonComponentProps) {
+function ButtonComponent({ buttonText, ...props }: ButtonComponentProps) {
   return (
     <>
-      <Button className={buttonClass} style={buttonStyle}>
+      <Button {...props}>
         <p>{buttonText}</p>
       </Button>
     </>

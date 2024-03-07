@@ -64,7 +64,7 @@ function TravelGuides() {
         ))}
       </div>
       <div className="d-flex justify-content-center mt-5">
-        <ButtonComponent buttonText="Read More" buttonClass="default-btn" />
+        <ButtonComponent buttonText="Read More" className="default-btn" />
       </div>
     </Container>
   );
