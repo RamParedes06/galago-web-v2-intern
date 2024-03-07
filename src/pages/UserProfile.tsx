@@ -1,20 +1,43 @@
 import React, { useState } from "react";
 import ".././styles/userprofile.scss";
 import { Form } from "react-router-dom";
-import { FloatingLabel, FormControl, FormLabel, Row } from "react-bootstrap";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import FloatingLabel from "react-bootstrap/FloatingLabel";
+import { FormControl } from "react-bootstrap";
 
 const UserProfile = () => {
   const [showLegal, setShowLegal] = useState(false);
   const [showEmail, setShowEmail] = useState(false);
   const [showContact, setShowContact] = useState(false);
+  const [showNationality, setShowNationality] = useState(false);
   const [showDocuments, setShowDocuments] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [cancelEdit, setCancelEdit] = useState({
+    legal: "Edit",
+    email: "Edit",
+    contact: "Edit",
+    nationality: "Edit",
+    travel: "Edit",
+    password: "Edit",
+  });
+
+  const [isFocused, setIsFocused] = useState(false);
+
+  const handleOnFocus = () => {
+    setIsFocused(true);
+  };
+  const handleBlur = () => {
+    setIsFocused(false);
+  };
+
+  const inputClassName = isFocused ? "teal" : "gray";
 
   return (
     <div className="content">
       <div className="profile-info-grp">
         <div className="profile-info">
-          <div className="profile-pic">image</div>
+          <div className="profile-pic"></div>
           <div className="info-grp d-flex flex-column gap-1">
             <div className="user-name">Christian Mae Marichan</div>
             <div className="body d-flex">christianMarichan28@gmail.com</div>
@@ -37,49 +60,64 @@ const UserProfile = () => {
                   <div className="d-flex justify-content-between align-items-center">
                     <div className="info-text">
                       <body>Legal Name</body>
-                      <p id="lname" className="m-0 pb-2">
-                        Christian Mae Marichan
-                      </p>
+                      <p className="m-0 pb-2">Christian Mae Marichan</p>
                     </div>
                     <a
                       className="edit-btn"
                       onClick={() => {
-                        setShowLegal(true);
+                        setShowLegal((prev) => !prev);
+                        setCancelEdit((prev) => ({
+                          ...prev,
+                          legal: prev.legal === "Cancel" ? "Edit" : "Cancel",
+                        }));
                       }}
                     >
-                      Edit
+                      {cancelEdit.legal}
                     </a>
                   </div>
                   {showLegal && (
                     <>
                       <Form>
-                        <div className="d-flex gap-2">
-                          <input
-                            type="text"
-                            id="first-name"
-                            name="first-name"
-                            placeholder="First Name"
-                          ></input>
-                          <input
-                            type="text"
-                            id="middle-name"
-                            name="middle-name"
-                            placeholder="Middle Name"
-                          ></input>
-                          <input
-                            type="text"
-                            id="last-name"
-                            name="last-name"
-                            placeholder="Last Name"
-                          ></input>
-                        </div>
+                        <Row>
+                          <Col>
+                            <FloatingLabel
+                              controlId="floatingArea"
+                              id="first-name"
+                              label="First Name"
+                            >
+                              <FormControl type="text"></FormControl>
+                            </FloatingLabel>
+                          </Col>
+                          <Col>
+                            <FloatingLabel
+                              controlId="floatingArea"
+                              id="middle-name"
+                              label="Middle Name"
+                            >
+                              <FormControl type="text"></FormControl>
+                            </FloatingLabel>
+                          </Col>
+                          <Col>
+                            <FloatingLabel
+                              controlId="floatingArea"
+                              id="last-name"
+                              label="Last Name"
+                            >
+                              <FormControl type="text"></FormControl>
+                            </FloatingLabel>
+                          </Col>
+                        </Row>
                       </Form>{" "}
                       <div className="d-flex flex-row-reverse pt-4 pb-1">
                         <button
                           type="submit"
                           className="btn"
                           onClick={() => {
-                            setShowLegal(false);
+                            setShowLegal((prev) => !prev);
+                            setCancelEdit((prev) => ({
+                              ...prev,
+                              legal: prev.legal === "Edit" ? "Cancel" : "Edit",
+                            }));
                           }}
                         >
                           Save
@@ -97,34 +135,44 @@ const UserProfile = () => {
                     <a
                       className="edit-btn"
                       onClick={() => {
-                        setShowEmail(true);
+                        setShowEmail((prev) => !prev);
+                        setCancelEdit((prev) => ({
+                          ...prev,
+                          email: prev.email === "Cancel" ? "Edit" : "Cancel",
+                        }));
                       }}
                     >
-                      Edit
+                      {cancelEdit.email}
                     </a>
                   </div>
                   {showEmail && (
                     <>
                       <Form>
-                        <div className="d-flex gap-2">
-                          <input
-                            type="text"
-                            id="email-add"
-                            name="email-add"
-                            placeholder="Email Address"
-                            style={{ width: "100%" }}
-                          ></input>
-                        </div>
+                        <Row>
+                          <Col>
+                            <FloatingLabel
+                              controlId="floatingArea"
+                              id="email-add"
+                              label="Email Address"
+                            >
+                              <FormControl type="email"></FormControl>
+                            </FloatingLabel>
+                          </Col>
+                        </Row>
                       </Form>
                       <div className="d-flex flex-row-reverse pt-4 pb-1">
                         <button
                           type="submit"
                           className="btn"
                           onClick={() => {
-                            setShowEmail(false);
+                            setShowEmail((prev) => !prev);
+                            setCancelEdit((prev) => ({
+                              ...prev,
+                              email: prev.email === "Edit" ? "Cancel" : "Edit",
+                            }));
                           }}
                         >
-                          Save
+                          Send Link
                         </button>
                       </div>
                     </>
@@ -139,24 +187,32 @@ const UserProfile = () => {
                     <a
                       className="edit-btn"
                       onClick={() => {
-                        setShowContact(true);
+                        setShowContact((prev) => !prev);
+                        setCancelEdit((prev) => ({
+                          ...prev,
+                          contact:
+                            prev.contact === "Cancel" ? "Edit" : "Cancel",
+                        }));
                       }}
                     >
-                      Edit
+                      {cancelEdit.contact}
                     </a>
                   </div>
                   {showContact && (
                     <>
                       <Form>
-                        <div className="d-flex gap-2">
-                          <input
-                            type="text"
-                            id="contact-num"
-                            name="contact-num"
-                            placeholder="Contact Number"
-                            style={{ width: "100%" }}
-                          ></input>
-                        </div>
+                        <Row>
+                          <Col>
+                            <FloatingLabel
+                              controlId="floatingArea"
+                              id="contact-num"
+                              label="Contact Number"
+                              style={{ width: "100%" }}
+                            >
+                              <FormControl type="text"></FormControl>
+                            </FloatingLabel>
+                          </Col>
+                        </Row>
                       </Form>
                       <div className="d-flex flex-row-reverse pt-4 pb-1">
                         <button
@@ -164,6 +220,11 @@ const UserProfile = () => {
                           className="btn"
                           onClick={() => {
                             setShowContact(false);
+                            setCancelEdit((prev) => ({
+                              ...prev,
+                              contact:
+                                prev.contact === "Cancel" ? "Edit" : "Cancel",
+                            }));
                           }}
                         >
                           Save
@@ -192,31 +253,42 @@ const UserProfile = () => {
                     <a
                       className="edit-btn"
                       onClick={() => {
-                        setShowDocuments(true);
+                        setShowDocuments((prev) => !prev);
+                        setCancelEdit((prev) => ({
+                          ...prev,
+                          nationality:
+                            prev.nationality === "Cancel" ? "Edit" : "Cancel",
+                        }));
                       }}
                     >
-                      Edit
+                      {cancelEdit.nationality}
                     </a>
                   </div>
                   {showDocuments && (
                     <>
                       <Form>
-                        <div className="d-flex gap-2">
-                          <input
-                            type="text"
-                            id="travel-docu-num"
-                            name="travel-docu-num"
-                            placeholder="Travel Document Number"
-                            style={{ width: "50%" }}
-                          ></input>
-                          <input
-                            type="text"
-                            id="docu-expdate"
-                            name="docu-expdate"
-                            placeholder="Travel Document Expiration Date"
-                            style={{ width: "50%" }}
-                          ></input>
-                        </div>
+                        <Row>
+                          <Col>
+                            <FloatingLabel
+                              controlId="floatingArea"
+                              id="travel-docu-num"
+                              label="Travel Document Number"
+                              style={{ width: "50%" }}
+                            >
+                              <FormControl type="text"></FormControl>
+                            </FloatingLabel>
+                          </Col>
+                          <Col>
+                            <FloatingLabel
+                              controlId="floatingArea"
+                              id="docu-expdate"
+                              label="Travel Document Expiration Date"
+                              style={{ width: "50%" }}
+                            >
+                              <FormControl type="text"></FormControl>
+                            </FloatingLabel>
+                          </Col>
+                        </Row>
                       </Form>
                       <div className="d-flex flex-row-reverse pt-4 pb-1">
                         <button
@@ -224,6 +296,11 @@ const UserProfile = () => {
                           className="btn"
                           onClick={() => {
                             setShowDocuments(false);
+                            setCancelEdit((prev) => ({
+                              ...prev,
+                              nationality:
+                                prev.nationality === "Edit" ? "Cancel" : "Edit",
+                            }));
                           }}
                         >
                           Save
@@ -232,7 +309,7 @@ const UserProfile = () => {
                     </>
                   )}
                 </div>
-                <div className="expiration-date-grp">
+                <div className="password-grp">
                   <div className="d-flex justify-content-between align-items-center">
                     <div className="info-text">
                       <body>Password</body>
@@ -241,38 +318,56 @@ const UserProfile = () => {
                     <a
                       className="edit-btn"
                       onClick={() => {
-                        setShowPassword(true);
+                        setShowPassword((prev) => !prev);
+                        setCancelEdit((prev) => ({
+                          ...prev,
+                          password:
+                            prev.password === "Cancel" ? "Edit" : "Cancel",
+                        }));
                       }}
                     >
-                      Edit
+                      {cancelEdit.password}
                     </a>
                   </div>
                   {showPassword && (
                     <>
-                      <Form>
-                        <div className="d-flex flex-column gap-2">
-                          <input
-                            type="text"
+                      <Form className="d-flex flex-column gap-3">
+                        <Col>
+                          <FloatingLabel
+                            controlId="floatingArea"
                             id="old-pass"
-                            name="old-pass"
-                            placeholder="Old Password*"
-                            style={{ width: "100%" }}
-                          ></input>
-                          <input
-                            type="text"
+                            label="Old Password *"
+                          >
+                            <FormControl type="password"></FormControl>
+                          </FloatingLabel>
+                        </Col>
+                        <Col>
+                          <FloatingLabel
+                            controlId="floatingArea"
                             id="new-pass"
-                            name="new-pass"
-                            placeholder="New Password*"
-                            style={{ width: "100%" }}
-                          ></input>
-                          <input
-                            type="text"
+                            label="New Password *"
+                          >
+                            <FormControl type="password"></FormControl>
+                          </FloatingLabel>
+                        </Col>
+                        <Col>
+                          {/* <input
+                          type="text"
+                          id="confirm-pass"
+                          placeholder="Confirm Password*"
+                          style={{ width: "100%" }}
+                        ></input> */}
+                          <FloatingLabel
+                            controlId="floatingArea"
                             id="confirm-pass"
-                            name="confirm-pass"
-                            placeholder="Confirm Password*"
-                            style={{ width: "100%" }}
-                          ></input>
-                        </div>
+                            label="Confirm Password *"
+                            // onFocus={handleOnFocus}
+                            // onBlur={handleBlur}
+                            // className={inputClassName}
+                          >
+                            <FormControl type="password"></FormControl>
+                          </FloatingLabel>
+                        </Col>
                       </Form>
                       <div className="d-flex flex-row-reverse pt-4 pb-1">
                         <button
@@ -280,6 +375,11 @@ const UserProfile = () => {
                           className="btn"
                           onClick={() => {
                             setShowPassword(false);
+                            setCancelEdit((prev) => ({
+                              ...prev,
+                              password:
+                                prev.password === "Edit" ? "Cancel" : "Edit",
+                            }));
                           }}
                         >
                           Save

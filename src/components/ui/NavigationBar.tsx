@@ -47,6 +47,10 @@ function NavigationBar() {
           <p>Help Center</p>
         </Link>
 
+        <Link to="/profile" style={{ textDecoration: "none" }}>
+          <p>Profile</p>
+        </Link>
+
         <button className="shadow-sm rounded">Login</button>
       </div>
     </div>
