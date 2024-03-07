@@ -38,7 +38,7 @@
 
 .primary-traveler {
   max-width: 784px;
-  max-height: 662px;
+  max-height: fit-content;
   border: 1px solid #d9d9d9;
   border-radius: 12px;
   padding: 24px 32px 24px 32px;
@@ -88,31 +88,60 @@
     padding: 12px 0px;
     border-bottom: 1px solid #e7eaeb;
   }
-  .expiration-date-grp {
+  .password-grp {
     padding: 12px 0px;
   }
 }
 
 // FORMS
-form ::placeholder {
-  color: #4fa2b4;
+form {
+  color: #d9d9d9;
   font-family: "General Sans", sans-serif;
   font-size: 13px;
   font-weight: 500;
+  label {
+    color: #d9d9d9;
+  }
 }
 
-form input {
-  border-radius: 12px;
-  border-color: #4fa2b4;
-  max-width: Fill (352px);
-  max-height: Fixed (56px);
-  padding: 12px 10px;
+.profile-pic {
+  height: 100px;
+  width: 100px;
+  border-radius: 100px;
+  background-color: #016e7f;
+}
+// input {
+//   border-radius: 12px;
+//   border: 1px solid #d9d9d9;
+//   max-height: Fixed (56px);
+//   padding: 12px 10px;
+// }
+.form-control {
+  outline: none;
+  border: 1px solid #d9d9d9;
+}
+.form-control:focus {
+  outline: none;
+  border: 1px solid #016e7f;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+    0 0 8px rgba(255, 255, 255, 0.6);
+}
+.label {
+  color: #016e7f;
 }
 .btn {
   background-color: #016e7f;
+
   padding: 12px 40px;
   border-radius: 6px;
   font-size: 13px;
   font-weight: 500;
   color: #ffff;
+}
+
+.teal {
+  border: 1px solid #6ae7fa;
+}
+.gray {
+  border: 1px solid #d9d9d9;
 }
