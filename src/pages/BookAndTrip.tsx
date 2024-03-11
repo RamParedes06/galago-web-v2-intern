@@ -74,7 +74,7 @@ const BookAndTrip = () => {
   return (
     <>
       <div className="container">
-        <h1>Bookings & Trip</h1>
+        <h1>Bookings & Trips</h1>
         <p className="title">Upcoming</p>
         <div className="upcoming-container">
           {upcoming.map((data, i) => (
@@ -83,10 +83,12 @@ const BookAndTrip = () => {
                 <img src={data.image} alt="" />
               </div>
 
-              <div className="info-list">
+              <div className="info-list d-flex flex-column gap-1">
                 <span className="card-status">{data.status}</span>
-                <p className="card-title">{data.title}</p>
-                <p className="card-date">{data.date}</p>
+                <div>
+                  <p className="card-title">{data.title}</p>
+                  <p className="card-date">{data.date}</p>
+                </div>
               </div>
             </div>
           ))}
@@ -101,10 +103,12 @@ const BookAndTrip = () => {
                   <img src={data.image} alt="" />
                 </div>
 
-                <div className="info-list">
+                <div className="info-list d-flex flex-column gap-1">
                   <span className="card-status">{data.status}</span>
-                  <p className="card-title">{data.title}</p>
-                  <p className="card-date">{data.date}</p>
+                  <div>
+                    <p className="card-title">{data.title}</p>
+                    <p className="card-date">{data.date}</p>
+                  </div>
                 </div>
               </div>
             ))}

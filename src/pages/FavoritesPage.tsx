@@ -1,6 +1,7 @@
 import Dropdown from "react-bootstrap/Dropdown";
 import "../styles/favoritespage.scss";
 import { Link } from "react-router-dom";
+import { PopDots } from "../components/ui/svg/PopDots";
 
 type data = {
   link: string;
@@ -62,9 +63,9 @@ const FavoritesPage = () => {
   return (
     <>
       <div className="favorite-wrapper">
-        <div className="header">
+        <div className="fav-header">
           <h1>Favorites</h1>
-          <a>+ Create new favorites</a>
+          <a className="header-btn">+ Create new favorites</a>
         </div>
         <div className="favorites-container">
           {favorites.map((data: any, i) => (
@@ -80,18 +81,18 @@ const FavoritesPage = () => {
                       <p className="title">{data.title}</p>
                       <p className="desc">{data.description}</p>
                     </div>
-                    <div>
-                      <Dropdown>
-                        <Dropdown.Toggle id="dropdown-custom-components">
-                          :
-                        </Dropdown.Toggle>
+                    {/* <div> */}
+                    <Dropdown>
+                      <Dropdown.Toggle className="p-0">
+                        <PopDots />
+                      </Dropdown.Toggle>
 
-                        <Dropdown.Menu>
-                          <Dropdown.Item>Rename Favorites</Dropdown.Item>
-                          <Dropdown.Item>Delete Favorites</Dropdown.Item>
-                        </Dropdown.Menu>
-                      </Dropdown>
-                    </div>
+                      <Dropdown.Menu>
+                        <Dropdown.Item>Rename Favorites</Dropdown.Item>
+                        <Dropdown.Item>Delete Favorites</Dropdown.Item>
+                      </Dropdown.Menu>
+                    </Dropdown>
+                    {/* </div> */}
                   </div>
                 </div>
               </Link>

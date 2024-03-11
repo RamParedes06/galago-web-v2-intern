@@ -11,7 +11,7 @@
   padding: 60px 104px;
 }
 
-.header {
+.fav-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -22,12 +22,13 @@
     font-size: 34px;
     font-weight: 700;
   }
-  a {
+  .header-btn {
     font-family: "General Sans", sans-serif;
     font-size: 16px;
     font-weight: 500;
     color: #016e7f;
     cursor: pointer;
+    text-decoration: none;
   }
 }
 
@@ -84,7 +85,7 @@
 
 .dropdown {
   .dropdown-toggle {
-    background-color: white;
+    background-color: transparent;
     border: none;
     font-weight: 1000;
     cursor: pointer;
@@ -154,6 +155,10 @@
         height: 144px;
         border-radius: 10px;
       }
+    }
+
+    .btn {
+      background-color: transparent;
     }
 
     .title {

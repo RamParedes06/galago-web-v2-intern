@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ".././styles/userprofile.scss";
 import { Form } from "react-router-dom";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
-import { FormControl } from "react-bootstrap";
+import { FormControl, FormSelect } from "react-bootstrap";
+import Modal from "react-bootstrap/Modal";
+import { EmailConfirmation } from "../components/ui/svg/EmailConfirmation";
+import { UploadProfileImg } from "../components/ui/svg/UploadProfileImg";
+import { useDropzone } from "react-dropzone";
 
 const UserProfile = () => {
   const [showLegal, setShowLegal] = useState(false);
@@ -13,6 +17,12 @@ const UserProfile = () => {
   const [showNationality, setShowNationality] = useState(false);
   const [showDocuments, setShowDocuments] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [modal_, setShowModal] = useState(false);
+  const [seconds, setSeconds] = useState(13);
+  const [showTimer, setShowTimer] = useState(false);
+  const [input, setInput] = useState("");
+  const [imgModal, setShowImgModal] = useState(false);
+  const { acceptedFiles, getRootProps, getInputProps } = useDropzone({});
   const [cancelEdit, setCancelEdit] = useState({
     legal: "Edit",
     email: "Edit",
@@ -22,22 +32,56 @@ const UserProfile = () => {
     password: "Edit",
   });
 
-  const [isFocused, setIsFocused] = useState(false);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (seconds > 0) {
+        setSeconds(seconds - 1);
+      } else {
+        setShowTimer(false);
+        setSeconds(12);
+      }
 
-  const handleOnFocus = () => {
-    setIsFocused(true);
-  };
-  const handleBlur = () => {
-    setIsFocused(false);
-  };
+      if (seconds === 0) {
+        clearInterval(interval);
+      }
+    }, 1000);
+    return () => {
+      clearInterval(interval);
+    };
+  }, [showTimer, seconds]);
 
-  const inputClassName = isFocused ? "teal" : "gray";
+  // const [isButtonDisabled, setButtonDisabled] = useState(false);
+  // const disabledButton = () => {
+  //   setButtonDisabled(true);
+  // };
+
+  // const enableButton = () =>{
+  //   setButtonDisabled(false);
+  // }
 
   return (
     <div className="content">
       <div className="profile-info-grp">
         <div className="profile-info">
-          <div className="profile-pic"></div>
+          <div className="profile-pic">
+            <button
+              className="upload-profileimg-btn position-relative"
+              onClick={() => {
+                setShowImgModal(true);
+              }}
+            >
+              <UploadProfileImg _width={24} _height={24} />
+            </button>
+            <Modal
+              show={imgModal}
+              onHide={() => setShowImgModal(false)}
+              dialogClassName="modal-500w"
+              className="img-modal"
+              centered
+            >
+              ajhsja
+            </Modal>
+          </div>
           <div className="info-grp d-flex flex-column gap-1">
             <div className="user-name">Christian Mae Marichan</div>
             <div className="body d-flex">christianMarichan28@gmail.com</div>
@@ -78,12 +122,13 @@ const UserProfile = () => {
                   {showLegal && (
                     <>
                       <Form>
-                        <Row>
+                        <Row className="d-flex gap-2 p-0">
                           <Col>
                             <FloatingLabel
                               controlId="floatingArea"
                               id="first-name"
                               label="First Name"
+                              style={{ width: "100%" }}
                             >
                               <FormControl type="text"></FormControl>
                             </FloatingLabel>
@@ -111,7 +156,8 @@ const UserProfile = () => {
                       <div className="d-flex flex-row-reverse pt-4 pb-1">
                         <button
                           type="submit"
-                          className="btn"
+                          className="submit-btn"
+                          disabled={!input}
                           onClick={() => {
                             setShowLegal((prev) => !prev);
                             setCancelEdit((prev) => ({
@@ -162,18 +208,71 @@ const UserProfile = () => {
                       </Form>
                       <div className="d-flex flex-row-reverse pt-4 pb-1">
                         <button
-                          type="submit"
-                          className="btn"
+                          // type="submit"
+                          className="submit-btn"
+                          disabled={!input}
                           onClick={() => {
-                            setShowEmail((prev) => !prev);
-                            setCancelEdit((prev) => ({
-                              ...prev,
-                              email: prev.email === "Edit" ? "Cancel" : "Edit",
-                            }));
+                            // setShowEmail((prev) => !prev);
+                            // setCancelEdit((prev) => ({
+                            //   ...prev,
+                            //   email: prev.email === "Edit" ? "Cancel" : "Edit",
+                            // }));
+                            setShowModal(true);
                           }}
                         >
                           Send Link
                         </button>
+                        <Modal
+                          show={modal_}
+                          onHide={() => setShowModal(false)}
+                          dialogClassName="modal-500w"
+                          className="confirm-email-modal"
+                          centered
+                        >
+                          <Modal.Body>
+                            <div className="d-flex flex-column align-items-center gap-4">
+                              <EmailConfirmation
+                                _width={160}
+                                _height={153.22}
+                              />
+                              <h1>Confirm your email</h1>
+                              <div className="d-flex flex-column align-items-center gap-1">
+                                <p>
+                                  You've got mail at [email]! Check your inbox
+                                  (or spam)
+                                </p>
+                                <p>
+                                  And confirm your email address to continue
+                                  your signup.
+                                </p>
+                              </div>
+                              <div className="countdown-text ">
+                                <div className="d-flex flex-row-reverse">
+                                  {showTimer && (
+                                    <p>
+                                      Resend in{" "}
+                                      <span>
+                                        {" "}
+                                        {seconds < 12 ? `${seconds}` : seconds}
+                                        {"s"}
+                                      </span>
+                                    </p>
+                                  )}
+                                </div>
+                                <button
+                                  className="resend-Email"
+                                  onClick={() => {
+                                    setShowTimer(true);
+                                    // onclick={disabledButton}
+                                    // disabled={isButtonDisabled}
+                                  }}
+                                >
+                                  Resend Email
+                                </button>
+                              </div>
+                            </div>
+                          </Modal.Body>
+                        </Modal>
                       </div>
                     </>
                   )}
@@ -209,7 +308,10 @@ const UserProfile = () => {
                               label="Contact Number"
                               style={{ width: "100%" }}
                             >
-                              <FormControl type="text"></FormControl>
+                              <FormControl
+                                type="text"
+                                className="custom-input"
+                              ></FormControl>
                             </FloatingLabel>
                           </Col>
                         </Row>
@@ -217,7 +319,7 @@ const UserProfile = () => {
                       <div className="d-flex flex-row-reverse pt-4 pb-1">
                         <button
                           type="submit"
-                          className="btn"
+                          className="-submit-btn"
                           onClick={() => {
                             setShowContact(false);
                             setCancelEdit((prev) => ({
@@ -237,23 +339,12 @@ const UserProfile = () => {
                   <div className="d-flex justify-content-between align-items-center">
                     <div className="info-text">
                       <body>Nationality</body>
-                      <p className="m-0 pb-2">Philippines</p>
-                    </div>
-                    <a className="edit-btn">Edit</a>
-                  </div>
-                </div>
-                <div className="travel-document-grp">
-                  <div className="d-flex justify-content-between align-items-center">
-                    <div className="info-text">
-                      <body>Travel</body>
-                      <p className="m-0 pb-2">
-                        1234-5678-9123 • August 14, 2025
-                      </p>
+                      <p className="m-0 mb-3">Philippines</p>
                     </div>
                     <a
                       className="edit-btn"
                       onClick={() => {
-                        setShowDocuments((prev) => !prev);
+                        setShowNationality((prev) => !prev);
                         setCancelEdit((prev) => ({
                           ...prev,
                           nationality:
@@ -264,38 +355,26 @@ const UserProfile = () => {
                       {cancelEdit.nationality}
                     </a>
                   </div>
-                  {showDocuments && (
+                  {showNationality && (
                     <>
                       <Form>
                         <Row>
                           <Col>
-                            <FloatingLabel
-                              controlId="floatingArea"
-                              id="travel-docu-num"
-                              label="Travel Document Number"
-                              style={{ width: "50%" }}
-                            >
-                              <FormControl type="text"></FormControl>
-                            </FloatingLabel>
-                          </Col>
-                          <Col>
-                            <FloatingLabel
-                              controlId="floatingArea"
-                              id="docu-expdate"
-                              label="Travel Document Expiration Date"
-                              style={{ width: "50%" }}
-                            >
-                              <FormControl type="text"></FormControl>
-                            </FloatingLabel>
+                            <FormSelect size="lg">
+                              <option>Philippines</option>
+                              {/* <option value="1">Philippines</option> */}
+                              <option value="2">South Korea</option>
+                              <option value="3">United Kingdom</option>
+                            </FormSelect>
                           </Col>
                         </Row>
                       </Form>
                       <div className="d-flex flex-row-reverse pt-4 pb-1">
                         <button
                           type="submit"
-                          className="btn"
+                          className="submit-btn"
                           onClick={() => {
-                            setShowDocuments(false);
+                            setShowNationality(false);
                             setCancelEdit((prev) => ({
                               ...prev,
                               nationality:
@@ -309,11 +388,76 @@ const UserProfile = () => {
                     </>
                   )}
                 </div>
+                <div className="travel-document-grp">
+                  <div className="d-flex justify-content-between align-items-center">
+                    <div className="info-text">
+                      <body>Travel</body>
+                      <p className="m-0 mb-3">
+                        1234-5678-9123 • August 14, 2025
+                      </p>
+                    </div>
+                    <a
+                      className="edit-btn"
+                      onClick={() => {
+                        setShowDocuments((prev) => !prev);
+                        setCancelEdit((prev) => ({
+                          ...prev,
+                          travel: prev.travel === "Cancel" ? "Edit" : "Cancel",
+                        }));
+                      }}
+                    >
+                      {cancelEdit.travel}
+                    </a>
+                  </div>
+                  {showDocuments && (
+                    <>
+                      <Form>
+                        <Row>
+                          <Col>
+                            <FloatingLabel
+                              controlId="floatingArea"
+                              id="travel-docu-num"
+                              label="Travel Document Number"
+                            >
+                              <FormControl type="text"></FormControl>
+                            </FloatingLabel>
+                          </Col>
+                          <Col>
+                            <FloatingLabel
+                              controlId="floatingArea"
+                              id="docu-expdate"
+                              label="Travel Document Expiration Date"
+                            >
+                              <FormControl type="text"></FormControl>
+                            </FloatingLabel>
+                          </Col>
+                        </Row>
+                      </Form>
+                      <div className="d-flex flex-row-reverse pt-4 pb-1">
+                        <button
+                          type="submit"
+                          className="btn"
+                          disabled={!input}
+                          onClick={() => {
+                            setShowDocuments(false);
+                            setCancelEdit((prev) => ({
+                              ...prev,
+                              travel:
+                                prev.travel === "Edit" ? "Cancel" : "Edit",
+                            }));
+                          }}
+                        >
+                          Save
+                        </button>
+                      </div>
+                    </>
+                  )}
+                </div>
                 <div className="password-grp">
                   <div className="d-flex justify-content-between align-items-center">
                     <div className="info-text">
                       <body>Password</body>
-                      <p className="m-0">Last updated 2 months ago</p>
+                      <p className="m-0 mb-3">Last updated 2 months ago</p>
                     </div>
                     <a
                       className="edit-btn"
@@ -372,7 +516,8 @@ const UserProfile = () => {
                       <div className="d-flex flex-row-reverse pt-4 pb-1">
                         <button
                           type="submit"
-                          className="btn"
+                          className="submit-btn"
+                          disabled={!input}
                           onClick={() => {
                             setShowPassword(false);
                             setCancelEdit((prev) => ({

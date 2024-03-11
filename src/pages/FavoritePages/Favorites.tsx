@@ -126,7 +126,7 @@ const Favorites = () => {
             <MeatballsMenu _color="#000" _width={24} _height={24} />
           </div>
         </div>
-        <div className="mt-4 header">
+        <div className="mt-4 mb-4 header d-flex justify-content-between">
           <div>
             <p>6 Saved Properties</p>
           </div>
@@ -145,9 +145,9 @@ const Favorites = () => {
                 <img src={data.image} alt="" />
               </div>
               <div className="infocard-text d-flex flex-column gap-1">
-                <div className="btn m-0 p-0 d-flex flex-row-reverse">
+                <button className="btn m-0 p-0 d-flex flex-row-reverse">
                   <Delete _color="#ADADAD" _width={15} _height={16.67} />
-                </div>
+                </button>
                 <div>
                   <p className="title">{data.title}</p>
                   <div className="d-flex gap-3">

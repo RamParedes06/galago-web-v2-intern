@@ -7,7 +7,7 @@ type HelpCenterInfoProps = {
 
 const HelpCenterInfo = ({ selectedOption }: HelpCenterInfoProps) => {
   return (
-    <div className="content-text">
+    <div className="helpcenter-content">
       <div></div>
       {selectedOption === "Option 1" && (
         <Accordion>
