@@ -110,28 +110,49 @@ form {
   border-radius: 100px;
   background-color: #016e7f;
 }
-// input {
-//   border-radius: 12px;
-//   border: 1px solid #d9d9d9;
-//   max-height: Fixed (56px);
-//   padding: 12px 10px;
-// }
+
+.upload-profileimg-btn {
+  margin-top: 72px;
+  margin-left: 76px;
+  background-color: transparent;
+  border: none;
+}
+
 .form-control {
   outline: none;
   border: 1px solid #d9d9d9;
+  text {
+    font-family: "General Sans", sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    color: #016e7f;
+  }
 }
+
 .form-control:focus {
   outline: none;
   border: 1px solid #016e7f;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
     0 0 8px rgba(255, 255, 255, 0.6);
 }
-.label {
-  color: #016e7f;
+.form-select {
+  outline: none;
+  border: 1px solid #d9d9d9;
+  height: Fixed (56px);
+  option {
+    font-family: "General Sans", sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+  }
 }
-.btn {
+.form-select:focus {
+  outline: none;
+  border: 1px solid #016e7f;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+    0 0 8px rgba(255, 255, 255, 0.6);
+}
+.submit-btn {
   background-color: #016e7f;
-
   padding: 12px 40px;
   border-radius: 6px;
   font-size: 13px;
@@ -139,9 +160,18 @@ form {
   color: #ffff;
 }
 
-.teal {
-  border: 1px solid #6ae7fa;
+.resend-Email {
+  width: 300px;
+  height: 60px;
+  border-radius: 12px;
+  background-color: #016e7f;
+  color: white;
+  border: none;
 }
-.gray {
-  border: 1px solid #d9d9d9;
+
+.confirm-email-modal {
+  width: Fill (500px);
+  height: Hug (447.22px);
+  padding: 34px;
+  gap: 10px;
 }
