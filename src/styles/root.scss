@@ -1,28 +1,588 @@
 @import url("https://fonts.cdnfonts.com/css/satoshi");
 @import url("https://fonts.cdnfonts.com/css/general-sans");
 
-// Text Colors
-.primary-color-b {
-  color: #333333;
-}
-.primary-color {
+// Colors
+.primary-0 {
   color: #016e7f;
 }
 
-.secondary-color {
+.primary-10 {
+  color: #e6f1f2;
+}
+
+.primary-20 {
+  color: #cae1e4;
+}
+
+.primary-30 {
+  color: #b3d4d9;
+}
+
+.primary-40 {
+  color: #9ac5cc;
+}
+
+.primary-50 {
+  color: #80b7bf;
+}
+
+.primary-60 {
+  color: #348b99;
+}
+
+.primary-70 {
+  color: #1a7d8c;
+}
+
+.primary-80 {
+  color: #016372;
+}
+
+.primary-90 {
+  color: #014d59;
+}
+
+.primary-100 {
+  color: #01424c;
+}
+
+.Sec-accent-0 {
+  color: #fc8f3a;
+}
+
+.Sec-accent-10 {
+  color: #fff4eb;
+}
+
+.Sec-accent-20 {
+  color: #fee9d8;
+}
+
+.Sec-accent-30 {
+  color: #feddc4;
+}
+
+.Sec-accent-40 {
+  color: #fed2b0;
+}
+
+.Sec-accent-50 {
+  color: #fec89e;
+}
+
+.Sec-accent-60 {
+  color: #fc8f3a;
+}
+
+.Sec-accent-70 {
+  color: #fdae71;
+}
+
+.Sec-accent-80 {
+  color: #e38134;
+}
+
+.Sec-accent-90 {
+  color: #ca722e;
+}
+
+.Sec-accent-100 {
+  color: #a25b25;
+}
+
+.Sec-accent-light-0 {
+  color: #bffaff;
+}
+
+.Sec-accent-light-10 {
+  color: #f7faeb;
+}
+
+.Sec-accent-light-20 {
+  color: #e5fdff;
+}
+
+.Sec-accent-light-30 {
+  color: #d9fcff;
+}
+
+.Sec-accent-light-40 {
+  color: #d1fcff;
+}
+
+.Sec-accent-light-50 {
+  color: #c5fbff;
+}
+
+.Sec-accent-light-60 {
+  color: #a8cacc;
+}
+
+.Sec-accent-light-70 {
+  color: #ace1e6;
+}
+
+.Sec-accent-light-80 {
+  color: #86afb3;
+}
+
+.Sec-accent-light-90 {
+  color: #739699;
+}
+
+.Sec-accent-light-100 {
+  color: #607d80;
+}
+
+.Sec-base-0 {
+  color: #4fa2b4;
+}
+
+.Sec-base-10 {
+  color: #edf6f8;
+}
+
+.Sec-base-20 {
+  color: #dcecf0;
+}
+
+.Sec-base-30 {
+  color: #c2dfe5;
+}
+
+.Sec-base-40 {
+  color: #a7d1da;
+}
+
+.Sec-base-50 {
+  color: #84becb;
+}
+
+.Sec-base-60 {
+  color: #77abb7;
+}
+
+.Sec-base-70 {
+  color: #6a98a2;
+}
+
+.Sec-base-80 {
+  color: #5c858e;
+}
+
+.Sec-base-90 {
+  color: #2f616c;
+}
+
+.Sec-base-100 {
+  color: #28515a;
+}
+
+//TEXT
+.heading-large-black {
+  font-family: "Satoshi", sans-serif;
+  font-size: 28px;
+  font-weight: 900;
+}
+.heading-large-bold {
+  font-family: "Satoshi", sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.heading-large-medium {
+  font-family: "Satoshi", sans-serif;
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.heading-large-regular {
+  font-family: "Satoshi", sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.heading-medium-black {
+  font-family: "Satoshi", sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.heading-medium-bold {
+  font-family: "Satoshi", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.heading-medium-medium {
+  font-family: "Satoshi", sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.heading-medium-regular {
+  font-family: "Satoshi", sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.heading-small-black {
+  font-family: "Satoshi", sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.heading-small-bold {
+  font-family: "Satoshi", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.heading-small-medium {
+  font-family: "Satoshi", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.heading-small-regular {
+  font-family: "Satoshi", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.body-bold {
+  font-family: "General Sans", sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.body-semibold {
+  font-family: "General Sans", sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.body-medium {
+  font-family: "General Sans", sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.body-regular {
+  font-family: "General Sans", sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.subheadline-bold {
+  font-family: "General Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.subheadline-semibold {
+  font-family: "General Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.subheadline-medium {
+  font-family: "General Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.subheadline-regular {
+  font-family: "General Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.callout-bold {
+  font-family: "General Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.callout-semibold {
+  font-family: "General Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.callout-medium {
+  font-family: "General Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.callout-regular {
+  font-family: "General Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.footnote-bold {
+  font-family: "General Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.footnote-semibold {
+  font-family: "General Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.footnote-medium {
+  font-family: "General Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.footnote-regular {
+  font-family: "General Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.chip-large-bold {
+  font-family: "General Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.chip-large-medium {
+  font-family: "General Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.chip-large-regular {
+  font-family: "General Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.chip-small-bold {
+  font-family: "General Sans", sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.chip-small-medium {
+  font-family: "General Sans", sans-serif;
+  font-size: 8px;
+  font-weight: 500;
+}
+
+.chip-small-regular {
+  font-family: "General Sans", sans-serif;
+  font-size: 8px;
+  font-weight: 400;
+}
+
+//TEXT COLOR
+.text-brand {
+  color: #016e7f;
+}
+
+.text-success {
+  color: #217c38;
+}
+
+.text-accent-light {
+  color: #aed136;
+}
+
+.text-primary {
+  color: #333333;
+}
+
+.text-error {
+  color: #bd0a00;
+}
+
+.text-accent-dark {
+  color: #ca722e;
+}
+
+.text-secondary {
   color: #adadad;
 }
 
-.border-primary {
+.text-tertiary {
+  color: #4fa2ba;
+}
+
+//STATE COLORS
+
+.default-state {
+  color: #adadad;
+}
+
+.inactive-state {
   color: #d9d9d9;
 }
 
-// Text Styles
-.primary-txt {
-  font-size: 16px;
-  font-family: "General Sans", sans-serif;
+.active-state {
+  color: #016e7f;
 }
 
-.title-txtG {
+.hover-state {
+  color: #4fa2b4;
+}
+
+.success-state {
+  color: #217c38;
+}
+
+.error-state {
+  color: #bd0a00;
+}
+
+//TICKET
+.ticket-headline-bold {
   font-family: "General Sans", sans-serif;
+  size: 24px;
+  font-weight: 700;
+}
+
+.ticket-headline-semibold {
+  font-family: "General Sans", sans-serif;
+  size: 24px;
+  font-weight: 600;
+}
+
+.ticket-headline-medium {
+  font-family: "General Sans", sans-serif;
+  size: 24px;
+  font-weight: 500;
+}
+
+.ticket-headline-regular {
+  font-family: "General Sans", sans-serif;
+  size: 24px;
+  font-weight: 400;
+}
+
+.ticket-large-bold {
+  font-family: "General Sans", sans-serif;
+  size: 20px;
+  font-weight: 700;
+}
+
+.ticket-large-semibold {
+  font-family: "General Sans", sans-serif;
+  size: 20px;
+  font-weight: 600;
+}
+
+.ticket-large-medium {
+  font-family: "General Sans", sans-serif;
+  size: 20px;
+  font-weight: 500;
+}
+
+.ticket-large-regular {
+  font-family: "General Sans", sans-serif;
+  size: 20px;
+  font-weight: 400;
+}
+
+.ticket-medium-bold {
+  font-family: "General Sans", sans-serif;
+  size: 10px;
+  font-weight: 700;
+}
+
+.ticket-medium-medium {
+  font-family: "General Sans", sans-serif;
+  size: 10px;
+  font-weight: 500;
+}
+
+.ticket-medium-regular {
+  font-family: "General Sans", sans-serif;
+  size: 10px;
+  font-weight: 400;
+}
+
+.ticket-small-semibold {
+  font-family: "General Sans", sans-serif;
+  size: 8px;
+  font-weight: 600;
+}
+
+.ticket-small-medium {
+  font-family: "General Sans", sans-serif;
+  size: 8px;
+  font-weight: 500;
+}
+
+.ticket-small-regular {
+  font-family: "General Sans", sans-serif;
+  size: 8px;
+  font-weight: 400;
+}
+
+// SHADOWS
+.shadow-light-100 {
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.14);
+}
+
+.shadow-light-200 {
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.14);
+}
+
+.shadow-light-300 {
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.14);
+}
+
+.shadow-light-400 {
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.14);
+}
+
+.shadow-light-500 {
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 14px 28.8px 0px rgba(0, 0, 0, 0.24);
+}
+
+.shadow-light-600 {
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 32px 64px 0px rgba(0, 0, 0, 0.24);
+}
+
+.shadow-dark-100 {
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.14);
+}
+
+.shadow-dark-200 {
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.14);
+}
+
+.shadow-dark-300 {
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.14);
+}
+
+.shadow-dark-400 {
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.14);
+}
+
+.shadow-dark-500 {
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 14px 28.8px 0px rgba(0, 0, 0, 0.24);
+}
+
+.shadow-dark-600 {
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 32px 64px 0px rgba(0, 0, 0, 0.24);
 }
