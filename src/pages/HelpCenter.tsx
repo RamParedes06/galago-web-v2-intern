@@ -26,7 +26,7 @@ const HelpCenter = () => {
     <>
       <NavigationBar />
       <main>
-        <div className="content">
+        <div className="helpcenter-page">
           <div className="title-container">
             <h1>Frequently Asked Questions</h1>
             <div className="dot1"></div>

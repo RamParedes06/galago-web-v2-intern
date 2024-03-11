@@ -17,6 +17,7 @@
     "mdb-react-ui-kit": "^7.2.0",
     "react-bootstrap": "^2.10.1",
     "react-dom": "^18.2.0",
+    "react-dropzone": "^14.2.3",
     "react-scripts": "5.0.1",
     "react-slideshow-image": "^4.3.0",
     "react-swipe": "^6.0.4",

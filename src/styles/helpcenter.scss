@@ -6,7 +6,7 @@
   padding: 0px;
 }
 
-.content {
+.helpcenter-page {
   display: flex;
   flex-direction: column;
 }
@@ -101,10 +101,11 @@
 }
 
 // PAGE CONTENT
-.content-text {
+.helpcenter-content {
   padding: 100px 104px 100px 32px;
   height: 685px;
   width: 1500px;
+  background-color: #fff;
   h1 {
     color: #333333;
     font-family: "General Sans", sans-serif;

@@ -13,6 +13,7 @@
 
   h1 {
     margin-bottom: 32px;
+    font-weight: 700;
   }
 
   p {
@@ -74,6 +75,7 @@
 
   span {
     background: var(--Color-Teal-Light-blue-800, #d0f0ef);
+    max-width: fit-content;
   }
 
   .card-status {
