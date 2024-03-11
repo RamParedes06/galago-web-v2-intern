@@ -7,7 +7,7 @@ import hongkong from "../../resources/homepage/hongkong.jpg";
 import bohol from "../../resources/homepage/bohol.jpg";
 import "../../styles/adventure.scss";
 import ButtonComponent from "../ui/ButtonComponent";
-// import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const adventureData = [
   {
@@ -22,18 +22,21 @@ const adventureData = [
     title: "Experience Boracay!",
     overlay: "Flight Package",
     description: "As low as ₱10,999",
+    link: "/elnidopage",
   },
   {
     image: hongkong,
     title: "Fly to Hong Kong",
     overlay: "Flight Package",
     description: "Buy 1, Get 1 for $205*",
+    link: "/elnidopage",
   },
   {
     image: bohol,
     title: "Discover Bohol!",
     overlay: "Hotel Package",
     description: "As low as ₱13,660",
+    link: "/elnidopage",
   },
 ];
 
@@ -51,9 +54,9 @@ function Adventure() {
             <div className="adv-overlay">
               <p>{adventure.overlay}</p>
             </div>
-            {/* <Link to={adventure.link} style={{ textDecoration: "none" }}> */}
-            <ButtonComponent buttonText="Learn More" className="border-btn" />
-            {/* </Link> */}
+            <Link to={adventure.link} style={{ textDecoration: "none" }}>
+              <ButtonComponent buttonText="Learn More" className="border-btn" />
+            </Link>
           </div>
         ))}
       </div>

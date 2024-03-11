@@ -1,0 +1,487 @@
+// Header Banner
+.header-banner {
+  background: linear-gradient(
+      to right,
+      rgba(1, 110, 127, 1),
+      rgba(1, 110, 127, 0)
+    ),
+    url(../resources/promos/header.jpg);
+  height: 50vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: "Satoshi", sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.promo-page-container {
+  padding: 100px 0;
+}
+.latest-promos-container {
+  padding: 100px 0;
+  display: grid;
+  grid-template-columns: 0.3fr 1fr;
+
+  gap: 41px;
+
+  .adv-col1 {
+    border-left: 2px solid #4fa2b4;
+    padding-left: 20px;
+    height: min-content;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .grid-cols {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    // grid-template-columns: repeat(auto-fill,minmax(458px, 1fr));
+    // grid-template-columns: repeat(3, 1fr);
+    width: min(95%, 70rem);
+    margin-inline: auto;
+    gap: 24px;
+
+    img {
+      width: 300px;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    h1 {
+      font-size: 17px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+
+    .grid-col {
+      max-width: min-content;
+      display: grid;
+      gap: 10px;
+
+      .three {
+        grid-row: 2;
+      }
+    }
+  }
+
+  .grid-row-span-2 {
+    grid-row: span 2;
+  }
+}
+
+// Travel
+.travel {
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+
+  .travel-banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+
+    h1 {
+      font-size: 28px;
+    }
+
+    p {
+      font-size: 22px;
+      color: rgba(173, 173, 173, 1);
+    }
+  }
+
+  .travel-card {
+    position: relative;
+    // width: 389px;
+
+    img {
+      border-radius: 20px;
+      width: 600px;
+      min-height: 300px;
+      object-fit: cover;
+    }
+
+    h1 {
+      font-size: 20px;
+    }
+
+    .travel-card-details {
+      margin-top: 10px;
+
+      p {
+        color: rgba(173, 173, 173, 1);
+        font-size: 16px;
+        margin: 0;
+      }
+
+      h1 {
+        font-size: 20px;
+        margin-top: 4px;
+      }
+    }
+  }
+
+  .travel-tip {
+    position: absolute;
+    border-radius: 6px;
+    color: rgba(1, 110, 127, 1);
+    background-color: white;
+    padding: 4px 12px;
+    font-size: 10px;
+    font-weight: 500;
+    box-shadow: 5px 5px 5px rgba(51, 51, 51, 0.25);
+    left: 10px;
+    top: 10px;
+  }
+}
+
+.travel {
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+
+  .travel-banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+
+    h1 {
+      font-size: 28px;
+    }
+
+    p {
+      font-size: 22px;
+      color: rgba(173, 173, 173, 1);
+    }
+  }
+
+  .travel-grid {
+    display: flex;
+    gap: 32px;
+  }
+
+  .travel-card {
+    position: relative;
+    max-width: 389px;
+    flex-wrap: wrap;
+
+    img {
+      border-radius: 20px;
+      width: 100%;
+      min-height: 300px;
+      object-fit: cover;
+    }
+
+    h1 {
+      font-size: 20px;
+    }
+
+    .travel-card-details {
+      margin-top: 10px;
+
+      p {
+        color: rgba(173, 173, 173, 1);
+        font-size: 16px;
+        margin: 0;
+      }
+
+      h1 {
+        font-size: 20px;
+        margin-top: 4px;
+      }
+    }
+
+    .travel-tip {
+      position: absolute;
+      border-radius: 6px;
+      color: rgba(1, 110, 127, 1);
+      background-color: white;
+      padding: 4px 12px;
+      font-size: 10px;
+      font-weight: 500;
+      box-shadow: 5px 5px 5px rgba(51, 51, 51, 0.25);
+      left: 10px;
+      top: 10px;
+    }
+  }
+}
+
+// PROMO OVERVIEW
+.promo-banner {
+  background: linear-gradient(
+      to right,
+      rgba(1, 110, 127, 1),
+      rgba(1, 110, 127, 0)
+    ),
+    url(../resources/promos/promobanner.jpg);
+  height: 50vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  // font-family: "Satoshi", sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.overview-txt {
+  // font-family: "Satoshi", sans-serif;
+  padding: 100px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  h1 {
+    font-size: 28px;
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 22px;
+    color: rgba(173, 173, 173, 1);
+  }
+}
+
+.overview-component {
+  .overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 420px));
+    justify-content: center;
+    /* Center the columns horizontally */
+    gap: 32px;
+  }
+
+  .overview-card {
+    border-radius: 16px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+
+    .overview-image {
+      position: relative;
+
+      img {
+        max-width: 197px;
+        min-height: 267px;
+        object-fit: cover;
+        border-radius: 16px;
+      }
+
+      .overlay {
+        color: white;
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        font-size: 12px;
+      }
+    }
+
+    .overview-details {
+      h1 {
+        color: rgba(1, 110, 127, 1);
+        font-size: 16px;
+        font-weight: 700;
+        margin: 15px 0;
+      }
+
+      h2 {
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .pax-quadruple,
+      .pax-others {
+        p {
+          font-size: 10px;
+          margin: 0;
+        }
+
+        h4 {
+          font-size: 10px;
+          font-weight: 700;
+        }
+
+        h3 {
+          font-size: 10px;
+          color: rgba(173, 173, 173, 1);
+        }
+
+        span {
+          color: rgba(1, 110, 127, 1);
+          font-weight: 700;
+          font-size: 12px;
+        }
+
+        .for-only {
+          display: flex;
+          gap: 0.5rem;
+        }
+
+        hr {
+          border-color: rgba(231, 234, 235, 1);
+        }
+      }
+    }
+
+    .book-now {
+      background-color: rgba(208, 240, 239, 1);
+      color: rgba(1, 110, 127, 1);
+      font-size: 10px;
+      border: none;
+      font-weight: 700;
+      width: 100%;
+    }
+
+    .book-now:hover {
+      background-color: rgba(1, 110, 127, 1);
+      color: rgba(208, 240, 239, 1);
+    }
+  }
+}
+
+.line {
+  margin: 6rem 0;
+}
+
+// ITINERARY
+
+.itinerary-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 3rem;
+  padding-bottom: 5rem;
+
+  * {
+    margin: 0;
+  }
+
+  h1 {
+    font-size: 22px;
+    color: rgba(1, 110, 127, 1);
+    margin-bottom: 1rem;
+  }
+
+  .itinerary {
+    grid-row: 1/3;
+
+    .itinerary-details {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      span {
+        font-weight: bold;
+      }
+
+      h1 {
+        font-size: 17px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+
+      .itinerary-circle {
+        position: relative;
+      }
+
+      .itinerary-circle::before {
+        position: absolute;
+        left: -50px;
+        align-items: center;
+        justify-content: center;
+        content: "";
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: rgba(148, 165, 171, 1);
+      }
+
+      .itinerary-line {
+        position: relative;
+      }
+
+      .itinerary-line::before {
+        content: "";
+        background-color: rgba(148, 165, 171, 1);
+        height: 85%;
+        width: 3px;
+        position: absolute;
+        top: 5px;
+        left: -40px;
+      }
+    }
+  }
+
+  .remarks {
+    grid-row: 3/4;
+
+    .remarks-details {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+
+  .package-inclusions {
+    .package-inclusions-details {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+
+  .flight-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+
+    .additional {
+      font-weight: bold;
+      margin-top: 0.5rem;
+    }
+
+    .flight-circle::before {
+      content: "";
+      display: inline-block;
+      width: 10px;
+      margin-right: 0.5rem;
+      height: 10px;
+      background-color: rgba(173, 173, 173, 1);
+      border-radius: 50%;
+    }
+  }
+}
+
+// Icon for all green checks
+.check-icon {
+  display: flex;
+  align-items: start;
+  gap: 1rem;
+
+  img {
+    object-fit: contain;
+  }
+}

@@ -6,11 +6,17 @@ import HelpCenter from "./pages/HelpCenter";
 import SelectedFlights from "./pages/Flights/SelectedFlights";
 import UserProfile from "./pages/UserProfile";
 import PassengerDetails from "./pages/Flights/FlightBookingDetails";
+import PromoPage from "./pages/PromoPage/PromoPage";
+import ElNidoPage from "./pages/PromoPage/OverviewPage";
 
 const router = createHashRouter([
   {
     path: "/",
     element: <Index />,
+  },
+  {
+    path: "/promos",
+    element: <PromoPage />,
   },
   {
     path: "/favorites",
@@ -36,6 +42,10 @@ const router = createHashRouter([
   {
     path: "/profile",
     element: <UserProfile />,
+  },
+  {
+    path: "/elnidopage",
+    element: <ElNidoPage />,
   },
 ]);
 
