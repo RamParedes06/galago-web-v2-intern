@@ -4,11 +4,12 @@ import { Form } from "react-router-dom";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
-import { FormControl, FormSelect } from "react-bootstrap";
+import { Button, FormControl, FormSelect, ModalBody } from "react-bootstrap";
 import Modal from "react-bootstrap/Modal";
 import { EmailConfirmation } from "../components/ui/svg/EmailConfirmation";
 import { UploadProfileImg } from "../components/ui/svg/UploadProfileImg";
 import { useDropzone } from "react-dropzone";
+import { DropImage } from "../components/ui/svg/DropImage";
 
 const UserProfile = () => {
   const [showLegal, setShowLegal] = useState(false);
@@ -20,7 +21,6 @@ const UserProfile = () => {
   const [modal_, setShowModal] = useState(false);
   const [seconds, setSeconds] = useState(13);
   const [showTimer, setShowTimer] = useState(false);
-  const [input, setInput] = useState("");
   const [imgModal, setShowImgModal] = useState(false);
   const { acceptedFiles, getRootProps, getInputProps } = useDropzone({});
   const [cancelEdit, setCancelEdit] = useState({
@@ -50,15 +50,6 @@ const UserProfile = () => {
     };
   }, [showTimer, seconds]);
 
-  // const [isButtonDisabled, setButtonDisabled] = useState(false);
-  // const disabledButton = () => {
-  //   setButtonDisabled(true);
-  // };
-
-  // const enableButton = () =>{
-  //   setButtonDisabled(false);
-  // }
-
   return (
     <div className="content">
       <div className="profile-info-grp">
@@ -75,11 +66,28 @@ const UserProfile = () => {
             <Modal
               show={imgModal}
               onHide={() => setShowImgModal(false)}
-              dialogClassName="modal-500w"
+              dialogClassName="modal- 500w"
               className="img-modal"
               centered
             >
-              ajhsja
+              <Modal.Header>Change Profile Picture</Modal.Header>
+              <Modal.Body>
+                <div className="profile-upload-modal">
+                  <div className="d-flex align-items-center">
+                    <DropImage _height={64} _width={64} />
+                  </div>
+                  <div className="profile-dropzone d-flex flex-column align-items-center gap-2 padding-4">
+                    <p>2 MB max</p>
+                    <p>JPEG, BMP or PNG files only</p>
+                    <p className="note">
+                      Click to upload or drag and drop file here!
+                    </p>
+                  </div>
+                </div>
+                <div>
+                  <Button className="">Upload profile picture</Button>
+                </div>
+              </Modal.Body>
             </Modal>
           </div>
           <div className="info-grp d-flex flex-column gap-1">
@@ -157,7 +165,6 @@ const UserProfile = () => {
                         <button
                           type="submit"
                           className="submit-btn"
-                          disabled={!input}
                           onClick={() => {
                             setShowLegal((prev) => !prev);
                             setCancelEdit((prev) => ({
@@ -210,7 +217,6 @@ const UserProfile = () => {
                         <button
                           // type="submit"
                           className="submit-btn"
-                          disabled={!input}
                           onClick={() => {
                             // setShowEmail((prev) => !prev);
                             // setCancelEdit((prev) => ({
@@ -319,7 +325,7 @@ const UserProfile = () => {
                       <div className="d-flex flex-row-reverse pt-4 pb-1">
                         <button
                           type="submit"
-                          className="-submit-btn"
+                          className="submit-btn"
                           onClick={() => {
                             setShowContact(false);
                             setCancelEdit((prev) => ({
@@ -437,7 +443,6 @@ const UserProfile = () => {
                         <button
                           type="submit"
                           className="btn"
-                          disabled={!input}
                           onClick={() => {
                             setShowDocuments(false);
                             setCancelEdit((prev) => ({
@@ -517,7 +522,6 @@ const UserProfile = () => {
                         <button
                           type="submit"
                           className="submit-btn"
-                          disabled={!input}
                           onClick={() => {
                             setShowPassword(false);
                             setCancelEdit((prev) => ({

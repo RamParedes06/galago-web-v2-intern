@@ -175,3 +175,20 @@ form {
   padding: 34px;
   gap: 10px;
 }
+
+.profile-upload-modal {
+  padding: 34px;
+  gap: 34px;
+  p {
+    font-family: "General Sans", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: rgba(51, 51, 51, 1);
+  }
+  .note {
+    font-family: "General Sans", sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    color: rgba(173, 173, 173, 1);
+  }
+}
