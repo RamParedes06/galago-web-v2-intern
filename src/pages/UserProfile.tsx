@@ -10,6 +10,7 @@ import { EmailConfirmation } from "../components/ui/svg/EmailConfirmation";
 import { UploadProfileImg } from "../components/ui/svg/UploadProfileImg";
 import { useDropzone } from "react-dropzone";
 import { DropImage } from "../components/ui/svg/DropImage";
+import ".././styles/root.scss";
 
 const UserProfile = () => {
   const [showLegal, setShowLegal] = useState(false);
@@ -70,22 +71,30 @@ const UserProfile = () => {
               className="img-modal"
               centered
             >
-              <Modal.Header>Change Profile Picture</Modal.Header>
+              <Modal.Header closeButton>Change Profile Picture</Modal.Header>
               <Modal.Body>
-                <div className="profile-upload-modal">
-                  <div className="d-flex align-items-center">
+                <div className="profile-upload-modal ">
+                  <div className="d-flex flex-column align-items-center gap-3">
                     <DropImage _height={64} _width={64} />
-                  </div>
-                  <div className="profile-dropzone d-flex flex-column align-items-center gap-2 padding-4">
-                    <p>2 MB max</p>
-                    <p>JPEG, BMP or PNG files only</p>
-                    <p className="note">
-                      Click to upload or drag and drop file here!
-                    </p>
+
+                    <div className="profile-dropzone d-flex flex-column align-items-center gap-1 padding-4">
+                      <p className="callout-medium">2 MB max</p>
+                      <p className="callout-medium">
+                        JPEG, BMP or PNG files only
+                      </p>
+                      <p className="footnote-medium text-secondary">
+                        Click to upload or drag and drop file here!
+                      </p>
+                    </div>
                   </div>
                 </div>
                 <div>
-                  <Button className="">Upload profile picture</Button>
+                  <button
+                    className="upload-profileimg"
+                    style={{ width: "100%" }}
+                  >
+                    Upload profile picture
+                  </button>
                 </div>
               </Modal.Body>
             </Modal>
