@@ -4,20 +4,17 @@ import NavigationBar from "../../components/ui/NavigationBar";
 import BookingDetails from "../../components/flightbookingdetails/BookingDetails";
 import PassengerDetails from "../../components/flightbookingdetails/PassengerDetails";
 import ContactDetails from "../../components/flightbookingdetails/ContactDetails";
-import BookingSummary from "../../components/flightbookingdetails/BookingSummary";
+import BookingSummary from "../../components/flightbookingdetails/PriceSummary";
 import "../../styles/flightbookingdetails.scss";
 import FooterComponent from "../../components/ui/FooterComponent";
 
 const FlightBookingDetails = () => {
   return (
     <div>
-      {/* <NavigationBar /> */}
+      <NavigationBar />
       <FlightProgressLine />
 
       <Container className="flight-booking-details-container">
-        {/* <div className="booking-summary-container2"> */}
-
-        {/* </div> */}
         <BookingSummary />
         <div className="booking-details-container">
           <div className="booking-details">

@@ -2,6 +2,7 @@ import React from "react";
 import { Form, FormControl, Button } from "react-bootstrap";
 import ButtonComponent from "../ui/ButtonComponent";
 import { isDisabled } from "@testing-library/user-event/dist/utils";
+import { Link } from "react-router-dom";
 
 function ContactDetails() {
   return (
@@ -60,12 +61,14 @@ function ContactDetails() {
         />
       </Form.Group>
 
-      <ButtonComponent
-        buttonText="Next"
-        className="default-btn"
-        style={{ width: "100%", backgroundColor: "#ADADAD" }}
-        disabled
-      />
+      <Link to={"/booking-summary"}>
+        <ButtonComponent
+          buttonText="Next"
+          className="default-btn"
+          style={{ width: "100%", backgroundColor: "#ADADAD" }}
+          // disabled
+        />
+      </Link>
     </div>
   );
 }

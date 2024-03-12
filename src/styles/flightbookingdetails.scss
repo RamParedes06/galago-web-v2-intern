@@ -7,8 +7,8 @@
   font-weight: 600;
   font-family: "General Sans", sans-serif;
   background-color: #016e7f;
-  padding: 0 104px;
-  min-height: 117px;
+  padding: 140px 104px 50px 104px;
+  max-height: 100px;
   gap: 2rem;
   justify-content: center;
   align-items: center;
@@ -67,31 +67,33 @@
     display: flex;
     justify-content: space-between;
   }
+}
+.airlines-flight-container {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
 
-  .airlines-flight-container {
+.time-location-container {
+  display: flex;
+  justify-content: space-between;
+
+  .time-location {
     display: flex;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
+    flex-direction: column;
+    gap: 0.2rem;
   }
-
-  .time-location-container {
+  .hours-direct {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    width: 100%;
 
-    .time-location {
-      display: flex;
-      flex-direction: column;
-      gap: 0.2rem;
-    }
-    .hours-direct {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.2rem;
-      .hours-direct-p {
-        border-bottom: 1.5px dashed #adadad;
-        width: 291px;
-      }
+    .hours-direct-line {
+      border-bottom: 1.5px dashed #adadad;
+      max-width: 291px;
+      width: 100%;
     }
   }
 }
@@ -146,7 +148,7 @@
 
 // Booking Summary
 
-.booking-summary-container {
+.price-summary-container {
   //   padding: 0.5rem;
   min-width: 540px;
   //   grid-column: 2 / 3;
@@ -156,9 +158,9 @@
   position: sticky;
 
   float: right;
-  top: 1rem;
+  top: 8rem;
 
-  .booking-summary-header {
+  .price-summary-header {
     padding: 24px 16px;
     text-align: center;
     background-color: #f9f9f9;
@@ -170,20 +172,46 @@
     }
   }
 
-  .booking-summary-content {
+  .price-summary-content {
     padding: 24px 16px;
     border: 1px solid #016e7f;
     border-top: none;
     background-color: white;
 
-    h4 {
-      font-size: 20px;
-      font-family: "General Sans", sans-serif;
-      font-weight: 600;
+    &.price-summary-content div {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .base-fare {
+      p {
+        span {
+          cursor: pointer;
+          position: relative;
+          width: 5px;
+          height: 10px;
+
+          img {
+            position: absolute;
+            top: 5.5px;
+            left: 10px;
+            transition: transform 0.3s ease;
+          }
+        }
+      }
+      .rotatedStyle {
+        transform: rotate(180deg);
+        transition: transform 0.3s ease; /* You can adjust the duration and easing */
+      }
+
+      .added-content {
+        display: flex;
+        justify-content: space-between;
+      }
     }
   }
 
-  .total-price-booking-summary {
+  .total-price-summary {
     background-color: #016e7f;
     border-radius: 0 0 12px 12px;
     display: flex;
@@ -195,7 +223,6 @@
 
 // Contact Details Container
 .contact-details-container {
-  //   grid-column: 1 / span 2;
   max-width: 596px;
   margin-bottom: 3rem;
   margin-top: 2rem;

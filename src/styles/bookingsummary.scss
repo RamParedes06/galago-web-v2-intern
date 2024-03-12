@@ -1,0 +1,137 @@
+.booking-summary-container {
+  padding: 47px 104px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  p,
+  h1 {
+    margin-bottom: 0 !important;
+  }
+  .booking-summary-header {
+    margin: 1rem 0;
+    max-width: 650px;
+    width: 100%;
+    h1 {
+      font-size: 34px;
+      font-weight: 700;
+      padding-bottom: 0.5rem;
+    }
+  }
+
+  .price-overview-container {
+    border-top: 1px solid #d9d9d9;
+    margin: 0 16px;
+    padding: 15px 0;
+    div {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .total-price-wrapper {
+    display: flex;
+    justify-content: space-between;
+    background-color: #016e7f;
+    border-radius: 0 0 12px 12px;
+    padding: 24px 16px;
+    color: white;
+  }
+
+  .booking-summary-btns {
+    display: flex;
+    gap: 14px;
+    margin-top: 1rem;
+    width: 100%;
+    max-width: 650px;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    .btn-summary2 {
+      max-width: 318px;
+      width: 100%;
+    }
+  }
+}
+
+.booking-summary-card {
+  border: 1px solid #016e7f;
+  background-color: white;
+  border-radius: 12px;
+  max-width: 650px;
+  width: 100%;
+
+  .time-location-container {
+    padding-bottom: 20px;
+  }
+
+  .departure-price-wrapper {
+    padding: 30px 16px 0px 16px;
+  }
+}
+
+// -----------------
+// Booking Confirmation
+.booking-confirmation-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  place-items: center;
+  padding: 100px 0;
+
+  .confirmed-banner {
+    max-width: 601px;
+    width: 100%;
+    text-align: center;
+
+    .check-wrapper {
+      margin: 0 auto;
+      width: 50px;
+      height: 50px;
+      background-color: #509c52;
+      border-radius: 100%;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .confirmed-content {
+      margin-bottom: 2rem;
+
+      h1 {
+        font-size: 34px;
+        font-weight: 700;
+      }
+      p {
+        margin-top: 1rem;
+      }
+    }
+  }
+
+  // ALTERNATE CONTENT
+  .booking-summary-alternate {
+    padding: 0 16px 24px 16px;
+    .paid-today-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 0;
+      border-top: 1px solid #d9d9d9;
+      border-bottom: 1px solid #d9d9d9;
+
+      .p-price-overview {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
+
+    .booking-reference-container {
+      padding: 24px 0 12px 0;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
