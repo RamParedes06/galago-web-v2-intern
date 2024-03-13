@@ -175,3 +175,20 @@ form {
   padding: 34px;
   gap: 10px;
 }
+
+.profile-upload-modal {
+  padding: 40px 100px;
+  gap: 34px;
+  border: 1px solid rgba(217, 217, 217, 1);
+  border-radius: 12px;
+  margin-bottom: 34px;
+}
+.upload-profileimg {
+  height: 60px;
+  // width: 432px;
+  border-radius: 12px;
+  background-color: #016e7f;
+  border: none;
+  color: rgba(255, 255, 255, 1);
+  padding: 0px;
+}
