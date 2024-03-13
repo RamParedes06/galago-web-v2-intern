@@ -17,7 +17,7 @@ function ReceivedModal({ show, onHide }) {
       dialogClassName="modal-width"
       centered
     >
-      <Modal.Body>
+      <Modal.Body className="received-modal-body">
         <div className="receivedModal">
           <img src={gally_wink} alt="" />
 

@@ -8,6 +8,8 @@ import UserProfile from "./pages/UserProfile";
 import PassengerDetails from "./pages/Flights/FlightBookingDetails";
 import PromoPage from "./pages/PromoPage/PromoPage";
 import ElNidoPage from "./pages/PromoPage/OverviewPage";
+import BookingSummary from "./pages/Flights/BookingSummary";
+import BookingConfirmation from "./pages/Flights/BookingConfirmation";
 
 const router = createHashRouter([
   {
@@ -46,6 +48,14 @@ const router = createHashRouter([
   {
     path: "/elnidopage",
     element: <ElNidoPage />,
+  },
+  {
+    path: "/booking-summary",
+    element: <BookingSummary />,
+  },
+  {
+    path: "/booking-confirmation",
+    element: <BookingConfirmation />,
   },
 ]);
 

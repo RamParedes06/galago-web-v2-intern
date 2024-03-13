@@ -22,7 +22,7 @@ function BookingDetails() {
           <p className="text-grey">Z2777 - 320</p>
         </div>
 
-        <div className="time-location-container">
+        <div className="time-location-container flex-fill">
           <div className="time-location">
             <p className="fw-bold">15:05</p>
             <p className="text-grey">MNL</p>
@@ -30,7 +30,7 @@ function BookingDetails() {
 
           <div className="hours-direct">
             <p className="text-grey">3h 40m</p>
-            <div className="hours-direct-p"></div>
+            <div className="hours-direct-line"></div>
             <p className="text-grey">Direct</p>
           </div>
 
