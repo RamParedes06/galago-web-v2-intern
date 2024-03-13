@@ -32,13 +32,19 @@
   font-weight: 400;
   display: flex;
   gap: 1rem;
+  align-items: center;
+
   p {
     text-decoration: none;
     color: #fff;
     cursor: pointer;
     display: flex;
-
     justify-content: center;
+
+    // &:hover {
+    //   color: #fc8f3a;
+    //   opacity: 30%;
+    // }
   }
   button {
     border-radius: 6px;
