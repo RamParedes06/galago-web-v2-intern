@@ -31,14 +31,13 @@
   font-size: 14px;
   font-weight: 400;
   display: flex;
+  gap: 1rem;
   p {
     text-decoration: none;
     color: #fff;
-    padding: 8px 8px;
-    margin: 0px;
-    margin-right: 16px;
     cursor: pointer;
     display: flex;
+
     justify-content: center;
   }
   button {
