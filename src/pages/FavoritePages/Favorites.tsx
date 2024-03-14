@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../styles/favoritespage.scss";
 import { Arrow } from "../../components/ui/svg/Arrow";
 import { Share } from "../../components/ui/svg/Share";
 import { MeatballsMenu } from "../../components/ui/svg/MeatballsMenu";
 import { Chevron } from "../../components/ui/svg/Chevron";
 import { Delete } from "../../components/ui/svg/Delete";
+import { Link } from "react-router-dom";
+import { Modal } from "react-bootstrap";
+import { CopyLink } from "../../components/ui/svg/CopyLink";
+import { Mail } from "../../components/ui/svg/Mail";
+import { Facebook } from "../../components/ui/svg/Facebook";
+import { Messenger } from "../../components/ui/svg/Messenger";
+import { Twitter } from "../../components/ui/svg/Twitter";
+import { Embed } from "../../components/ui/svg/Embed";
+import { Star } from "../../components/ui/svg/Star";
+import FooterComponent from "../../components/ui/FooterComponent";
 
 type data = {
   link: string;
@@ -16,7 +26,7 @@ type data = {
 const favoritesinfo = [
   {
     image:
-      "https://s3-alpha-sig.figma.com/img/83f7/d5c7/4ca0b926b9572afc15a12eed7ab813a4?Expires=1710115200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=gNv1JRpsvDDUpNRFNnOJfx4j6e6hvBawKPT00TjnQNKfh7Ar~0dYUhTXszm0E5sZGaZT2gxK10Gj6-pMi5lIImrXhaMKZlr~ExzUuhvedHBzlmaSGFg08CRWCzdfLHR9KdlHZX8guVH9nGIIuwLLqaXlj~6VOdIyEMisJailrMw~gEEgmr0zx-Dbt8iHRXh6pJ2HjNl5FingExnIua0Gi9zO5PEgbeZu-r~Qc1ZTgRA5kURyY8ky0VYvJIo8J8CWhT6fzzr8l4dAzS-M3Zyf2FozzEhmqbYhKECsuX8C3i3YHTk~SkjSRh-7GGDpH03mn58uKEsAcEsxZm~GVczzag__",
+      "https://galago-assets.s3.ap-southeast-1.amazonaws.com/Galago-v2-Assets/FavoritesPage+Assets/properties.png",
     title: "Property Name or Description",
     nights: 2,
     month: "Sep",
@@ -32,7 +42,7 @@ const favoritesinfo = [
   },
   {
     image:
-      "https://s3-alpha-sig.figma.com/img/83f7/d5c7/4ca0b926b9572afc15a12eed7ab813a4?Expires=1710115200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=gNv1JRpsvDDUpNRFNnOJfx4j6e6hvBawKPT00TjnQNKfh7Ar~0dYUhTXszm0E5sZGaZT2gxK10Gj6-pMi5lIImrXhaMKZlr~ExzUuhvedHBzlmaSGFg08CRWCzdfLHR9KdlHZX8guVH9nGIIuwLLqaXlj~6VOdIyEMisJailrMw~gEEgmr0zx-Dbt8iHRXh6pJ2HjNl5FingExnIua0Gi9zO5PEgbeZu-r~Qc1ZTgRA5kURyY8ky0VYvJIo8J8CWhT6fzzr8l4dAzS-M3Zyf2FozzEhmqbYhKECsuX8C3i3YHTk~SkjSRh-7GGDpH03mn58uKEsAcEsxZm~GVczzag__",
+      "https://galago-assets.s3.ap-southeast-1.amazonaws.com/Galago-v2-Assets/FavoritesPage+Assets/properties.png",
     title: "Property Name or Description",
     nights: 2,
     month: "Sep",
@@ -112,13 +122,28 @@ const favoritesinfo = [
   },
 ];
 
+const favsModalInfo = [
+  {
+    images:
+      "https://galago-assets.s3.ap-southeast-1.amazonaws.com/Galago-v2-Assets/FavoritesPage+Assets/christmasvacation2023.jpg",
+    title: "Property Name",
+    rooms: "2 available Rooms",
+    rating: "4.8",
+    bed: "1 King Bed",
+    pool: "Private Swimming Pool",
+  },
+];
+
 const Favorites = () => {
+  const [favsModal, setShowFavsModal] = useState(false);
   return (
     <>
       <div className="fav-page">
         <div className="d-flex align-items-center justify-content-between title">
           <div className="d-flex align-items-center gap-3">
-            <Arrow _color="#000" _width={24} _height={24} />
+            <Link to="/favorites-page">
+              <Arrow _color="#000" _width={24} _height={24} />
+            </Link>
             <h3>Christmas vacation 2023</h3>
           </div>
           <div className="d-flex gap-3 buttons">
@@ -139,8 +164,14 @@ const Favorites = () => {
           </div>
         </div>
         <div className="favorites-infocard-container">
-          {favoritesinfo.map((data, i) => (
-            <div className="favorites-infocard" key={i}>
+          {favoritesinfo.map((data: { [index: string]: any }, i: React.Key) => (
+            <div
+              className="favorites-infocard"
+              key={i}
+              onClick={() => {
+                setShowFavsModal(true);
+              }}
+            >
               <div className="infocard-img">
                 <img src={data.image} alt="" />
               </div>
@@ -173,8 +204,81 @@ const Favorites = () => {
               </div>
             </div>
           ))}
-        </div>
+        </div>{" "}
+        <Modal
+          show={favsModal}
+          onHide={() => setShowFavsModal(false)}
+          dialogClassName="modal-500w"
+          className="share-fav-modal"
+          centered
+        >
+          <Modal.Header closeButton>Share your travel favorites</Modal.Header>
+          <Modal.Body>
+            <div className="d-flex flex-column gap-4">
+              {favsModalInfo.map(
+                (data: { [index: string]: any }, i: React.Key) => (
+                  <div className="d-flex align-items-center gap-4 modal-card">
+                    <div>
+                      <img src={data.images} alt="" />
+                    </div>
+                    <div className="modal-title">
+                      <p>{data.title}</p>
+                      <div>
+                        <div className="d-flex gap-3 property-info">
+                          <span>15% off</span>
+                          <p className="room-details">{data.rooms}</p>
+                        </div>
+                        <div className="d-flex align-items-center gap-2 footnote-medium">
+                          <Star _color="#F9F9F9" _width={10} _height={10} />
+                          <p>{data.rating}</p>
+                          <p>•</p>
+                          <p>{data.bed}</p>
+                          <p>•</p>
+                          <p>{data.pool}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )
+              )}
+
+              <div className="fav-btngroup">
+                <button>
+                  <CopyLink _color={"#F9F9F9"} _width={24} _height={24} />
+                  <p>Copy Link</p>
+                </button>
+                <button>
+                  <Mail _color={"#F9F9F9"} _width={22} _height={22} />
+                  <p>Email</p>
+                </button>
+                <button>
+                  <Facebook _color={"#F9F9F9"} _width={22} _height={22} />
+                  <p>Facebook</p>
+                </button>
+                <button>
+                  <Messenger _color={"#F9F9F9"} _width={22} _height={22} />
+                  <p>Messenger</p>
+                </button>
+                <button>
+                  <Twitter _color={"#F9F9F9"} _width={22} _height={22} />
+                  <p>Twitter</p>
+                </button>
+                <button>
+                  <Embed _color={"#F9F9F9"} _width={22} _height={22} />
+                  <p>Embed</p>
+                </button>
+              </div>
+              <div>
+                <p className="footnote-medium">
+                  Just a friendle reminder, anyone who has the link can view
+                  this collection.
+                </p>
+              </div>
+            </div>
+          </Modal.Body>
+        </Modal>
       </div>
+      <FooterComponent />
     </>
   );
 };

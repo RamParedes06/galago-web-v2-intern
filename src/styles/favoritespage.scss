@@ -139,10 +139,11 @@
       display: flex;
       gap: 15px;
       max-width: 586px;
-      max-height: 176px;
       border: 1px solid #d9d9d9;
       border-radius: 12px;
       padding: 16px 14px;
+      height: fit-content;
+      align-items: center;
     }
 
     .infocard-img {
@@ -196,5 +197,68 @@
     font-weight: 500;
     font-size: clamp(10px, 10vw, 13px);
     font-family: "General Sans", sans-serif;
+  }
+}
+
+//MODAL
+.share-fav-modal {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+  border: 1px solid rgba(217, 217, 217, 1);
+  border-radius: 12px;
+  .modal-card {
+    border-bottom: 1px solid #d9d9d9;
+    padding-bottom: 16px;
+    img {
+      width: 124px;
+      height: 108px;
+      border-radius: 6px;
+    }
+    .modal-title {
+      font-family: "General Sans", sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+    }
+  }
+
+  .fav-btngroup {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    button {
+      border-radius: 12px;
+      background-color: #f9f9f9;
+      padding: 10px 20px;
+      width: 137px;
+      border: 1px solid #d9d9d9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      p {
+        font-family: "General Sans", sans-serif;
+        font-weight: 500;
+        font-size: 13px;
+      }
+    }
+  }
+  .property-info span {
+    background-color: #d0f0ef;
+    color: #016e7f;
+    font-size: 10px;
+    font-weight: 700;
+    font-family: "Satoshi";
+    padding: 2px 12px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+  }
+  .room-details {
+    font-family: "Satoshi", sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    color: #217c38;
   }
 }

@@ -1,0 +1,28 @@
+.privacy-header {
+  height: 82px;
+  padding: 24px 104px;
+  background-color: rgba(1, 110, 127, 1);
+  color: #ffffff;
+  a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 10px;
+  }
+}
+.privacy-container {
+  padding: 42px 104px 74px 104px;
+}
+.privacy-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  h1 {
+    font-family: "General Sans", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #016e7f;
+  }
+  li {
+    margin-left: 10px;
+  }
+}
