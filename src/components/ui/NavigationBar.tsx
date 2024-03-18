@@ -61,7 +61,7 @@ function NavigationBar() {
           <p>Favorites</p>
         </Link>
         <Link
-          to="flight-results"
+          to="/flight-results"
           onClick={scrollToTop}
           style={{ textDecoration: "none" }}
         >
