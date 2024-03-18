@@ -13,6 +13,9 @@ import BookingSummary from "./pages/Flights/BookingSummary";
 import BookingConfirmation from "./pages/Flights/BookingConfirmation";
 import HotelResultPage from "./pages/hotels/HotelResultPage";
 import HotelProfile from "./pages/hotels/HotelProfile";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsAndConditions from "./pages/TermsAndConditions";
+import FavoritesPage from "./pages/FavoritesPage";
 
 const router = createHashRouter([
   {
@@ -67,6 +70,18 @@ const router = createHashRouter([
   {
     path: "/hotel-profile",
     element: <HotelProfile />,
+  },
+  {
+    path: "/privacy-policy",
+    element: <PrivacyPolicy />,
+  },
+  {
+    path: "/terms-conditions",
+    element: <TermsAndConditions />,
+  },
+  {
+    path: "/favorites-page",
+    element: <FavoritesPage />,
   },
 ]);
 
