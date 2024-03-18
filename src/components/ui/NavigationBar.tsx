@@ -24,7 +24,10 @@ function NavigationBar() {
     <div className={color ? "nav-container nav-container-bg" : "nav-container"}>
       <div className="nav-logo">
         <Link to="/" style={{ textDecoration: "none" }}>
-          <img src={logo} alt="Logo" />
+          <img
+            src="https://galago-assets.s3.ap-southeast-1.amazonaws.com/white_galago+1.png"
+            alt="Logo"
+          />
         </Link>
       </div>
 

@@ -1,6 +1,6 @@
 /* Footer  */
 footer {
-  padding: 0px 140px;
+  padding: 40px 104px;
   background-color: rgba(1, 110, 127, 1);
 }
 
@@ -13,26 +13,51 @@ footer {
 .cols {
   display: grid;
   gap: 8px;
+  h3 {
+    font-family: "General Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  p {
+    text-decoration: none;
+    color: #ffff;
+    font-family: "General Sans", sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+  }
 }
 
 .footer {
-  padding: 32px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: last baseline;
+  border-bottom: 1px solid #ffff;
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
 
-.footer img {
-  max-width: 300px;
-}
-
-footer hr {
-  width: 97%;
-}
 #copyright {
-  padding: 16px;
   background-color: rgba(1, 110, 127, 1);
   right: 0px;
   color: white;
   text-align: right;
+  font-size: 10px;
+  padding: 16px 0px;
+}
+
+.right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  img {
+    max-width: 340px;
+    width: 100%;
+    align-self: flex-end;
+  }
+  .logo-group {
+    display: flex;
+    border-right: 1px solid #ffff;
+    padding: 0px 14px;
+    gap: 14px;
+  }
 }
