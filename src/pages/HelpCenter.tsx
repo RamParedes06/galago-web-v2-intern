@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import "../styles/helpcenter.scss";
 import NavigationBar from "../components/ui/NavigationBar";
 import "bootstrap/dist/css/bootstrap.min.css";
-import HelpCenterInfo from "./HelpCenterInfo";
+import HelpCenterInfo from "../components/helpcenter/HelpCenterInfo";
+import FooterComponent from "../components/ui/FooterComponent";
 
 const HelpCenter = () => {
   const [selectedOption, setSelectedOption] = useState("Option 1");
@@ -39,6 +40,7 @@ const HelpCenter = () => {
           </div>
         </div>
       </main>
+      <FooterComponent />
     </>
   );
 };

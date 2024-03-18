@@ -2,6 +2,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 import "../styles/favoritespage.scss";
 import { Link } from "react-router-dom";
 import { PopDots } from "../components/ui/svg/PopDots";
+import FooterComponent from "../components/ui/FooterComponent";
 
 type data = {
   link: string;
@@ -70,7 +71,7 @@ const FavoritesPage = () => {
         <div className="favorites-container">
           {favorites.map((data: any, i) => (
             <>
-              <Link to={data.link} style={{ textDecoration: "none" }}>
+              <Link to="/favorites" style={{ textDecoration: "none" }}>
                 <div className="favorites-card" key={i}>
                   <div className="img-cont">
                     <img src={data.image} alt="" />
@@ -100,6 +101,7 @@ const FavoritesPage = () => {
           ))}
         </div>
       </div>
+      <FooterComponent />
     </>
   );
 };
