@@ -41,6 +41,12 @@ const adventureData = [
 ];
 
 function Adventure() {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <Container className="adv-container">
       <div className="adv-cards-wrapper">
@@ -54,7 +60,11 @@ function Adventure() {
             <div className="adv-overlay">
               <p>{adventure.overlay}</p>
             </div>
-            <Link to={adventure.link} style={{ textDecoration: "none" }}>
+            <Link
+              to={adventure.link}
+              onClick={scrollToTop}
+              style={{ textDecoration: "none" }}
+            >
               <ButtonComponent buttonText="Learn More" className="border-btn" />
             </Link>
           </div>

@@ -2,12 +2,12 @@ import "../../styles/selectedflight.scss";
 import "../../styles/selectedflight.scss";
 import { Button, Container } from "react-bootstrap";
 import NavigationBar from "../../components/ui/NavigationBar";
-import FlightBanner from "../../components/flightresult/FlightBanner";
 import ButtonComponent from "../../components/ui/ButtonComponent";
 import FooterComponent from "../../components/ui/FooterComponent";
 import { useState } from "react";
 import FlightLoadingModal from "../../components/selectedflight/FlightLoadingModal";
 import { useNavigate } from "react-router-dom";
+import FloatingBanner from "../../components/flightresult/FloatingBanner";
 
 const SelectedFlights = () => {
   const [modalShow, setModalShow] = useState(false);
@@ -17,18 +17,18 @@ const SelectedFlights = () => {
     setModalShow(true);
     setTimeout(() => {
       setModalShow(false);
-      navigate("/passenger-details");
+      navigate("/booking-details");
     }, 2000);
   };
   return (
     <>
       <div className="selected-flight-container">
         <NavigationBar />
-        <div className="flight-header-container">
-          <div className="flight-header"></div>
+        <div className="floating-banner-header-container">
+          <div className="floating-banner-header"></div>
           <Container>
-            <div className="flight-overlap">
-              <FlightBanner />
+            <div className="floating-banner-overlap">
+              <FloatingBanner />
             </div>
           </Container>
         </div>

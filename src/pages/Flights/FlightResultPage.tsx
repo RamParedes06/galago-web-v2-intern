@@ -1,4 +1,4 @@
-import FlightBanner from "../../components/flightresult/FlightBanner";
+import FlightBanner from "../../components/flightresult/FloatingBanner";
 import SearchFilter from "../../components/flightresult/SearchFilter";
 import "../../styles/flightresult.scss";
 import { Container } from "react-bootstrap";
@@ -14,10 +14,10 @@ const FlightResultPage = () => {
     <>
       <NavigationBar />
       <div className="flight-result-container">
-        <div className="flight-header-container">
-          <div className="flight-header"></div>
+        <div className="floating-banner-header-container">
+          <div className="floating-banner-header"></div>
           <Container>
-            <div className="flight-overlap">
+            <div className="floating-banner-overlap">
               <FlightBanner />
             </div>
           </Container>
@@ -25,7 +25,7 @@ const FlightResultPage = () => {
 
         <Container className="flight-container">
           <div className="search-container">
-            <SearchFilter />
+            <SearchFilter showHotelContent={false} />
           </div>
           <div className="info-container">
             <DepartureInfo />
@@ -33,7 +33,7 @@ const FlightResultPage = () => {
             <FlightInfoCard />
           </div>
         </Container>
-        <FooterComponent/>
+        <FooterComponent />
       </div>
     </>
   );
