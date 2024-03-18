@@ -3,10 +3,106 @@
   padding: 24px 104px;
   background-color: rgba(1, 110, 127, 1);
   color: #ffffff;
-  p {
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 10px;
+  div {
+    p {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 10px;
+      font-weight: 400;
+    }
+  }
+}
+
+.terms-info {
+  padding: 42px 104px 74px 104px;
+}
+
+.terms-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .intro {
     font-weight: 500;
+  }
+}
+
+.terms-text {
+  display: flex;
+  flex-direction: column;
+  width: 870px;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 1rem;
+    h1 {
+      font-family: "General Sans", sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      color: #016e7f;
+    }
+    p {
+      font-family: "General Sans", sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      text-align: justify;
+      padding: 0px 10px;
+    }
+  }
+}
+
+.terms-content {
+  display: flex;
+  gap: 60px;
+  justify-content: space-between;
+
+  .terms-group {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+
+.terms-intro {
+  width: 870px;
+  text-align: justify;
+  font-family: "General Sans", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+.terms-table {
+  padding: 24px;
+  height: fit-content;
+  position: sticky;
+  top: 40px;
+  box-sizing: border-box;
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    .terms-card-title {
+      font-family: "General Sans";
+      font-weight: 600;
+      font-size: 20px;
+    }
+    p {
+      border-radius: 12px;
+      text-decoration: none;
+      color: #016e7f;
+      padding-left: 10px;
+      font-family: "General Sans", sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      cursor: pointer;
+      &:hover {
+        color: #aed136;
+      }
+      &:visited {
+        color: red;
+      }
+    }
   }
 }
