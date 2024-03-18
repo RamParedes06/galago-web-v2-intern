@@ -14,7 +14,12 @@ function NavigationBar() {
   };
 
   window.addEventListener("scroll", changeColor);
-
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <div className={color ? "nav-container nav-container-bg" : "nav-container"}>
       <div className="nav-logo">
@@ -24,30 +29,64 @@ function NavigationBar() {
       </div>
 
       <div className="nav-links">
-        <Link to="/" style={{ textDecoration: "none" }}>
+        <Link to="/" onClick={scrollToTop} style={{ textDecoration: "none" }}>
           <p>Home</p>
         </Link>
-        <Link to="/promos" style={{ textDecoration: "none" }}>
+        <Link
+          to="/promos"
+          onClick={scrollToTop}
+          style={{ textDecoration: "none" }}
+        >
           <p>Promos</p>
         </Link>
-        <Link to="/blogs" style={{ textDecoration: "none" }}>
+        <Link
+          to="/blogs"
+          onClick={scrollToTop}
+          style={{ textDecoration: "none" }}
+        >
           <p>Blogs</p>
         </Link>
-        <Link to="www.walktheplanet.com" style={{ textDecoration: "none" }}>
+        <Link
+          to="www.walktheplanet.com"
+          onClick={scrollToTop}
+          style={{ textDecoration: "none" }}
+        >
           <p>About Us</p>
         </Link>
-        <Link to="/favorites" style={{ textDecoration: "none" }}>
+        <Link
+          to="/favorites"
+          onClick={scrollToTop}
+          style={{ textDecoration: "none" }}
+        >
           <p>Favorites</p>
         </Link>
-        <Link to="flight-results" style={{ textDecoration: "none" }}>
-          <p>Flight Results</p>
+        <Link
+          to="flight-results"
+          onClick={scrollToTop}
+          style={{ textDecoration: "none" }}
+        >
+          <p>Flights</p>
         </Link>
-
-        <Link to="/help-center" style={{ textDecoration: "none" }}>
+        <Link
+          to="/hotel-result"
+          onClick={scrollToTop}
+          style={{ textDecoration: "none" }}
+        >
+          <p>Hotels</p>
+        </Link>
+        <Link
+          to="/help-center"
+          onClick={scrollToTop}
+          style={{ textDecoration: "none" }}
+        >
           <p>Help Center</p>
         </Link>
 
-        <Link to="/profile" style={{ textDecoration: "none" }}>
+        <Link
+          to="/profile"
+          onClick={scrollToTop}
+          style={{ textDecoration: "none" }}
+        >
           <p>Profile</p>
         </Link>
 

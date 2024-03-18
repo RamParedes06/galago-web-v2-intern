@@ -1,0 +1,61 @@
+//*Flight Banner
+.floating-banner-container {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 29px 42px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border-radius: 12px;
+  width: 100%;
+  background-color: white;
+
+  .floating-banners {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+
+    div {
+      font-family: "General Sans", sans-serif;
+      justify-content: start;
+      padding: 0 3rem;
+      p {
+        color: #adadad;
+        font-size: 13px;
+        margin: 0;
+      }
+
+      h1 {
+        font-size: 16px;
+        margin: 0;
+
+        span {
+          color: #016e7f;
+        }
+      }
+      &:not(:last-of-type) {
+        border-right: 1px solid #d9d9d9;
+      }
+    }
+
+    .hotel-banner {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+}
+
+//*Floating Banner Header
+.floating-banner-header-container {
+  .floating-banner-header {
+    background-color: #016e7f;
+    min-height: 200px;
+  }
+
+  .floating-banner-overlap {
+    display: grid;
+    place-items: center;
+    transform: translateY(-70%);
+  }
+}

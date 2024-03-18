@@ -1,0 +1,101 @@
+.hotel-result-container {
+  margin-bottom: 3rem;
+}
+
+.hotel-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+
+  .hotel-card-wrapper {
+    margin-top: 16px;
+
+    .galago-picks {
+      display: flex;
+      gap: 0.7rem;
+      background-color: #016e7f;
+      color: white;
+      width: fit-content;
+      padding: 6px 14px;
+      border-radius: 12px 12px 0 0;
+
+      .galago-picks-logo {
+        display: grid;
+        place-items: center;
+        width: 24px;
+        height: 24px;
+        background-color: white;
+        border-radius: 100%;
+        border: 2px solid #2dbfd6;
+        img {
+          width: 17px;
+          height: 12px;
+        }
+      }
+    }
+  }
+
+  //   HotelInfoCard.tsx
+  .hotel-info-card-container {
+    background-color: white;
+    display: flex;
+    border: 1px solid #016e7f;
+    border-radius: 0px 12px 12px 12px;
+    gap: 1.5rem;
+    align-items: center;
+    padding: 14px;
+
+    .hotel-info-card {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      flex-wrap: wrap;
+
+      .cancellation-tag {
+        margin-top: 0.5rem;
+        background-color: #d0f0ef;
+        color: #016e7f;
+        padding: 4px 8px;
+        width: fit-content;
+        border-radius: 12px;
+      }
+    }
+    .hotel-availability {
+      text-align: right;
+      border-left: 1px solid #d9d9d980;
+      padding-left: 3rem;
+      .hotel-price {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        h1 {
+          font-size: 18px;
+          font-family: "General Sans", sans-serif;
+          font-weight: 600;
+        }
+
+        .hotel-discount {
+          background-color: #eb534b;
+          padding: 4px 8px;
+          font-size: 10px;
+          font-weight: 700;
+          border-radius: 12px;
+          color: white;
+        }
+      }
+    }
+  }
+
+  .info-container {
+    .hotel-sort {
+      display: flex;
+      justify-content: space-between;
+      #p-property span {
+        color: #016e7f;
+        font-weight: 700;
+      }
+    }
+  }
+}

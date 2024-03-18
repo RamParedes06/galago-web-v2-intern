@@ -7,6 +7,7 @@ import FooterComponent from "../../components/ui/FooterComponent";
 import FlightProgressLine from "../../components/flightbookingdetails/FlightProgressLine";
 import "../../styles/bookingsummary.scss";
 import check_icon from "../../resources/check-icon.png";
+import { Link } from "react-router-dom";
 
 const BookingConfirmation = () => {
   return (
@@ -26,11 +27,13 @@ const BookingConfirmation = () => {
               Thanks for booking with GalaGO!
             </p>
           </div>
-          <ButtonComponent
-            buttonText="Back to Home"
-            className="default-btn"
-            style={{ width: "100%" }}
-          />
+          <Link to={"/"}>
+            <ButtonComponent
+              buttonText="Back to Home"
+              className="default-btn"
+              style={{ width: "100%" }}
+            />
+          </Link>
         </div>
 
         <BookingSummaryCard showAlternateContent={true} />
