@@ -4,6 +4,7 @@ import hotel_img from "../../resources/hotelresults/hotel_info_card.png";
 import ButtonComponent from "../ui/ButtonComponent";
 import galago_picks from "../../resources/flightresults/galago_logo.png";
 import { Link } from "react-router-dom";
+import HotelPrice from "./HotelPrice";
 
 const hotelInfoData = [
   {
@@ -86,12 +87,7 @@ function HotelInfoCard() {
                   <p>4.6</p>
                 </div>
                 <p className="mt-1">Total Price</p>
-                <div className="hotel-price">
-                  <h1>PHP 2,500.00</h1>
-                  <div className="hotel-discount">
-                    <p>17% OFF</p>
-                  </div>
-                </div>
+                <HotelPrice />
                 <p className="text-secondary mb-3">Tax included</p>
 
                 <Link to={"/hotel-profile"} onClick={scrollToTop}>

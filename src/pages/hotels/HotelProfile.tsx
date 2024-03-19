@@ -1,14 +1,26 @@
 import { Container } from "react-bootstrap";
 import { Star } from "../../components/ui/svg/Star";
-import NavigationBar from "../../components/ui/NavigationBar";
 import { Share } from "../../components/ui/svg/Share";
 import { Heart } from "../../components/ui/svg/Heart";
+import { Map } from "../../components/ui/svg/Map";
 import HotelGallery from "../../components/hotelresult/HotelGallery";
 import Offers from "./Offers";
+
 import "../../styles/hotelprofile.scss";
 import FooterComponent from "../../components/ui/FooterComponent";
+import HotelRooms from "../../components/hotelresult/HotelRooms";
+import MapPlaceholder from "../../resources/hotelresults/map_placeholder.png";
+import { HomeIcon } from "../../components/ui/svg/HomeIcon";
+import { Info } from "../../components/ui/svg/Info";
 
 const HotelProfile = () => {
+  const handleScroll = (targetId: string) => {
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div>
       <Container className="hotel-profile-container">
@@ -58,17 +70,111 @@ const HotelProfile = () => {
           <Offers />
 
           <div className="hotel-navigator">
-            <a href="/#/hotel-profile">Available Rooms</a>
-            <a href="/#/hotel-profile">Location</a>
-            <a href="/#/hotel-profile">Hotel Policies</a>
-            <a href="/#/hotel-profile">Other Info</a>
+            <a
+              href="#available-rooms"
+              onClick={() => handleScroll("available-rooms")}
+            >
+              Available Rooms
+            </a>
+            <a
+              href="#hotel-location"
+              onClick={() => handleScroll("hotel-locations")}
+            >
+              Location
+            </a>
+            <a
+              href="#hotel-policies"
+              onClick={() => handleScroll("hotel-policies")}
+            >
+              Hotel Policies
+            </a>
+            <a
+              href="#hotel-policies"
+              onClick={() => handleScroll("hotel-locations")}
+            >
+              Other Info
+            </a>
           </div>
 
-          <div className="available-rooms">
+          <div className="available-rooms" id="available-rooms">
             <h1 className="ticket-headline-semibold">Available Rooms</h1>
             <p className="text-secondary">
               Prices might change. You'll see the final price on the next page.
             </p>
+            <HotelRooms />
+          </div>
+
+          <center>
+            <p className="heading-medium-bold see-more">See More Rooms</p>
+          </center>
+
+          <div className="hotel-location-container" id="hotel-location">
+            <h1 className="hotel-location ticket-headline-semibold">
+              Location
+            </h1>
+            <p className="callout-medium my-3">
+              Sheridan Dr, Camp John Hay, Baguio, Philippines, 2600
+            </p>
+            <div className="map-image">
+              <img src={MapPlaceholder} alt="" />
+              <div className="map-overlay">
+                <span>
+                  <HomeIcon _width={27} _height={27} />
+                </span>
+              </div>
+
+              <div className="map-overlay-border"></div>
+            </div>
+            <p className="primary-0 d-flex align-items-center gap-2 my-3">
+              Nearby Attractions <Map />
+            </p>
+            <p>Greenbelt Shopping Mall 0.8mi (1.4 km)</p>
+          </div>
+
+          <div className="hotel-policies-container" id="hotel-policies">
+            <h1 className="ticket-headline-semibold mb-4">Hotel Policies</h1>
+            <div className="hotel-policies">
+              <div className="hotel-policy">
+                <div className=" d-flex align-items-center gap-2">
+                  <Info _width={20} _height={20} _color="#016e7f" />{" "}
+                  <span className="body-medium">Check-in time</span>
+                </div>
+                <p className="subheadline-regular">Starts at 2:00 PM</p>
+              </div>
+              <div className="hotel-policy">
+                <div className=" d-flex align-items-center gap-2">
+                  <Info _width={20} _height={20} _color="#016e7f" />{" "}
+                  <span className="body-medium">Check-out time</span>
+                </div>
+                <p className="subheadline-regular">Until 11:59 AM</p>
+              </div>
+              <div className="hotel-policy">
+                <div className=" d-flex align-items-center gap-2">
+                  <Info _width={20} _height={20} _color="#016e7f" />{" "}
+                  <span className="body-medium">Cancellation policy</span>
+                </div>
+                <p className="subheadline-regular">
+                  Cancellation policies vary depending on the type of
+                  accommodation. Kindly review the specific{" "}
+                  <span className="primary-0 text-decoration-underline">
+                    conditions associated with each room option
+                  </span>{" "}
+                  while making your selection.
+                </p>
+              </div>
+              <div className="hotel-policy">
+                <div className=" d-flex align-items-center gap-2">
+                  <Info _width={20} _height={20} _color="#016e7f" />{" "}
+                  <span className="body-medium">Airport transfer</span>
+                </div>
+                <p className="subheadline-regular">
+                  This property offers transfers from the airport (surcharges
+                  may apply). To arrange pick-up, guests must contact the
+                  property 48 hours prior to arrival, using the contact
+                  information on the booking confirmation.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </Container>

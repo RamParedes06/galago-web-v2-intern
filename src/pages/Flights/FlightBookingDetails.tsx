@@ -9,12 +9,6 @@ import "../../styles/flightbookingdetails.scss";
 import FooterComponent from "../../components/ui/FooterComponent";
 
 const FlightBookingDetails = () => {
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
   return (
     <div>
       <NavigationBar />

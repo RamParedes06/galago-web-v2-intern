@@ -67,7 +67,7 @@ Form {
       // background-attachment: fixed;
       .each-card {
         display: flex;
-        justify-content: start;
+        justify-content: flex-start;
         align-items: center;
         border: 1px solid rgba(1, 110, 127, 1);
         border-radius: 10px;

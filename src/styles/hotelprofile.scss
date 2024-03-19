@@ -60,3 +60,69 @@
     font-family: "General Sans", sans-serif;
   }
 }
+
+.see-more {
+  color: #016e7f;
+  margin: 4rem 0;
+  border-bottom: 1px solid #016e7f;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.hotel-location-container {
+  border-top: 1px solid #e7eaeb;
+  padding: 32px 0 40px 0;
+}
+
+.map-image {
+  position: relative;
+
+  img {
+    max-height: 505px;
+    width: 100%;
+    object-fit: cover;
+  }
+  .map-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #016e7f;
+    max-width: 49px;
+    height: 49px;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    z-index: 9999;
+  }
+
+  .map-overlay-border {
+    position: absolute;
+    max-width: 100px;
+    min-height: 100px;
+    width: 100%;
+    background-color: #016e7f4d;
+    top: 45%;
+    left: 48%;
+    border-radius: 50%;
+  }
+}
+
+.hotel-policies-container {
+  padding: 32px 0 40px 0;
+  border-top: 1px solid #e7eaeb;
+
+  .hotel-policies {
+    border: 1px solid #016e7f;
+    padding: 25px 64px 0px 64px;
+    border-radius: 12px;
+
+    .hotel-policy {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      padding: 50px 24px 50px 24px;
+      border-bottom: 1px solid #e7eaeb;
+    }
+  }
+}
