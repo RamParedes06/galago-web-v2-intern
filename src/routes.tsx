@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { createHashRouter, useRoutes } from "react-router-dom";
+import React from "react";
+import { createHashRouter } from "react-router-dom";
 import Index from "./pages/Index";
 import Favorites from "./pages/FavoritePages/Favorites";
 import FlightResultPage from "./pages/Flights/FlightResultPage";
@@ -71,6 +71,7 @@ const router = createHashRouter([
     path: "/hotel-profile",
     element: <HotelProfile />,
   },
+
   {
     path: "/privacy-policy",
     element: <PrivacyPolicy />,

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "../../styles/navigationbar.scss";
-import logo from "../../resources/GalaGO Logo 1.png";
 import { Link } from "react-router-dom";
 
 function NavigationBar() {
