@@ -1,0 +1,62 @@
+.hotel-profile-container {
+  padding-top: 5rem;
+}
+
+.property-offers-container {
+  border-top: 1px solid #e7eaeb;
+  padding: 3rem 0;
+}
+.offers-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  .offer {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+.about-stay-container {
+  padding-bottom: 1rem;
+  h1 {
+    margin-bottom: 1rem;
+  }
+  p:nth-of-type(2) {
+    margin: 2rem 0;
+  }
+  a {
+    font-family: "Satoshi", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+  }
+}
+
+.hotel-navigator {
+  border-top: 1px solid #e7eaeb;
+  border-bottom: 1px solid #e7eaeb;
+  padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  font-size: 14px;
+  font-weight: 500;
+
+  a {
+    text-decoration: none;
+    color: #333333;
+  }
+
+  a:hover {
+    color: #016e7f;
+  }
+}
+
+.available-rooms {
+  margin: 2rem 0;
+  p {
+    font-size: 14px;
+    font-family: "General Sans", sans-serif;
+  }
+}
