@@ -1,0 +1,94 @@
+.custom-modal-container {
+  width: 100%;
+  background-color: #00000099;
+  height: 100vh;
+  display: flex;
+  position: fixed;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  top: 0;
+  z-index: 999999999999;
+  // overflow: hidden;
+  display: grid;
+  place-items: center;
+
+  .custom-gallery-modal {
+    background-color: white;
+    max-width: 1246px;
+    width: 100%;
+    height: 770px;
+    border-radius: 16px;
+    overflow: hidden;
+
+    .custom-modal-header {
+      min-height: 74px;
+      width: 100%;
+      background-color: white;
+      padding: 16px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .close {
+        cursor: pointer;
+      }
+    }
+
+    .custom-modal-body {
+      background-color: #3333330d;
+      height: 100%;
+      display: flex;
+      // justify-content: space-between;
+      padding: 16px 40px;
+      gap: 22px;
+      .gallery-images {
+        overflow-y: scroll;
+        max-height: 680px;
+        display: grid;
+        grid-template-columns: repeat(3, 282px);
+        width: 100%;
+        max-width: 900px;
+        gap: 16px;
+        img {
+          max-width: 282px;
+          height: 182px;
+          width: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+
+      .gallery-facilities {
+        max-width: 244px;
+        width: 100%;
+        padding: 1rem;
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 177px;
+        p {
+          font-family: "General Sans", sans-serif;
+          font-size: 13px;
+          font-weight: 500;
+
+          > span {
+            margin-right: 0.5rem;
+          }
+        }
+
+        .facilities {
+          margin-top: 24px;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+        }
+      }
+    }
+  }
+}
+
+// For hiding the scrollbar
+.overflow-hidden {
+  overflow-y: hidden;
+}
