@@ -7,11 +7,13 @@ import HotelGallery from "../../components/hotelresult/HotelGallery";
 import Offers from "./Offers";
 
 import "../../styles/hotelprofile.scss";
+import "../../styles/modalgallery.scss";
 import FooterComponent from "../../components/ui/FooterComponent";
 import HotelRooms from "../../components/hotelresult/HotelRooms";
 import MapPlaceholder from "../../resources/hotelresults/map_placeholder.png";
 import { HomeIcon } from "../../components/ui/svg/HomeIcon";
 import { Info } from "../../components/ui/svg/Info";
+import CustomModal from "../../components/hotelresult/CustomModal";
 
 const HotelProfile = () => {
   const handleScroll = (targetId: string) => {
@@ -23,6 +25,7 @@ const HotelProfile = () => {
 
   return (
     <div>
+      <CustomModal />
       <Container className="hotel-profile-container">
         <div className="property-container">
           <h1 className="title-large-bold">Property Name</h1>
@@ -178,6 +181,7 @@ const HotelProfile = () => {
           </div>
         </div>
       </Container>
+
       <FooterComponent />
     </div>
   );

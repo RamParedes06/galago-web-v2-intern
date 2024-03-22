@@ -55,9 +55,14 @@
 
 .available-rooms {
   margin: 2rem 0;
-  p {
-    font-size: 14px;
-    font-family: "General Sans", sans-serif;
+
+  .price-per-night2 {
+    > p {
+      margin-top: 0.5rem;
+      font-size: 14px;
+      font-family: "General Sans", sans-serif;
+      text-align: right;
+    }
   }
 }
 
