@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "../../styles/hotelgallery.scss";
-import "./GalleryModal";
 import CustomModal from "./CustomModal";
 
 const HotelGallery = () => {

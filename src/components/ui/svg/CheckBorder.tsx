@@ -5,6 +5,7 @@ type SvgProps = {
   _color?: string;
 };
 
+// Used for Facilities in Hotel Gallery Modal
 export const CheckBorder = ({
   _width = 12,
   _height = 13,

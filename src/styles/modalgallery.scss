@@ -17,7 +17,7 @@
     background-color: white;
     max-width: 1246px;
     width: 100%;
-    height: 770px;
+    min-height: 770px;
     border-radius: 16px;
     overflow: hidden;
 
@@ -32,6 +32,40 @@
 
       .close {
         cursor: pointer;
+      }
+
+      .header-tabs {
+        padding: 8px 16px;
+        border: 1px solid #016e7f;
+        border-radius: 12px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #016e7f;
+        // &:hover {
+        //   background-color: #016e7f;
+        //   transition: 0.2s ease-in-out;
+        //   color: white;
+        // }
+      }
+
+      .header-tabs-toggled {
+        padding: 8px 16px;
+        border: 1px solid #016e7f;
+        border-radius: 12px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background-color: #016e7f;
+        color: white;
+
+        // &:hover {
+        //   background-color: white;
+        //   transition: 0.2s ease-in-out;
+        //   color: #016e7f;
+        // }
       }
     }
 
@@ -50,6 +84,7 @@
         width: 100%;
         max-width: 900px;
         gap: 16px;
+        // padding-bottom: 16px;
         img {
           max-width: 282px;
           height: 182px;
