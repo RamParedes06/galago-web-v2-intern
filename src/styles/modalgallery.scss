@@ -8,8 +8,7 @@
   margin-right: auto;
   left: 0;
   top: 0;
-  z-index: 999999999999;
-  // overflow: hidden;
+  z-index: 9999;
   display: grid;
   place-items: center;
 
@@ -17,7 +16,6 @@
     background-color: white;
     max-width: 1246px;
     width: 100%;
-    min-height: 770px;
     border-radius: 16px;
     overflow: hidden;
 
@@ -71,11 +69,14 @@
 
     .custom-modal-body {
       background-color: #3333330d;
-      height: 100%;
-      display: flex;
+      // min-height: 680px;
+      max-height: 100%;
+      display: grid;
       // justify-content: space-between;
+      grid-template-columns: 900px 346px;
       padding: 16px 40px;
       gap: 22px;
+
       .gallery-images {
         overflow-y: scroll;
         max-height: 680px;
@@ -126,4 +127,48 @@
 // For hiding the scrollbar
 .overflow-hidden {
   overflow-y: hidden;
+}
+
+// Carousel Component
+.carousel-root {
+  max-width: 892px;
+  width: 100%;
+  max-height: 680px;
+
+  .thumbs-wrapper {
+    margin: 10px 0 0 0 !important;
+  }
+
+  .carousel ol,
+  ul {
+    padding-left: 0;
+    .thumb {
+      width: 293px !important;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-right: 7px;
+
+      img {
+        object-fit: cover;
+        max-height: 150px;
+        border-radius: 12px;
+      }
+    }
+  }
+
+  .thumbs {
+    width: 100%;
+  }
+}
+.carousel-imgs {
+  img {
+    object-fit: cover;
+    max-height: 489px;
+    width: 100%;
+    border-radius: 12px;
+  }
+}
+
+.thumbs animated {
+  transform: translate3d(100px, 0px, 0px);
 }
