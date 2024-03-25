@@ -1,3 +1,4 @@
+import NavigationBarWhite from "../components/ui/NavigationBarWhite";
 import "../styles/bookandtrip.scss";
 
 const upcoming = [
@@ -73,7 +74,8 @@ const complete = [
 const BookAndTrip = () => {
   return (
     <>
-      <div className="container">
+      <NavigationBarWhite />
+      <div className="booking-container">
         <h1>Bookings & Trips</h1>
         <p className="title">Upcoming</p>
         <div className="upcoming-container">

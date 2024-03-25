@@ -1,12 +1,13 @@
-import { Footer } from "rsuite";
 import "../styles/privacypolicy.scss";
 import "../styles/root.scss";
 import { Link } from "react-router-dom";
 import FooterComponent from "../components/ui/FooterComponent";
+import NavigationBarWhite from "../components/ui/NavigationBarWhite";
 
 const PrivacyPolicy = () => {
   return (
     <>
+      <NavigationBarWhite />
       <div className="privacy-header d-flex justify-content-between align-items-center">
         <h1 className="heading-large-bold ">Privacy Policy</h1>
         <div className="d-flex gap-4">

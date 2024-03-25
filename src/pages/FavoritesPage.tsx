@@ -3,6 +3,9 @@ import "../styles/favoritespage.scss";
 import { Link } from "react-router-dom";
 import { PopDots } from "../components/ui/svg/PopDots";
 import FooterComponent from "../components/ui/FooterComponent";
+import NavigationBarWhite from "../components/ui/NavigationBarWhite";
+import { Form, Modal, Row } from "react-bootstrap";
+import { useState } from "react";
 
 type data = {
   link: string;
@@ -61,12 +64,16 @@ const favorites = [
 ];
 
 const FavoritesPage = () => {
+  const [createFavModal, showCreateFavModal] = useState(false);
   return (
     <>
+      <NavigationBarWhite />
       <div className="favorite-wrapper">
         <div className="fav-header">
           <h1>Favorites</h1>
-          <a className="header-btn">+ Create new favorites</a>
+          <a className="header-btn" onClick={() => showCreateFavModal(true)}>
+            + Create new favorites
+          </a>
         </div>
         <div className="favorites-container">
           {favorites.map((data: any, i) => (
@@ -82,7 +89,6 @@ const FavoritesPage = () => {
                       <p className="title">{data.title}</p>
                       <p className="desc">{data.description}</p>
                     </div>
-                    {/* <div> */}
                     <Dropdown>
                       <Dropdown.Toggle className="p-0">
                         <PopDots />
@@ -93,13 +99,30 @@ const FavoritesPage = () => {
                         <Dropdown.Item>Delete Favorites</Dropdown.Item>
                       </Dropdown.Menu>
                     </Dropdown>
-                    {/* </div> */}
                   </div>
                 </div>
               </Link>
             </>
           ))}
         </div>
+        <Modal
+          show={createFavModal}
+          onHide={() => showCreateFavModal(false)}
+          className="create-fav-modal"
+          centered
+        >
+          <Modal.Header closeButton></Modal.Header>
+          <Modal.Body className="create-fav-body">
+            <Form>
+              <Row>
+                <input type="text" placeholder="Favorites Name"></input>
+              </Row>
+              <Row>
+                <button type="submit">Create Favorites</button>
+              </Row>
+            </Form>
+          </Modal.Body>
+        </Modal>
       </div>
       <FooterComponent />
     </>

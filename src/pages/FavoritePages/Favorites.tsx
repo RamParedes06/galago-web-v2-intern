@@ -14,7 +14,9 @@ import { Messenger } from "../../components/ui/svg/Messenger";
 import { Twitter } from "../../components/ui/svg/Twitter";
 import { Embed } from "../../components/ui/svg/Embed";
 import { Star } from "../../components/ui/svg/Star";
+import { ConfusedGalaGo } from "../../components/ui/svg/ConfusedGalaGo";
 import FooterComponent from "../../components/ui/FooterComponent";
+import NavigationBarWhite from "../../components/ui/NavigationBarWhite";
 
 type data = {
   link: string;
@@ -136,8 +138,10 @@ const favsModalInfo = [
 
 const Favorites = () => {
   const [favsModal, setShowFavsModal] = useState(false);
+  const [deleteFavModal, setDeleteFavModal] = useState(false);
   return (
     <>
+      <NavigationBarWhite />
       <div className="fav-page">
         <div className="d-flex align-items-center justify-content-between title">
           <div className="d-flex align-items-center gap-3">
@@ -165,41 +169,52 @@ const Favorites = () => {
         </div>
         <div className="favorites-infocard-container">
           {favoritesinfo.map((data: { [index: string]: any }, i: React.Key) => (
-            <div
-              className="favorites-infocard"
-              key={i}
-              onClick={() => {
-                setShowFavsModal(true);
-              }}
-            >
-              <div className="infocard-img">
+            <div className="favorites-infocard" key={i}>
+              <div
+                className="infocard-img"
+                onClick={() => {
+                  setShowFavsModal(true);
+                }}
+              >
                 <img src={data.image} alt="" />
               </div>
               <div className="infocard-text d-flex flex-column gap-1">
-                <button className="btn m-0 p-0 d-flex flex-row-reverse">
+                <button
+                  className="btn m-0 p-0 d-flex flex-row-reverse"
+                  onClick={() => {
+                    setDeleteFavModal(true);
+                  }}
+                >
                   <Delete _color="#ADADAD" _width={15} _height={16.67} />
                 </button>
-                <div>
-                  <p className="title">{data.title}</p>
-                  <div className="d-flex gap-3">
-                    <p className="text">
-                      {data.nights} nights • Saved for {data.month}{" "}
-                      {data.dateFrom} - {data.dateTo}
+                <div
+                  className="d-flex flex-column gap-1"
+                  onClick={() => {
+                    setShowFavsModal(true);
+                  }}
+                >
+                  <div>
+                    <p className="title">{data.title}</p>
+                    <div className="d-flex gap-3">
+                      <p className="text">
+                        {data.nights} nights • Saved for {data.month}{" "}
+                        {data.dateFrom} - {data.dateTo}
+                      </p>
+                    </div>
+                  </div>
+                  <div>
+                    <p>
+                      <strong>PHP 15,000</strong> per night •{" "}
+                      <span className="text-secondary text-decoration-underline">
+                        PHP 30,000 total
+                      </span>
                     </p>
                   </div>
-                </div>
-                <div>
-                  <p>
-                    <strong>PHP 15,000</strong> per night •{" "}
-                    <span className="text-secondary text-decoration-underline">
-                      PHP 30,000 total
-                    </span>
-                  </p>
-                </div>
-                <div className="d-flex gap-2 tag-div">
-                  <span className="tag">Free Breakfast</span>
-                  <span className="tag">Pet-Friendly</span>
-                  <span className="off-tag">17% OFF</span>
+                  <div className="d-flex gap-2 tag-div">
+                    <span className="tag">Free Breakfast</span>
+                    <span className="tag">Pet-Friendly</span>
+                    <span className="off-tag">17% OFF</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -208,7 +223,6 @@ const Favorites = () => {
         <Modal
           show={favsModal}
           onHide={() => setShowFavsModal(false)}
-          dialogClassName="modal-500w"
           className="share-fav-modal"
           centered
         >
@@ -273,6 +287,29 @@ const Favorites = () => {
                   Just a friendle reminder, anyone who has the link can view
                   this collection.
                 </p>
+              </div>
+            </div>
+          </Modal.Body>
+        </Modal>
+        <Modal
+          show={deleteFavModal}
+          onHide={() => setDeleteFavModal(false)}
+          className="delete-fav-modal"
+          centered
+        >
+          <Modal.Body>
+            <div className="d-flex flex-column align-items-center">
+              <div className="d-flex flex-column align-items-center gap-2">
+                <ConfusedGalaGo _width={128} _height={128} />
+                <p className="delete-modal-text">Delete this Property?</p>
+                <div className="d-flex flex-column align-items-center footnote-medium text-secondary pb-4">
+                  <p>This property will be removed permanently</p>
+                  <p>from your favorites</p>
+                </div>
+              </div>
+              <div className="d-flex flex-column align-items-center">
+                <button>Delete</button>
+                <a className="footnote-medium text-brand">Cancel</a>
               </div>
             </div>
           </Modal.Body>

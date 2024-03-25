@@ -1,18 +1,17 @@
-import React, { useEffect, useState } from "react";
+import ".././styles/root.scss";
 import ".././styles/userprofile.scss";
-import { Form } from "react-router-dom";
+import FooterComponent from "../components/ui/FooterComponent";
+import NavigationBarWhite from "../components/ui/NavigationBarWhite";
+import Modal from "react-bootstrap/Modal";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
-import { Button, FormControl, FormSelect, ModalBody } from "react-bootstrap";
-import Modal from "react-bootstrap/Modal";
+import React, { useEffect, useState } from "react";
+import { Form } from "react-router-dom";
+import { FormControl, FormSelect } from "react-bootstrap";
 import { EmailConfirmation } from "../components/ui/svg/EmailConfirmation";
 import { UploadProfileImg } from "../components/ui/svg/UploadProfileImg";
-import { useDropzone } from "react-dropzone";
 import { DropImage } from "../components/ui/svg/DropImage";
-import ".././styles/root.scss";
-import FooterComponent from "../components/ui/FooterComponent";
-import NavigationBar from "../components/ui/NavigationBar";
 
 const UserProfile = () => {
   const [showLegal, setShowLegal] = useState(false);
@@ -25,7 +24,6 @@ const UserProfile = () => {
   const [seconds, setSeconds] = useState(13);
   const [showTimer, setShowTimer] = useState(false);
   const [imgModal, setShowImgModal] = useState(false);
-  const { acceptedFiles, getRootProps, getInputProps } = useDropzone({});
   const [cancelEdit, setCancelEdit] = useState({
     legal: "Edit",
     email: "Edit",
@@ -55,7 +53,7 @@ const UserProfile = () => {
 
   return (
     <>
-      {/* <NavigationBar /> */}
+      <NavigationBarWhite />
       <div className="content">
         <div className="profile-info-grp">
           <div className="profile-info">
@@ -232,11 +230,6 @@ const UserProfile = () => {
                             // type="submit"
                             className="submit-btn"
                             onClick={() => {
-                              // setShowEmail((prev) => !prev);
-                              // setCancelEdit((prev) => ({
-                              //   ...prev,
-                              //   email: prev.email === "Edit" ? "Cancel" : "Edit",
-                              // }));
                               setShowModal(true);
                             }}
                           >
@@ -285,8 +278,6 @@ const UserProfile = () => {
                                     className="resend-Email"
                                     onClick={() => {
                                       setShowTimer(true);
-                                      // onclick={disabledButton}
-                                      // disabled={isButtonDisabled}
                                     }}
                                   >
                                     Resend Email

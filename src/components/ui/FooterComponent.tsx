@@ -1,4 +1,3 @@
-import logo from "../../resources/GalaGO Logo 1.png";
 import "../../styles/footer.scss";
 import { Link } from "react-router-dom";
 import { FacebookIcon } from "./svg/FacebookIcon";
@@ -86,7 +85,7 @@ const FooterComponent = () => {
                   <a href="https://www.instagram.com/galagonow/?hl=en">
                     <Instagram _color="transparent" _width={24} _height={24} />
                   </a>
-                  <a href="https://www.linkedin.com/company/aiqueinnovation/">
+                  <a href="https://www.linkedin.com/company/walktheplanet/">
                     <LinkedIn _color="transparent" _width={24} _height={24} />
                   </a>
                 </div>
