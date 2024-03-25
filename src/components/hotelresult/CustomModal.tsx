@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "../../styles/modalgallery.scss";
 import { Close } from "../ui/svg/Close";
 import ButtonComponent from "../ui/ButtonComponent";
 import { CheckBorder } from "../ui/svg/CheckBorder";
 import { ImageIcon } from "../ui/svg/ImageIcon";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
 
 function CustomModal({ isOpen, toggleModal }: any) {
   const closeModal = () => {
@@ -34,20 +36,6 @@ function CustomModal({ isOpen, toggleModal }: any) {
       }.png`
   );
 
-  const images = [
-    {
-      original: "https://picsum.photos/id/1018/1000/600/",
-      thumbnail: "https://picsum.photos/id/1018/250/150/",
-    },
-    {
-      original: "https://picsum.photos/id/1015/1000/600/",
-      thumbnail: "https://picsum.photos/id/1015/250/150/",
-    },
-    {
-      original: "https://picsum.photos/id/1019/1000/600/",
-      thumbnail: "https://picsum.photos/id/1019/250/150/",
-    },
-  ];
   const hotelData = [
     {
       hotelName: "Sample Hotel",
@@ -82,6 +70,25 @@ function CustomModal({ isOpen, toggleModal }: any) {
   ];
   console.log(hotelData[0]);
 
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const handleSlideChange = (index: number) => {
+    setCurrentIndex(index);
+
+    const thumbsWrapper = document.querySelector(
+      ".thumbs-wrapper"
+    ) as HTMLElement;
+    if (thumbsWrapper) {
+      const thumb = thumbsWrapper.querySelector(".thumb") as HTMLElement;
+      if (thumb) {
+        const thumbWidth = 300;
+        const scrollPosition = thumbWidth * index;
+
+        // Scroll the thumbnails wrapper
+        thumbsWrapper.scrollTo({ left: scrollPosition, behavior: "smooth" });
+      }
+    }
+  };
+
   return (
     <>
       {isOpen && (
@@ -110,8 +117,29 @@ function CustomModal({ isOpen, toggleModal }: any) {
                   </div>
                 </div>
               ) : (
-                <div>
-                  <h1> {/* <ImageGallery items={images} />; */}</h1>
+                <div className="slidehow-container">
+                  <h1>
+                    {/* Reference From: https://medium.com/stackanatomy/build-an-elegant-gallery-with-react-responsive-carousel-926c4f34768e */}
+                    <Carousel
+                      autoPlay
+                      interval={5000}
+                      transitionTime={1000}
+                      infiniteLoop
+                      onChange={handleSlideChange}
+                    >
+                      {imageUrls.map((url, index) => (
+                        <div className="carousel-imgs">
+                          <img
+                            key={index}
+                            src={url}
+                            alt={`Gallery ${index + 1}`}
+                            loading="lazy"
+                          />
+                          <p className="legend">Hotel Area Name {index + 1}</p>
+                        </div>
+                      ))}
+                    </Carousel>
+                  </h1>
                 </div>
               )}
 
