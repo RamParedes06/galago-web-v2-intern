@@ -1,3 +1,6 @@
+.hotel-profile-bg {
+  background-color: white;
+}
 .hotel-profile-container {
   padding-top: 5rem;
 }
@@ -128,6 +131,34 @@
       grid-template-columns: 1fr 2fr;
       padding: 50px 24px 50px 24px;
       border-bottom: 1px solid #e7eaeb;
+    }
+  }
+}
+
+// Selected Hotel
+.selected-hotel-container {
+  position: sticky;
+  bottom: 15px;
+  padding: 24px 32px;
+  border: 1px solid #d9d9d9;
+  border-radius: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: white;
+  margin-bottom: 15px;
+  z-index: 9999;
+
+  .selected-hotel-left-col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .selected-hotel-right-col {
+    text-align: right;
+
+    .reserve-hotel-btn {
+      margin-bottom: 8px;
     }
   }
 }

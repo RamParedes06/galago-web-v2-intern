@@ -1,8 +1,14 @@
-import HotelPrice from "./HotelPrice";
+import HotelPrice from "../hotelresult/HotelPrice";
 import { Check } from "../ui/svg/Check";
 import "../../styles/hotelrooms.scss";
 import ButtonComponent from "../ui/ButtonComponent";
-const HotelRooms = () => {
+import { useState } from "react";
+
+type HotelRoomTypes = {
+  setReservedRoom: (arg: { [index: string]: any }) => void;
+};
+
+const HotelRooms = ({ setReservedRoom }: HotelRoomTypes) => {
   const hotelRoomsData = [
     {
       roomName: "Standard Double Room",
@@ -31,6 +37,12 @@ const HotelRooms = () => {
       pricePerNight: "PHP 2,700.00",
     },
   ];
+
+  const [selectedRoom, setSelectedRoom] = useState<string | null>(null);
+  const handleRoomSelect = (roomName: string) => {
+    setSelectedRoom(roomName);
+  };
+
   return (
     <>
       {hotelRoomsData.map((hotelRooms, index) => (
@@ -64,9 +76,16 @@ const HotelRooms = () => {
                   <p className="footnote-medium text-secondary text-align-right">
                     PHP 0,000.00 with Taxes and Fees
                   </p>
+
                   <ButtonComponent
                     buttonText="Select Room"
                     className="btn-light-blue"
+                    onClick={() => {
+                      setReservedRoom(hotelRooms);
+                      handleRoomSelect(hotelRooms.roomName);
+                    }}
+                    // onClick={() => handleRoomSelect(hotelRooms.roomName)}
+                    // disabled={selectedRoom !== hotelRooms.roomName}
                   />
                 </div>
               </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Check } from "../../components/ui/svg/Check";
+import { Check } from "../ui/svg/Check";
 import "../../styles/hotelprofile.scss";
 
 const Offers = () => {
