@@ -18,6 +18,7 @@ import TermsAndConditions from "./pages/TermsAndConditions";
 import FavoritesPage from "./pages/FavoritesPage";
 import BookAndTrip from "./pages/BookAndTrip";
 import EmptyBookingsAndTrips from "./components/bookingsandtrips/EmptyBookingsAndTrips";
+import HotelBookingDetails from "./pages/hotels/HotelBookingDetails";
 
 const router = createHashRouter([
   {
@@ -93,6 +94,10 @@ const router = createHashRouter([
   {
     path: "/empty-bookings-and-trips",
     element: <EmptyBookingsAndTrips />,
+  },
+  {
+    path: "/hotel-booking-details",
+    element: <HotelBookingDetails />,
   },
 ]);
 

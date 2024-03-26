@@ -55,7 +55,7 @@ const HotelGallery = () => {
           alt=""
         />
       </div>
-      {/* <GalleryModal show={modalShow} onHide={() => setModalShow(false)} /> */}
+
       <CustomModal isOpen={modalIsOpen} toggleModal={toggleModal} />
     </div>
   );

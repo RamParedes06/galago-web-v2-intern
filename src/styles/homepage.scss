@@ -26,8 +26,14 @@ body {
 
   .hero-details {
     position: absolute;
-    left: 220px;
+    top: 25%;
+    left: 20%;
     gap: 3rem;
+    transform: translate(-20%, -30%);
+
+    h1 {
+      padding-bottom: 1rem;
+    }
   }
 }
 
@@ -36,7 +42,7 @@ body {
   padding: 0;
   position: relative;
   // transform: translateY(-100px);
-  bottom: 170px;
+  bottom: 215px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
   .nav-link {
@@ -79,10 +85,10 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  p {
-    margin: 0;
-  }
 
+  p {
+    margin-bottom: 8px;
+  }
   .trip-container {
     display: flex;
 
@@ -161,7 +167,7 @@ body {
   }
 
   .banner-two {
-    background: url(https://s3-alpha-sig.figma.com/img/72a9/298f/002742efc70d93f794ec12bf66ec9be4?Expires=1710115200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Il6NbzOUHDqAHDtFa59gLbEZ4JaJSIv4taCt0trQi39ARCX0GuOdOLnLyvBRYqlPbScbITQWiC2ZdFUwkAmsFbPOKrWC3VBdVwc-yNSFXiuu8RTG5rV94fmNGgCMr8w39MwxtJ128C-xfwCasJUv0oO7V~lfLhRN60H5FVA7iqrOG2EyYlYYHLBNDCSi~qJfsmG6NfTQXUWwtBx2yqEhmwkm~VLooOg0AIekhoOiRoDQJ5wvOUqvSWBpsRXTinN9bfZuIL2gpUW67MCTh2VfeCQxRm9ah9xCiUgIjvesyA2kaXtlSKtix~Bu8u9R-07QsFof8Vx3EF174GpKUyX15w__);
+    background: url(https://galago-assets.s3.ap-southeast-1.amazonaws.com/Galago-v2-Assets/Homepage+Assets/homepage_banner.png);
     width: 100%;
     min-height: 477px;
     background-position: center;

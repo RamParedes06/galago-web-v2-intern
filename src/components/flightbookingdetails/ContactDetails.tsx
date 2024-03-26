@@ -42,7 +42,7 @@ function ContactDetails() {
           aria-label="Default select example"
         >
           <option>+63</option>
-          <option value="Mr">+62</option>
+          <option>+62</option>
         </Form.Select>
         <Form.Group className="mb-3" controlId="">
           <Form.Control

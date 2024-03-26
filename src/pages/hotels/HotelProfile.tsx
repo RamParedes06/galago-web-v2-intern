@@ -3,17 +3,19 @@ import { Star } from "../../components/ui/svg/Star";
 import { Share } from "../../components/ui/svg/Share";
 import { Heart } from "../../components/ui/svg/Heart";
 import { Map } from "../../components/ui/svg/Map";
-import HotelGallery from "../../components/hotelresult/HotelGallery";
-import Offers from "./Offers";
+import HotelGallery from "../../components/hotelprofile/HotelGallery";
+import Offers from "../../components/hotelprofile/Offers";
 
 import "../../styles/hotelprofile.scss";
 import "../../styles/modalgallery.scss";
 import FooterComponent from "../../components/ui/FooterComponent";
-import HotelRooms from "../../components/hotelresult/HotelRooms";
+import HotelRooms from "../../components/hotelprofile/HotelRooms";
 import MapPlaceholder from "../../resources/hotelresults/map_placeholder.png";
 import { HomeIcon } from "../../components/ui/svg/HomeIcon";
 import { Info } from "../../components/ui/svg/Info";
-import CustomModal from "../../components/hotelresult/CustomModal";
+import CustomModal from "../../components/hotelprofile/CustomModal";
+import SelectedHotel from "../../components/hotelprofile/SelectedHotel";
+import { useState } from "react";
 
 const HotelProfile = () => {
   const handleScroll = (targetId: string) => {
@@ -23,9 +25,14 @@ const HotelProfile = () => {
     }
   };
 
+  const [reservedRoom, setReservedRoom] = useState<{ [index: string]: any }>(
+    {}
+  );
+
   return (
-    <div>
+    <div className="hotel-profile-bg">
       <CustomModal />
+
       <Container className="hotel-profile-container">
         <div className="property-container">
           <h1 className="title-large-bold">Property Name</h1>
@@ -50,6 +57,7 @@ const HotelProfile = () => {
               </div>
             </div>
           </div>
+
           <HotelGallery />
           <div className="about-stay-container mb-3">
             <h1 className="ticket-large-semibold">About your stay</h1>
@@ -104,7 +112,7 @@ const HotelProfile = () => {
             <p className="text-secondary">
               Prices might change. You'll see the final price on the next page.
             </p>
-            <HotelRooms />
+            <HotelRooms setReservedRoom={setReservedRoom} />
           </div>
 
           <center>
@@ -122,7 +130,7 @@ const HotelProfile = () => {
               <img src={MapPlaceholder} alt="" />
               <div className="map-overlay">
                 <span>
-                  <HomeIcon _width={27} _height={27} />
+                  <HomeIcon _width={27} _height={27} _color="white" />
                 </span>
               </div>
 
@@ -180,8 +188,9 @@ const HotelProfile = () => {
             </div>
           </div>
         </div>
-      </Container>
 
+        <SelectedHotel reservedRoom={reservedRoom} />
+      </Container>
       <FooterComponent />
     </div>
   );
