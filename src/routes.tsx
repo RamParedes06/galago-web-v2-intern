@@ -16,6 +16,8 @@ import HotelProfile from "./pages/hotels/HotelProfile";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import FavoritesPage from "./pages/FavoritesPage";
+import BookAndTrip from "./pages/BookAndTrip";
+import EmptyBookingsAndTrips from "./components/bookingsandtrips/EmptyBookingsAndTrips";
 
 const router = createHashRouter([
   {
@@ -83,6 +85,14 @@ const router = createHashRouter([
   {
     path: "/favorites-page",
     element: <FavoritesPage />,
+  },
+  {
+    path: "/bookings-and-trips",
+    element: <BookAndTrip />,
+  },
+  {
+    path: "/empty-bookings-and-trips",
+    element: <EmptyBookingsAndTrips />,
   },
 ]);
 

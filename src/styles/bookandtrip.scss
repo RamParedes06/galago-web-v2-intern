@@ -6,7 +6,7 @@
   padding: 0px;
 }
 
-.container {
+.booking-container {
   display: flex;
   flex-direction: column;
   padding: 60px 104px;
@@ -101,5 +101,25 @@
     font-family: "General Sans";
     font-size: 13px;
     font-weight: 500;
+  }
+}
+
+//EMPTY BOOKINGS AND TRIPS PAGE
+.bookings-container {
+  padding: 60px 104px 60px 104px;
+  height: 567.15px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  .empty-bookings-content {
+    padding: 60px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+    p {
+      text-align: center;
+    }
   }
 }

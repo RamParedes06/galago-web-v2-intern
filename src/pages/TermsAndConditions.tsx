@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import "../styles/termsconditions.scss";
 import { useRef } from "react";
 import { useState } from "react";
+import FooterComponent from "../components/ui/FooterComponent";
+import NavigationBarWhite from "../components/ui/NavigationBarWhite";
 
 const TermsAndConditions = () => {
   const terms1 = useRef(null);
@@ -30,23 +32,22 @@ const TermsAndConditions = () => {
   };
   return (
     <>
+      <NavigationBarWhite />
       <div className="terms-header d-flex justify-content-between align-items-center">
         <h1 className="heading-large-bold">Terms and Condition</h1>
         <div className="d-flex gap-4">
-          <Link to="/help-center">
+          <Link to="/help-center" className="text-decoration-none">
             <p>Help Center</p>
           </Link>
         </div>
       </div>
       <div className="terms-info d-flex flex-column gap-4">
-        <div>
-          <p className="footnote-medium text-secondary">
-            Version 1 • Last Updated August 29, 2023
-          </p>
-        </div>
         <div className="terms-content">
           <div className="terms-group">
             <div className="terms-intro">
+              <p className="footnote-medium text-secondary">
+                Version 1 • Last Updated August 29, 2023
+              </p>
               <p className="intro">
                 YOUR USE OF THIS WEBSITE ESTABLISHES A LEGALLY BINDING AGREEMENT
                 TO ADHERE TO THESE TERMS AND CONDITIONS. IF YOU DO NOT ACCEPT
@@ -971,6 +972,7 @@ const TermsAndConditions = () => {
           </div>
         </div>
       </div>
+      <FooterComponent />
     </>
   );
 };
