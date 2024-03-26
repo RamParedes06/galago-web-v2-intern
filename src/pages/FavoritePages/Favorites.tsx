@@ -18,13 +18,6 @@ import { ConfusedGalaGo } from "../../components/ui/svg/ConfusedGalaGo";
 import FooterComponent from "../../components/ui/FooterComponent";
 import NavigationBarWhite from "../../components/ui/NavigationBarWhite";
 
-type data = {
-  link: string;
-  favTags: string;
-  tag: string;
-  tagTitle: string;
-};
-
 const favoritesinfo = [
   {
     image:
@@ -139,6 +132,7 @@ const favsModalInfo = [
 const Favorites = () => {
   const [favsModal, setShowFavsModal] = useState(false);
   const [deleteFavModal, setDeleteFavModal] = useState(false);
+  const [showSortDropdown, setShowSortDropdown] = useState(false);
   return (
     <>
       <NavigationBarWhite />
@@ -162,9 +156,19 @@ const Favorites = () => {
           <div className="d-flex gap-2">
             <div>Sort by:</div>
             <div>Availability</div>
-            <div>
+            <div
+              className="sort-dropdown-btn"
+              onClick={() => setShowSortDropdown((prev) => !prev)}
+            >
               <Chevron _color="#000" _width={16} _height={16} />
             </div>
+            {showSortDropdown && (
+              <div className="sort-dropdown">
+                <div className="sort-dropdown-item">Availability</div>
+                <div className="sort-dropdown-item">Property Name</div>
+                <div className="sort-dropdown-item">Lowest Price</div>
+              </div>
+            )}
           </div>
         </div>
         <div className="favorites-infocard-container">
@@ -307,9 +311,15 @@ const Favorites = () => {
                   <p>from your favorites</p>
                 </div>
               </div>
-              <div className="d-flex flex-column align-items-center">
+              <div className="delete-modal-btns d-flex flex-column align-items-center">
                 <button>Delete</button>
-                <a className="footnote-medium text-brand">Cancel</a>
+                <p
+                  className="cancel-btn footnote-medium text-brand"
+                  onClick={() => setDeleteFavModal(false)}
+                  style={{ cursor: "pointer" }}
+                >
+                  Cancel
+                </p>
               </div>
             </div>
           </Modal.Body>
