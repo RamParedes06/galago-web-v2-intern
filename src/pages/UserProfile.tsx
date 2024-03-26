@@ -373,7 +373,10 @@ const UserProfile = () => {
                         <Form>
                           <Row>
                             <Col>
-                              <FormSelect size="lg">
+                              <FormSelect
+                                className="nationality-select"
+                                size="lg"
+                              >
                                 <option>Philippines</option>
                                 {/* <option value="1">Philippines</option> */}
                                 <option value="2">South Korea</option>
@@ -452,7 +455,7 @@ const UserProfile = () => {
                         <div className="d-flex flex-row-reverse pt-4 pb-1">
                           <button
                             type="submit"
-                            className="btn"
+                            className="submit-btn"
                             onClick={() => {
                               setShowDocuments(false);
                               setCancelEdit((prev) => ({

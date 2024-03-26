@@ -76,7 +76,7 @@ const NavigationBarWhite = () => {
               {showNavDropdown && (
                 <div className="nav-dropdown">
                   <Link
-                    to="/empty-bookings-and-trips"
+                    to="/bookings-and-trips"
                     style={{ textDecoration: "none" }}
                   >
                     <p className="nav-dropdown-links">Bookings and Trips</p>

@@ -41,6 +41,7 @@
 }
 
 .favorites-card {
+  position: relative;
   .img-cont {
     max-width: 284px;
     max-height: 233px;
@@ -59,25 +60,65 @@
       object-position: center center;
     }
   }
-}
+  .favorite-info {
+    display: flex;
+    justify-content: space-between;
 
-.favorite-info {
-  display: flex;
-  justify-content: space-between;
-
-  .title {
-    font-family: "General Sans", sans-serif;
-    font-size: 17px;
-    font-weight: 600;
-    color: #333333;
-    margin: 0px;
-  }
-  .desc {
-    font-family: "General Sans", sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    color: #333333;
-    margin: 0px;
+    .title {
+      font-family: "General Sans", sans-serif;
+      font-size: 17px;
+      font-weight: 600;
+      color: #333333;
+      margin: 0px;
+    }
+    .desc {
+      font-family: "General Sans", sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: #333333;
+      margin: 0px;
+    }
+    .fav-dropdown {
+      position: absolute;
+      overflow: hidden;
+      max-width: 204px;
+      width: 100%;
+      background-color: #ffffff;
+      border: 1px solid #e7eaeb;
+      border-radius: 8px;
+      top: 270px;
+      left: 80px;
+      justify-content: stretch;
+      // align-items: center;
+      #a {
+        font-family: "General Sans", sans-serif;
+        font-weight: 500;
+        size: 16px;
+        justify-content: center;
+        cursor: pointer;
+        padding: 5px 0;
+        text-align: center;
+        border-bottom: 1px solid #d9d9d9;
+        &:hover {
+          background-color: #e6f1f3;
+        }
+      }
+      #b {
+        font-family: "General Sans", sans-serif;
+        font-weight: 500;
+        size: 16px;
+        justify-content: center;
+        cursor: pointer;
+        padding: 5px 0;
+        text-align: center;
+        &:hover {
+          background-color: #e6f1f3;
+        }
+      }
+      hr {
+        margin: 0;
+      }
+    }
   }
 }
 
@@ -105,6 +146,7 @@
     padding: 0px 12px 0px 12px;
   }
 }
+//  CREATE FAVORITE MODAL
 .create-fav-modal {
   padding: 34px;
 
@@ -140,6 +182,7 @@
   }
 }
 
+// DELETE FAVORITE MODAL
 .delete-fav-modal {
   .delete-modal-text {
     font-family: "General Sans", sans-serif;
@@ -158,14 +201,44 @@
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
       0 0 8px rgba(255, 255, 255, 0.6);
   }
-  a {
+  .cancel-btn {
     padding: 12px 20px;
     text-decoration: none;
     color: #016e7f;
   }
 }
 
-// FAVORITES PAGE
+//RENAME FAVORITE MODAL
+.rename-fav-modal {
+  .rename-modal-body {
+    padding: 24px;
+    input {
+      height: 56px;
+      border-radius: 12px;
+      border-color: #d9d9d9;
+      outline: none;
+      border: 1px solid #d9d9d9;
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+        0 0 8px rgba(255, 255, 255, 0.6);
+      margin-bottom: 24px;
+      &:focus {
+        border-color: #4fa2b4;
+      }
+    }
+    button {
+      font-size: 16px;
+      font-weight: 500;
+      height: 60px;
+      background-color: #016e7f;
+      color: #ffffff;
+      border-radius: 12px;
+      outline: none;
+      border: 1px solid #d9d9d9;
+    }
+  }
+}
+
+// FAVORITES
 .fav-page {
   padding: 60px 104px 60px 104px;
 
@@ -183,6 +256,39 @@
     font-size: 16px;
     font-weight: 600;
   }
+  .sort-dropdown-btn {
+    position: relative;
+  }
+  .sort-dropdown {
+    position: absolute;
+    overflow: hidden;
+    width: 204px;
+    max-width: 100%;
+    border: 1px solid #4fa2b4;
+    border-radius: 8px;
+    background-color: #ffffff;
+    top: 245px;
+    right: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    .sort-dropdown-item {
+      font-family: "General Sans", sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      padding: 5px 12px;
+      display: flex;
+      cursor: pointer;
+      border-bottom: 1px solid #d9d9d9;
+      &:hover {
+        background-color: #e6f1f3;
+        border-bottom: none;
+      }
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
 
   .favorites-infocard-container {
     display: grid;
@@ -199,12 +305,13 @@
       padding: 16px 14px;
       height: fit-content;
       align-items: center;
+      cursor: pointer;
     }
 
     .infocard-img {
       max-width: 159px;
       max-height: 144px;
-
+      cursor: pointer;
       img {
         object-fit: cover;
         width: 159px;
@@ -258,7 +365,7 @@
   }
 }
 
-//MODAL
+//SHARE MODAL
 .share-fav-modal {
   display: flex;
   flex-direction: column;
@@ -295,6 +402,11 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
+      &:active {
+        background-color: #d0f0ef;
+        border: 1px solid #4fa2b4;
+        color: #016e7f;
+      }
       p {
         font-family: "General Sans", sans-serif;
         font-weight: 500;
