@@ -55,7 +55,7 @@ function NavigationBar() {
           <p>Blogs</p>
         </Link>
         <Link
-          to="www.walktheplanet.com"
+          to="https://www.walktheplanet.com"
           onClick={scrollToTop}
           style={{ textDecoration: "none" }}
         >
