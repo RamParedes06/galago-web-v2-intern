@@ -8,6 +8,7 @@ import { useState } from "react";
 import FlightLoadingModal from "../../components/selectedflight/FlightLoadingModal";
 import { useNavigate } from "react-router-dom";
 import FloatingBanner from "../../components/flightresult/FloatingBanner";
+import { CheckBorder } from "../../components/ui/svg/CheckBorder";
 
 const SelectedFlights = () => {
   const [modalShow, setModalShow] = useState(false);
@@ -34,14 +35,22 @@ const SelectedFlights = () => {
         </div>
         <Container className="departure-flight-container">
           <div className="return-flight">
-            <p className="text-grey">Selected departure flight</p>
+            <p className="text-grey"> Selected departure flight</p>
             <h1>
               Manila <span>MNL</span> to Rome <span>FCO</span>
             </h1>
           </div>
 
           <div className="selected-flight-card">
-            <div className="selected-tag">Selected</div>
+            <div className="selected-tag d-flex align-items-center justify-content-center gap-3">
+              <p>
+                {" "}
+                <span>
+                  <CheckBorder _color="#FFFFFF" />
+                </span>{" "}
+                Selected
+              </p>
+            </div>
             <div className="info-1">
               <h4>09:05</h4>
               <p className="text-grey">MNL</p>

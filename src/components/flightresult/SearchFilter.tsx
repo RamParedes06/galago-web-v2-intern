@@ -295,7 +295,7 @@ function SearchFilter({ showHotelContent }: any) {
 
             {/* Progress */}
             <div className="range-slider-container">
-              <Slider
+              {/* <Slider
                 getAriaLabel={() => ""}
                 value={departureValue}
                 onChange={handleDepartureChange}
@@ -303,7 +303,10 @@ function SearchFilter({ showHotelContent }: any) {
                 getAriaValueText={departureValueText}
                 disableSwap
                 marks={departureMarks}
-              />
+              /> */}
+              <div className="slider-container">
+                <SliderComponent min={1} max={11} />
+              </div>
             </div>
             <div className="time">
               <p className="text-grey">Arrival time</p>
@@ -311,7 +314,7 @@ function SearchFilter({ showHotelContent }: any) {
             </div>
             {/* Progress */}
             <div className="range-slider-container">
-              <Slider
+              {/* <Slider
                 getAriaLabel={() => ""}
                 value={value}
                 onChange={handleArrivalChange}
@@ -319,7 +322,10 @@ function SearchFilter({ showHotelContent }: any) {
                 getAriaValueText={valuetext}
                 disableSwap
                 marks={arrivalMarks}
-              />
+              /> */}
+              <div className="slider-container">
+                <SliderComponent min={1} max={11} />
+              </div>
             </div>
           </div>
         </div>

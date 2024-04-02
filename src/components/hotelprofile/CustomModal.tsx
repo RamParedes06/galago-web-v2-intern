@@ -152,7 +152,7 @@ function CustomModal({ isOpen, toggleModal }: any) {
                         {hotel.hotelFacilities.map((facility) => (
                           <p>
                             <span>
-                              <CheckBorder />
+                              <CheckBorder _color="#016E7F" />
                             </span>
                             {facility}
                           </p>

@@ -33,6 +33,9 @@ body {
 
     h1 {
       padding-bottom: 1rem;
+      font-family: "Satoshi", sans-serif;
+      font-size: 40px;
+      font-weight: 700;
     }
   }
 }
@@ -41,13 +44,14 @@ body {
 .hero-tab-container {
   padding: 0;
   position: relative;
-  // transform: translateY(-100px);
+  width: 80%;
   bottom: 215px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
   .nav-link {
     color: black;
     font-weight: 500;
+    height: 53px;
 
     &.active {
       color: rgba(1, 110, 127, 1);
@@ -76,7 +80,8 @@ body {
   .flights-tab,
   .hotels-tab {
     margin: 0;
-    padding: 1rem;
+    padding: 24px 34px;
+    // height: 366px;
   }
 }
 
@@ -91,11 +96,35 @@ body {
   }
   .trip-container {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #016e7f;
+    max-width: 320px;
+    width: 100%;
+    border-radius: 12px;
+    p {
+      margin-bottom: 0;
+    }
 
-    .one-way,
-    .round-trip {
+    .trip-option {
+      max-width: 114px;
+      width: 100%;
       padding: 8px 18px;
-      border-radius: 12px;
+      border-radius: 11px;
+      cursor: pointer;
+      background-color: transparent;
+      transition: 0.2s ease-in-out;
+      text-align: center;
+      outline: none;
+      border: none;
+      color: #016e7f;
+    }
+
+    .trip-option:hover,
+    .selected {
+      color: white;
+      background-color: #016e7f;
+      transition: 0.2s ease-in-out;
     }
   }
 
@@ -113,11 +142,32 @@ body {
   }
 }
 
+// Hotels Components Switch
+.home-hotels-container {
+  .hotels-row-1 {
+    display: grid;
+    grid-template-columns: 1fr 0.5fr 0.5fr 1fr;
+    gap: 1rem;
+
+    .hotels-col {
+      p {
+        padding-bottom: 0.5rem;
+      }
+    }
+  }
+
+  .hotels-search-btn {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+  }
+}
+
 .btn-switch {
-  display: grid;
-  place-items: center;
-  width: 30px;
-  height: 30px;
+  place-content: center;
+
+  width: 36px;
+  height: 36px;
   border-radius: 100%;
   background-color: #016e7f;
   transition: 0.3s ease-in-out;
@@ -125,7 +175,7 @@ body {
 
   &.btn-switch:hover {
     rotate: (180deg);
-    transition: 0.3s ease-in-out;
+    transition: 0.4s ease-in-out;
   }
 }
 

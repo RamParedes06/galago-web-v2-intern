@@ -6,7 +6,7 @@ import NavigationBar from "../components/ui/NavigationBar";
 import FavoritesPage from "./FavoritesPage";
 import Favorites from "./FavoritePages/Favorites";
 import UserProfile from "./UserProfile";
-import FlightResultPage from "./Flights/FlightResultPage";
+import FlightResultPage from "./flights/FlightResultPage";
 
 const index = () => {
   return (

@@ -1,16 +1,17 @@
-import React from "react";
 import "../../styles/hotelbookingdetails.scss";
 import { Container, Form } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import ButtonComponent from "../../components/ui/ButtonComponent";
-import BookingSummary from "../Flights/BookingSummary";
-import BookingSummaryCard from "../../components/flightbookingdetails/BookingSummaryCard";
 import NavigationBar from "../../components/ui/NavigationBar";
 import FooterComponent from "../../components/ui/FooterComponent";
 import ReservationDetails from "../../components/hotelbookingdetails/ReservationDetails";
+import HotelBookingProgress from "../../components/hotelbookingdetails/HotelProgressLine";
+import NavigationBarWhite from "../../components/ui/NavigationBarWhite";
 const HotelBookingDetails = () => {
   return (
     <div className="hotel-booking-details-bg">
-      <NavigationBar />
+      <NavigationBarWhite />
+      <HotelBookingProgress />
       <Container className="hotel-booking-details-container">
         <div className="hotel-booking-left-col">
           <div className="guest-information-container">
@@ -124,11 +125,13 @@ const HotelBookingDetails = () => {
             </div>
           </div>
 
-          <ButtonComponent
-            buttonText="Continue"
-            className="default-btn"
-            style={{ width: "100%", marginTop: "60px", height: "60px" }}
-          />
+          <Link to={"/hotel-booking-summary"}>
+            <ButtonComponent
+              buttonText="Continue"
+              className="default-btn"
+              style={{ width: "100%", marginTop: "60px", height: "60px" }}
+            />
+          </Link>
         </div>
 
         <div className="hotel-booking-right-col">
