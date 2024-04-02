@@ -8,11 +8,12 @@ import FlightProgressLine from "../../components/flightbookingdetails/FlightProg
 import "../../styles/bookingsummary.scss";
 import check_icon from "../../resources/check-icon.png";
 import { Link } from "react-router-dom";
+import NavigationBarWhite from "../../components/ui/NavigationBarWhite";
 
 const BookingConfirmation = () => {
   return (
     <>
-      <NavigationBar />
+      <NavigationBarWhite />
       <FlightProgressLine />
       <Container className="booking-confirmation-container">
         <div className="confirmed-banner">

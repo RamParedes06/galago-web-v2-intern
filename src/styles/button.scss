@@ -2,6 +2,26 @@
 a {
   width: fit-content;
 }
+.search-btn {
+  background-color: #016e7f;
+  border: none;
+  padding: 12px 24px;
+  width: 200px;
+  height: 56px;
+  border-radius: 12px;
+
+  p {
+    margin: 0;
+  }
+
+  &:hover {
+    background-color: #01535f;
+  }
+
+  &.default-btn:active {
+    background-color: #01535f;
+  }
+}
 .default-btn {
   background-color: #016e7f;
   border: none;

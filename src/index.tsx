@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 import "./styles/root.scss";
-
+import "./styles/form-control-override.scss";
 import { RouterProvider } from "react-router-dom";
 import { router } from "./routes";
 

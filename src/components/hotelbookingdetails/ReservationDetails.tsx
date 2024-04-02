@@ -1,12 +1,21 @@
 import React from "react";
 import { Check } from "../ui/svg/Check";
 
+import bookingDetail1 from "../../resources/hotelbooking/hotelbookingdetail1.png";
+import bookingDetail2 from "../../resources/hotelbooking/hotelbookingdetail2.jpg";
+import bookingDetail3 from "../../resources/hotelbooking/hotelbookingdetail3.jpg";
+
 function ReservationDetails() {
   return (
-    <div className="reservation-details-card-container shadow-light-400 ">
+    <div className="reservation-details-card-container ">
       <h1 className="heading-large-bold primary-0">
         Hotel / Property Name will be here
       </h1>
+      <div className="reservation-gallery ">
+        <img src={bookingDetail1} alt="Hotel Room Image 1" />
+        <img src={bookingDetail2} alt="Hotel Room Image 2" />
+        <img src={bookingDetail3} alt="Hotel Room Image 3" />
+      </div>
       <a href="" className="text-tertiary">
         Change your selection
       </a>

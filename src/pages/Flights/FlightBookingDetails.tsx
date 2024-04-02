@@ -7,11 +7,12 @@ import ContactDetails from "../../components/flightbookingdetails/ContactDetails
 import BookingSummary from "../../components/flightbookingdetails/PriceSummary";
 import "../../styles/flightbookingdetails.scss";
 import FooterComponent from "../../components/ui/FooterComponent";
+import NavigationBarWhite from "../../components/ui/NavigationBarWhite";
 
 const FlightBookingDetails = () => {
   return (
     <div>
-      <NavigationBar />
+      <NavigationBarWhite />
       <FlightProgressLine />
 
       <Container className="flight-booking-details-container">

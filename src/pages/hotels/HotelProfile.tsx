@@ -16,6 +16,7 @@ import { Info } from "../../components/ui/svg/Info";
 import CustomModal from "../../components/hotelprofile/CustomModal";
 import SelectedHotel from "../../components/hotelprofile/SelectedHotel";
 import { useState } from "react";
+import NavigationBarWhite from "../../components/ui/NavigationBarWhite";
 
 const HotelProfile = () => {
   const handleScroll = (targetId: string) => {
@@ -31,6 +32,7 @@ const HotelProfile = () => {
 
   return (
     <div className="hotel-profile-bg">
+      <NavigationBarWhite />
       <CustomModal />
 
       <Container className="hotel-profile-container">

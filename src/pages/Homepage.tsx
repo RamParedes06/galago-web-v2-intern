@@ -10,6 +10,7 @@ import TravelGuides from "../components/homepage/TravelGuides";
 import Accreditations from "../components/homepage/Accreditations";
 import ScrollerComponent from "../components/homepage/slider/ScrollerComponent";
 import FooterComponent from "../components/ui/FooterComponent";
+import Hotels from "../components/homepage/Hotels";
 const Homepage = () => {
   return (
     <div>
@@ -19,7 +20,7 @@ const Homepage = () => {
       <div className="hero-section">
         <div className="hero-details">
           <h1>Get ready to GO!</h1>
-          <p>
+          <p className="body-medium">
             Trot the globe or discover the beauty of the Philippines <br />
             islands. Your next adventure starts here!
           </p>
@@ -33,16 +34,37 @@ const Homepage = () => {
           className="mb-3"
           fill
         >
-          <Tab eventKey="flights" title="Flights" className="flights-tab">
+          <Tab
+            eventKey="flights"
+            title={
+              <span className="d-flex align-items-center justify-content-center gap-2">
+                {/* <Airplane /> */}
+                <p>Flights </p>
+              </span>
+            }
+            className="flights-tab"
+          >
             <Flights />
           </Tab>
-          <Tab eventKey="hotels" title="Hotels" className="hotels-tab">
-            Tab content for Hotels
+          <Tab
+            eventKey="hotels"
+            title={
+              <span className="d-flex align-items-center justify-content-center gap-2">
+                {/* <Hotel /> */}
+                <p>Hotels</p>
+              </span>
+            }
+            className="hotels-tab"
+          >
+            <Hotels />
           </Tab>
           <Tab eventKey="placeholder3" title="" disabled></Tab>
           <Tab eventKey="placeholder4" title="" disabled></Tab>
           <Tab eventKey="placeholder5" title="" disabled></Tab>
           <Tab eventKey="placeholder6" title="" disabled></Tab>
+          <Tab eventKey="placeholder7" title="" disabled></Tab>
+          <Tab eventKey="placeholder8" title="" disabled></Tab>
+          <Tab eventKey="placeholder9" title="" disabled></Tab>
         </Tabs>
       </Container>
 

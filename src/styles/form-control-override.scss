@@ -1,0 +1,26 @@
+.form-control,
+.form-select {
+  border: 1px solid rgba(217, 217, 217, 1) !important;
+  height: 56px !important;
+  border-radius: 12px;
+  font-family: "General Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(173, 173, 173, 1) !important;
+}
+
+.form-control::placeholder {
+  color: rgba(173, 173, 173, 1);
+}
+
+.form-control:focus,
+.form-select:focus,
+.form-control:not(:placeholder-shown) {
+  border: 1px solid rgba(79, 162, 180, 1) !important;
+  height: 56px !important;
+  border-radius: 12px;
+  font-family: "General Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: black !important;
+}

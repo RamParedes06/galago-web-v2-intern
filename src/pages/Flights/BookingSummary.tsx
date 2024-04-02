@@ -8,11 +8,12 @@ import FooterComponent from "../../components/ui/FooterComponent";
 import ButtonComponent from "../../components/ui/ButtonComponent";
 import BookingSummaryCard from "../../components/flightbookingdetails/BookingSummaryCard";
 import { Link } from "react-router-dom";
+import NavigationBarWhite from "../../components/ui/NavigationBarWhite";
 
 const BookingSummary = () => {
   return (
     <>
-      <NavigationBar />
+      <NavigationBarWhite />
       <FlightProgressLine />
       <Container className="booking-summary-container">
         <div className="booking-summary-header">

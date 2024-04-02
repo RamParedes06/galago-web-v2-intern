@@ -1,39 +1,65 @@
-import { Container, Form } from "react-bootstrap";
+import { Button, Container, Form } from "react-bootstrap";
 import ButtonComponent from "../../components/ui/ButtonComponent";
 import { SwitchArrow } from "../ui/svg/SwitchArrow";
 import "../../styles/homepage.scss";
 import "../../styles/button.scss";
+import { Search } from "../ui/svg/Search";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Flights() {
+  // const [selectedOption, setSelectedOption] = useState<string | null>(null);
+  // adding a default value
+  const [selectedOption, setSelectedOption] = useState<string>("one-way");
+
+  const selectOption = (option: string) => {
+    setSelectedOption(option);
+  };
   return (
-    <Container>
+    <>
       <div className="tab-contents">
-        <div className="trip-container">
-          <div className="one-way">
-            <p>One Way</p>
-          </div>
-          <div className="round-trip">
-            <p>Round Trip</p>
-          </div>
+        <div className="trip-container  footnote-medium primary-0">
+          <button
+            className={`trip-option one-way ${
+              selectedOption === "one-way" ? "selected" : ""
+            }`}
+            onClick={() => selectOption("one-way")}
+          >
+            One Way
+          </button>
+          <button
+            className={`trip-option round-trip ${
+              selectedOption === "round-trip" ? "selected" : ""
+            }`}
+            onClick={() => selectOption("round-trip")}
+          >
+            Round Trip
+          </button>
+          <button
+            className={`trip-option multi-city ${
+              selectedOption === "multi-city" ? "selected" : ""
+            }`}
+            onClick={() => selectOption("multi-city")}
+          >
+            Multi-City
+          </button>
         </div>
 
-        <div className="row-1">
+        <div className="row-1 footnote-medium">
           <div className="from-col">
             <p>From</p>
             <Form.Control type="text" placeholder="Manila" />
           </div>
-
           <div className="btn-switch">
             <SwitchArrow _color="#fff" />
           </div>
-
           <div className="to-col">
             <p>To</p>
             <Form.Control type="text" placeholder="Rome" />
           </div>
         </div>
 
-        <div className="row-2">
+        <div className="row-2 footnote-medium">
           <div className="departure-date">
             <p>Departure Date</p>
             <Form.Control type="date" placeholder="September 5, 2023" />
@@ -55,10 +81,17 @@ function Flights() {
           </div>
         </div>
         <div className="d-flex justify-content-end">
-          <ButtonComponent buttonText="SEARCH" className="default-btn" />
+          <Link to={"/flight-results"}>
+            <Button className="search-btn">
+              <span className="px-2">
+                <Search />
+              </span>
+              SEARCH
+            </Button>
+          </Link>
         </div>
       </div>
-    </Container>
+    </>
   );
 }
 
