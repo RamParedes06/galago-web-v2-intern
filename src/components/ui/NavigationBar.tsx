@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../../styles/navigationbar.scss";
 import { Link } from "react-router-dom";
+import { DropdownButton } from "./svg/DropdownButton";
 
 function NavigationBar() {
   const [color, setColor] = useState(false);
@@ -18,6 +19,11 @@ function NavigationBar() {
       top: 0,
       behavior: "smooth",
     });
+  };
+
+  const [showNavDropdown, setShowNavDropdown] = useState(false);
+  const toggleNavDropdown = () => {
+    setShowNavDropdown((prev) => !prev);
   };
   return (
     <div className={color ? "nav-container nav-container-bg" : "nav-container"}>
@@ -55,44 +61,46 @@ function NavigationBar() {
         >
           <p>About Us</p>
         </Link>
-        <Link
-          to="/favorites-page"
-          onClick={scrollToTop}
-          style={{ textDecoration: "none" }}
-        >
-          <p>Favorites</p>
-        </Link>
-        <Link
-          to="/flight-results"
-          onClick={scrollToTop}
-          style={{ textDecoration: "none" }}
-        >
-          <p>Flights</p>
-        </Link>
-        <Link
-          to="/hotel-result"
-          onClick={scrollToTop}
-          style={{ textDecoration: "none" }}
-        >
-          <p>Hotels</p>
-        </Link>
-        <Link
-          to="/help-center"
-          onClick={scrollToTop}
-          style={{ textDecoration: "none" }}
-        >
-          <p>Help Center</p>
-        </Link>
 
-        <Link
-          to="/profile"
-          onClick={scrollToTop}
-          style={{ textDecoration: "none" }}
-        >
-          <p>Profile</p>
-        </Link>
-
-        <button className="shadow-sm rounded">Login</button>
+        {/* <button className="shadow-sm rounded">Login</button> */}
+        <div className="nav-info d-flex align-items-center gap-2">
+          <div className="nav-profile">
+            <img
+              src="https://galago-assets.s3.ap-southeast-1.amazonaws.com/Galago-v2-Assets/NavigationBar+Assets/ProfilePicture.jpg"
+              alt=""
+              style={{ border: "2px solid #ffffff" }}
+            />{" "}
+          </div>
+          <div
+            className="nav-profile-info d-flex align-items-center gap-2 pointer"
+            onClick={toggleNavDropdown}
+          >
+            <p>Christian Mae</p>
+            <p>
+              <DropdownButton _color="#FFFFFF" _height={7} _width={11} />
+            </p>
+          </div>
+          {showNavDropdown && (
+            <div className="nav-dropdown">
+              <Link to="/bookings-and-trips" style={{ textDecoration: "none" }}>
+                <p className="nav-dropdown-links">Bookings and Trips</p>
+              </Link>
+              <Link to="/profile" style={{ textDecoration: "none" }}>
+                <p className="nav-dropdown-links">Account</p>
+              </Link>
+              <Link to="/favorites-page" style={{ textDecoration: "none" }}>
+                <p className="nav-dropdown-links">Favorites</p>
+              </Link>
+              <hr />
+              <Link to="/help-center" style={{ textDecoration: "none" }}>
+                <p className="nav-dropdown-links">Help Center</p>
+              </Link>
+              <Link to="/" style={{ textDecoration: "none" }}>
+                <p className="nav-dropdown-links">Log Out</p>
+              </Link>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

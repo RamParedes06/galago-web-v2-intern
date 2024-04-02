@@ -17,6 +17,7 @@ import { Star } from "../../components/ui/svg/Star";
 import { ConfusedGalaGo } from "../../components/ui/svg/ConfusedGalaGo";
 import FooterComponent from "../../components/ui/FooterComponent";
 import NavigationBarWhite from "../../components/ui/NavigationBarWhite";
+import { Success } from "../../components/ui/svg/Success";
 
 const favoritesinfo = [
   {
@@ -133,6 +134,7 @@ const Favorites = () => {
   const [favsModal, setShowFavsModal] = useState(false);
   const [deleteFavModal, setDeleteFavModal] = useState(false);
   const [showSortDropdown, setShowSortDropdown] = useState(false);
+  const [alert, setAlert] = useState(false);
   return (
     <>
       <NavigationBarWhite />
@@ -153,20 +155,36 @@ const Favorites = () => {
           <div>
             <p>6 Saved Properties</p>
           </div>
-          <div className="d-flex gap-2">
+          <div className="d-flex gap-2" style={{ cursor: "pointer" }}>
             <div>Sort by:</div>
             <div>Availability</div>
             <div
               className="sort-dropdown-btn"
+              style={{ cursor: "pointer" }}
               onClick={() => setShowSortDropdown((prev) => !prev)}
             >
               <Chevron _color="#000" _width={16} _height={16} />
             </div>
             {showSortDropdown && (
               <div className="sort-dropdown">
-                <div className="sort-dropdown-item">Availability</div>
-                <div className="sort-dropdown-item">Property Name</div>
-                <div className="sort-dropdown-item">Lowest Price</div>
+                <div
+                  className="sort-dropdown-item"
+                  onClick={() => setShowSortDropdown(false)}
+                >
+                  Availability
+                </div>
+                <div
+                  className="sort-dropdown-item"
+                  onClick={() => setShowSortDropdown(false)}
+                >
+                  Property Name
+                </div>
+                <div
+                  className="sort-dropdown-item"
+                  onClick={() => setShowSortDropdown(false)}
+                >
+                  Lowest Price
+                </div>
               </div>
             )}
           </div>
@@ -183,14 +201,14 @@ const Favorites = () => {
                 <img src={data.image} alt="" />
               </div>
               <div className="infocard-text d-flex flex-column gap-1">
-                <button
-                  className="btn m-0 p-0 d-flex flex-row-reverse"
+                <span
+                  className="align-self-end"
                   onClick={() => {
                     setDeleteFavModal(true);
                   }}
                 >
                   <Delete _color="#ADADAD" _width={15} _height={16.67} />
-                </button>
+                </span>
                 <div
                   className="d-flex flex-column gap-1"
                   onClick={() => {
@@ -262,7 +280,7 @@ const Favorites = () => {
 
               <div className="fav-btngroup">
                 <button>
-                  <CopyLink _color={"#F9F9F9"} _width={24} _height={24} />
+                  <CopyLink _color={"transparent"} _width={24} _height={24} />
                   <p>Copy Link</p>
                 </button>
                 <button>
@@ -312,7 +330,17 @@ const Favorites = () => {
                 </div>
               </div>
               <div className="delete-modal-btns d-flex flex-column align-items-center">
-                <button>Delete</button>
+                <button
+                  onClick={() => {
+                    setDeleteFavModal(false);
+                    setAlert(true);
+                    setTimeout(() => {
+                      setAlert(false);
+                    }, 2000);
+                  }}
+                >
+                  Delete
+                </button>
                 <p
                   className="cancel-btn footnote-medium text-brand"
                   onClick={() => setDeleteFavModal(false)}
@@ -324,6 +352,11 @@ const Favorites = () => {
             </div>
           </Modal.Body>
         </Modal>
+        {alert && (
+          <div className="alert">
+            <Success /> Property removed successfully!
+          </div>
+        )}
       </div>
       <FooterComponent />
     </>

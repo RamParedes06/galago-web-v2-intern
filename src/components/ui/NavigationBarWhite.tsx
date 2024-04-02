@@ -8,7 +8,7 @@ const NavigationBarWhite = () => {
   const [showNavDropdown, setShowNavDropdown] = useState(false);
 
   const toggleNavDropdown = () => {
-    setShowNavDropdown(true);
+    setShowNavDropdown((prev) => !prev);
   };
 
   const scrollToTop = () => {
@@ -26,7 +26,7 @@ const NavigationBarWhite = () => {
               <GalaGoTeal _height={100} />
             </Link>
           </div>
-          <div className="d-flex align-items-center gap-4">
+          <div className="d-flex align-items-center">
             <div className="d-flex gap-4">
               <Link
                 to="/"
@@ -74,7 +74,10 @@ const NavigationBarWhite = () => {
                 </p>
               </div>
               {showNavDropdown && (
-                <div className="nav-dropdown">
+                <div
+                  className="nav-dropdown"
+                  style={{ backgroundColor: "#FFFFFF" }}
+                >
                   <Link
                     to="/bookings-and-trips"
                     style={{ textDecoration: "none" }}
