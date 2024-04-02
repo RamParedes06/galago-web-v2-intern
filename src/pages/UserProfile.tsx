@@ -141,7 +141,7 @@ const UserProfile = () => {
                     {showLegal && (
                       <>
                         <Form>
-                          <Row className="d-flex gap-2 p-0">
+                          <Row>
                             <Col>
                               <FloatingLabel
                                 controlId="floatingArea"

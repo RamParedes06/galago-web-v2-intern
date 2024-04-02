@@ -4,6 +4,8 @@ import NavigationBarWhite from "../components/ui/NavigationBarWhite";
 import { Form, Modal, Row } from "react-bootstrap";
 import { useState } from "react";
 import FavoritesCard from "../components/favoritespage/FavoritesCard";
+import React from "react";
+import { Success } from "../components/ui/svg/Success";
 
 type data = {
   link: string;
@@ -62,14 +64,27 @@ const favorites = [
 ];
 
 const FavoritesPage = () => {
-  const [createFavModal, showCreateFavModal] = useState(false);
+  const [showCreateFavModal, setShowCreateFavModal] = useState(false);
+  const [inputCount, setInputCount] = useState("");
+  const [showInputCount, setShowInputCount] = React.useState(false);
+  const [createFav, setCreateFav] = useState(false);
+
+  const handleChange = (e: { target: { value: any } }) => {
+    const data = e.target.value.split("");
+    console.log(data);
+    setInputCount(e.target.value);
+  };
+
+  // const showInput = () => {
+  //   if (inputCount.length > 0) setShowInputCount(() => !showInputCount(true));
+  // };
   return (
     <>
       <NavigationBarWhite />
       <div className="favorite-wrapper">
         <div className="fav-header">
           <h1>Favorites</h1>
-          <a className="header-btn" onClick={() => showCreateFavModal(true)}>
+          <a className="header-btn" onClick={() => setShowCreateFavModal(true)}>
             + Create new favorites
           </a>
         </div>
@@ -85,8 +100,8 @@ const FavoritesPage = () => {
           ))}
         </div>
         <Modal
-          show={createFavModal}
-          onHide={() => showCreateFavModal(false)}
+          show={showCreateFavModal}
+          onHide={() => setShowCreateFavModal(false)}
           className="create-fav-modal"
           centered
         >
@@ -94,14 +109,41 @@ const FavoritesPage = () => {
           <Modal.Body className="create-fav-body">
             <Form>
               <Row>
-                <input type="text" placeholder="Favorites Name"></input>
+                <input
+                  type="text"
+                  placeholder="Favorites Name"
+                  value={inputCount}
+                  onChange={handleChange}
+                ></input>
+                {showInputCount && (
+                  <>
+                    <p>{inputCount.length} /50 characters</p>
+                  </>
+                )}
               </Row>
               <Row>
-                <button type="submit">Create Favorites</button>
+                <button
+                  // type="submit"
+                  // disabled={!inputCount}
+                  onClick={() => {
+                    setShowCreateFavModal(false);
+                    setCreateFav(true);
+                    setTimeout(() => {
+                      setCreateFav(false);
+                    }, 2000);
+                  }}
+                >
+                  Create Favorites
+                </button>
               </Row>
             </Form>
           </Modal.Body>
         </Modal>
+        {createFav && (
+          <div className="create-fav-alert">
+            <Success /> Property added successfully!
+          </div>
+        )}
       </div>
       <FooterComponent />
     </>
