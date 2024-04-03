@@ -48,7 +48,9 @@ function Flights() {
         <div className="row-1 footnote-medium">
           <div className="from-col">
             <p>From</p>
-            <Form.Control type="text" placeholder="Manila" />
+            <Form.Control onKeyUp={()=>{
+              
+            }} type="text" placeholder="Manila" />
           </div>
           <div className="btn-switch">
             <SwitchArrow _color="#fff" />
