@@ -6,7 +6,7 @@ import NavigationBar from "../components/ui/NavigationBar";
 import FavoritesPage from "./FavoritesPage";
 import Favorites from "./FavoritePages/Favorites";
 import UserProfile from "./UserProfile";
-import FlightResultPage from "./flights/FlightResultPage";
+import FlightResultPage from "./Flights/FlightResultPage";
 import ApiRoute from "../apiRoutes";
 import axios from "axios";
 
