@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../../styles/navigationbar.scss";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { DropdownButton } from "./svg/DropdownButton";
 
 function NavigationBar() {
@@ -37,31 +37,37 @@ function NavigationBar() {
       </div>
 
       <div className="nav-links">
-        <Link to="/" onClick={scrollToTop} style={{ textDecoration: "none" }}>
-          <p>Home</p>
-        </Link>
-        <Link
-          to="/promos"
-          onClick={scrollToTop}
-          style={{ textDecoration: "none" }}
-        >
-          <p>Promos</p>
-        </Link>
-        <Link
-          to="/blogs"
-          onClick={scrollToTop}
-          style={{ textDecoration: "none" }}
-        >
-          <p>Blogs</p>
-        </Link>
-        <Link
-          to="https://www.walktheplanet.com"
-          onClick={scrollToTop}
-          style={{ textDecoration: "none" }}
-        >
-          <p>About Us</p>
-        </Link>
-
+        <div className="d-flex gap-5 hey">
+          <NavLink
+            to="/"
+            onClick={scrollToTop}
+            className="active-link"
+            style={{ textDecoration: "none" }}
+          >
+            <p>Home</p>
+          </NavLink>
+          <NavLink
+            to="/promos"
+            onClick={scrollToTop}
+            style={{ textDecoration: "none" }}
+          >
+            <p>Promos</p>
+          </NavLink>
+          <NavLink
+            to="/blogs"
+            onClick={scrollToTop}
+            style={{ textDecoration: "none" }}
+          >
+            <p>Blogs</p>
+          </NavLink>
+          <NavLink
+            to="https://www.walktheplanet.com"
+            onClick={scrollToTop}
+            style={{ textDecoration: "none" }}
+          >
+            <p>About Us</p>
+          </NavLink>
+        </div>
         {/* <button className="shadow-sm rounded">Login</button> */}
         <div className="nav-info d-flex align-items-center gap-2">
           <div className="nav-profile">
@@ -72,8 +78,9 @@ function NavigationBar() {
             />{" "}
           </div>
           <div
-            className="nav-profile-info d-flex align-items-center gap-2 pointer"
+            className="nav-profile-info d-flex align-items-center gap-2"
             onClick={toggleNavDropdown}
+            style={{ cursor: "pointer" }}
           >
             <p>Christian Mae</p>
             <p>
@@ -81,7 +88,10 @@ function NavigationBar() {
             </p>
           </div>
           {showNavDropdown && (
-            <div className="nav-dropdown">
+            <div
+              className="nav-dropdown w-full"
+              // onMouseLeave={() => setShowNavDropdown(false)}
+            >
               <Link to="/bookings-and-trips" style={{ textDecoration: "none" }}>
                 <p className="nav-dropdown-links">Bookings and Trips</p>
               </Link>
