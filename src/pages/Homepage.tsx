@@ -14,15 +14,18 @@ import Hotels from "../components/homepage/Hotels";
 import axios from "axios";
 import ApiRoute from "../apiRoutes";
 const Homepage = () => {
-
-   // let airports = [];
+  // let airports = [];
   const [airports, setAiports] = useState<any>();
-  
+
   useEffect(() => {
-    axios.get(ApiRoute.searchAirports+"?airportSearch=manila&ram=lalake&ram2=lasing").then((response) => {
-      setAiports(response.data)
-    })
-  },[])
+    axios
+      .get(
+        ApiRoute.searchAirports + "?airportSearch=manila&ram=lalake&ram2=lasing"
+      )
+      .then((response) => {
+        setAiports(response.data);
+      });
+  }, []);
 
   return (
     <div>
@@ -35,14 +38,12 @@ const Homepage = () => {
           <p className="body-medium">
             Trot the globe or discover the beauty of the Philippines <br />
             islands. Your next adventure starts here!
-
-            {airports?.tag.map((value:any, index: React.Key) => {
+            {/* {airports?.tag.map((value:any, index: React.Key) => {
               
               return (
                 <p key={index}>{value.airportName}</p>
               )
-            })}
-
+            })} */}
           </p>
         </div>
       </div>
