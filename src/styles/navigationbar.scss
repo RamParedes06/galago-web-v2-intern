@@ -19,7 +19,7 @@
     font-weight: 400;
     display: flex;
 
-    .hey {
+    .nav-links-main {
       display: flex;
       align-self: center;
     }
@@ -119,6 +119,11 @@
 
 .nav-container-bg {
   background-color: #016e7f;
+}
+
+.active {
+  border-bottom: 2px solid;
+  padding-bottom: 5px;
 }
 
 //WHITE NAVBAR
