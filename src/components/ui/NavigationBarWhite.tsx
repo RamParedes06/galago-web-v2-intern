@@ -31,6 +31,7 @@ const NavigationBarWhite = () => {
               <Link
                 to="/"
                 className="main-links"
+                onClick={scrollToTop}
                 style={{ textDecoration: "none" }}
               >
                 Home
@@ -38,6 +39,7 @@ const NavigationBarWhite = () => {
               <Link
                 to="/"
                 className="main-links"
+                onClick={scrollToTop}
                 style={{ textDecoration: "none" }}
               >
                 Blogs
@@ -45,6 +47,7 @@ const NavigationBarWhite = () => {
               <Link
                 to="/promos"
                 className="main-links"
+                onClick={scrollToTop}
                 style={{ textDecoration: "none" }}
               >
                 Promos
@@ -85,17 +88,25 @@ const NavigationBarWhite = () => {
                     <p className="nav-dropdown-links">Bookings and Trips</p>
                   </Link>
                   <Link to="/profile" style={{ textDecoration: "none" }}>
-                    <p className="nav-dropdown-links">Account</p>
+                    <p className="nav-dropdown-links" onClick={scrollToTop}>
+                      Account
+                    </p>
                   </Link>
                   <Link to="/favorites-page" style={{ textDecoration: "none" }}>
-                    <p className="nav-dropdown-links">Favorites</p>
+                    <p className="nav-dropdown-links" onClick={scrollToTop}>
+                      Favorites
+                    </p>
                   </Link>
                   <hr />
                   <Link to="/help-center" style={{ textDecoration: "none" }}>
-                    <p className="nav-dropdown-links">Help Center</p>
+                    <p className="nav-dropdown-links" onClick={scrollToTop}>
+                      Help Center
+                    </p>
                   </Link>
                   <Link to="/" style={{ textDecoration: "none" }}>
-                    <p className="nav-dropdown-links">Log Out</p>
+                    <p className="nav-dropdown-links" onClick={scrollToTop}>
+                      Log Out
+                    </p>
                   </Link>
                 </div>
               )}

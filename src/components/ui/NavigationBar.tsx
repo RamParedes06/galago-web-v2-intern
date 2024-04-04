@@ -37,11 +37,11 @@ function NavigationBar() {
       </div>
 
       <div className="nav-links">
-        <div className="d-flex gap-5 hey">
+        <div className="d-flex gap-5 nav-links-main">
           <NavLink
             to="/"
             onClick={scrollToTop}
-            className="active-link"
+            // className={({ isActive }) => (isActive ? "active" : "")}
             style={{ textDecoration: "none" }}
           >
             <p>Home</p>
@@ -90,7 +90,7 @@ function NavigationBar() {
           {showNavDropdown && (
             <div
               className="nav-dropdown w-full"
-              // onMouseLeave={() => setShowNavDropdown(false)}
+              onMouseLeave={() => setShowNavDropdown(false)}
             >
               <Link to="/bookings-and-trips" style={{ textDecoration: "none" }}>
                 <p className="nav-dropdown-links">Bookings and Trips</p>
