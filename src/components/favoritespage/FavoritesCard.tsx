@@ -31,7 +31,6 @@ const FavoritesCard = ({
 
   const handleChange = (e: { target: { value: any } }) => {
     const data = e.target.value.split("");
-    console.log(data);
     setInputCount(e.target.value);
   };
   // const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {

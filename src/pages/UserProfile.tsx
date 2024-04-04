@@ -6,7 +6,7 @@ import Modal from "react-bootstrap/Modal";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Form } from "react-router-dom";
 import { FormControl, FormSelect } from "react-bootstrap";
 import { EmailConfirmation } from "../components/ui/svg/EmailConfirmation";
@@ -50,6 +50,14 @@ const UserProfile = () => {
       clearInterval(interval);
     };
   }, [showTimer, seconds]);
+
+  const legalRef = useRef<any>();
+  const emailRef = useRef();
+  const contactRef = useRef();
+  const nationalityRef = useRef();
+  const travelRef = useRef();
+  const passwordRef = useRef();
+  const grayOutEditButtonSiblings = () => {};
 
   return (
     <>
@@ -127,12 +135,15 @@ const UserProfile = () => {
                       </div>
                       <a
                         className="edit-btn"
+                        ref={legalRef}
+                        data-text={cancelEdit.legal}
                         onClick={() => {
                           setShowLegal((prev) => !prev);
                           setCancelEdit((prev) => ({
                             ...prev,
                             legal: prev.legal === "Cancel" ? "Edit" : "Cancel",
                           }));
+                          grayOutEditButtonSiblings();
                         }}
                       >
                         {cancelEdit.legal}
@@ -199,6 +210,11 @@ const UserProfile = () => {
                       </div>
                       <a
                         className="edit-btn"
+                        data-text={
+                          cancelEdit.email === "Cancel"
+                            ? "active"
+                            : "not-selected"
+                        }
                         onClick={() => {
                           setShowEmail((prev) => !prev);
                           setCancelEdit((prev) => ({
@@ -513,12 +529,6 @@ const UserProfile = () => {
                             </FloatingLabel>
                           </Col>
                           <Col>
-                            {/* <input
-                          type="text"
-                          id="confirm-pass"
-                          placeholder="Confirm Password*"
-                          style={{ width: "100%" }}
-                        ></input> */}
                             <FloatingLabel
                               controlId="floatingArea"
                               id="confirm-pass"
