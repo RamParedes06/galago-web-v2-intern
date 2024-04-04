@@ -15,8 +15,10 @@ import { HomeIcon } from "../../components/ui/svg/HomeIcon";
 import { Info } from "../../components/ui/svg/Info";
 import CustomModal from "../../components/hotelprofile/CustomModal";
 import SelectedHotel from "../../components/hotelprofile/SelectedHotel";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import NavigationBarWhite from "../../components/ui/NavigationBarWhite";
+import axios from "axios";
+import ApiRoute from "../../apiRoutes";
 
 const HotelProfile = () => {
   const handleScroll = (targetId: string) => {
@@ -30,14 +32,19 @@ const HotelProfile = () => {
     {}
   );
 
+  const hotel = localStorage.getItem("hotel");
+  
+
+console.log(hotel, "pwet ni gelo")
+
   return (
     <div className="hotel-profile-bg">
       <NavigationBarWhite />
       <CustomModal />
 
       <Container className="hotel-profile-container">
-        <div className="property-container">
-          <h1 className="title-large-bold">Property Name</h1>
+        <div className="property-container">     
+          <h1  className="title-large-bold">asdasd</h1>
           <div className="property-subheader d-flex justify-content-between mt-2 align-items-center">
             <div className="property-subheader1 d-flex gap-3 align-items-center">
               <div className="property-stars d-flex gap-1">

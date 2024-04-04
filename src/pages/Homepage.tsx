@@ -38,6 +38,8 @@ const Homepage = () => {
           <p className="body-medium">
             Trot the globe or discover the beauty of the Philippines <br />
             islands. Your next adventure starts here!
+
+            {/* {airports?.tag.map((value:any, index: React.Key) => {
             {/* {airports?.tag.map((value:any, index: React.Key) => {
               
               return (
