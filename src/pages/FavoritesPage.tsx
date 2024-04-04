@@ -1,10 +1,10 @@
+import React from "react";
 import "../styles/favoritespage.scss";
 import FooterComponent from "../components/ui/FooterComponent";
 import NavigationBarWhite from "../components/ui/NavigationBarWhite";
+import FavoritesCard from "../components/favoritespage/FavoritesCard";
 import { Form, Modal, Row } from "react-bootstrap";
 import { useState } from "react";
-import FavoritesCard from "../components/favoritespage/FavoritesCard";
-import React from "react";
 import { Success } from "../components/ui/svg/Success";
 
 type data = {
@@ -84,9 +84,9 @@ const FavoritesPage = () => {
       <div className="favorite-wrapper">
         <div className="fav-header">
           <h1>Favorites</h1>
-          <a className="header-btn" onClick={() => setShowCreateFavModal(true)}>
+          <p className="header-btn" onClick={() => setShowCreateFavModal(true)}>
             + Create new favorites
-          </a>
+          </p>
         </div>
         <div className="favorites-container">
           {favorites.map((data: any, i) => (

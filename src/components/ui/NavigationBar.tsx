@@ -41,7 +41,7 @@ function NavigationBar() {
           <NavLink
             to="/"
             onClick={scrollToTop}
-            // className={({ isActive }) => (isActive ? "active" : "")}
+            className={({ isActive }) => (isActive ? "active" : "")}
             style={{ textDecoration: "none" }}
           >
             <p>Home</p>

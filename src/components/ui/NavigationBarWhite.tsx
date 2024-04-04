@@ -53,7 +53,7 @@ const NavigationBarWhite = () => {
                 Promos
               </Link>
               <Link
-                to="/"
+                to="https://www.walktheplanet.com/"
                 className="main-links"
                 style={{ textDecoration: "none" }}
               >

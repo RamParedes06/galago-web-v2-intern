@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../../styles/favoritespage.scss";
 import { Link } from "react-router-dom";
 import { PopDots } from "../ui/svg/PopDots";
-import { Form, Modal, ModalBody, Row, Alert } from "react-bootstrap";
+import { Form, Modal, ModalBody, Row } from "react-bootstrap";
 import { ConfusedGalaGo } from "../ui/svg/ConfusedGalaGo";
 import { Success } from "../ui/svg/Success";
 
@@ -30,7 +30,7 @@ const FavoritesCard = ({
   };
 
   const handleChange = (e: { target: { value: any } }) => {
-    const data = e.target.value.split("");
+    // const data = e.target.value.split("");
     setInputCount(e.target.value);
   };
   // const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {

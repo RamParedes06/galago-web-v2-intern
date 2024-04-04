@@ -22,6 +22,11 @@
     .nav-links-main {
       display: flex;
       align-self: center;
+
+      .active {
+        border-bottom: 2px solid;
+        padding-bottom: 5px;
+      }
     }
     .nav-info {
       position: relative;
@@ -119,11 +124,6 @@
 
 .nav-container-bg {
   background-color: #016e7f;
-}
-
-.active {
-  border-bottom: 2px solid;
-  padding-bottom: 5px;
 }
 
 //WHITE NAVBAR
