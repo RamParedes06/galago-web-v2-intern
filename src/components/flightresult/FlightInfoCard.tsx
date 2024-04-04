@@ -4,9 +4,12 @@ import cebupacific from "../../resources/flightresults/cebu-pacific.png";
 import arrow from "../../resources/flightresults/arrow.png";
 import ButtonComponent from "../ui/ButtonComponent";
 
+import axios from "axios";
+import ApiRoute from "../../apiRoutes";
+
 //? Calling tags components
 import { Cheapest, Fastest, Percentage } from "./Tags";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FlightModal from "./FlightModal";
 
 const flightInfoData = [
@@ -102,8 +105,30 @@ const flightInfoData = [
   },
 ];
 
+
+
+
 function FlightInfoCard() {
   const [modalShow, setModalShow] = useState(false);
+
+  const [airports, setAirports] = useState<any>();
+  
+  useEffect(() => {
+    axios.post(ApiRoute.searchOneWayFlights,{
+      departureDate: '2024/05/01',
+      originCode: 'MNL',
+      destinationCode: 'DVO',
+      passengers: {
+        adults: 1
+      }
+    }).then((response)=>{
+      setAirports(response.data.mystifly)
+      console.log(airports)
+    })
+  },[])
+
+
+
   return (
     <div className="flight-info-card-container">
       {flightInfoData.map((flightInfo) => (

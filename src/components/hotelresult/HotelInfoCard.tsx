@@ -1,62 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../../styles/hotelresult.scss";
 import ButtonComponent from "../ui/ButtonComponent";
 import galago_picks from "../../resources/flightresults/galago_logo.png";
 import { Link } from "react-router-dom";
 import HotelPrice from "./HotelPrice";
 import { HeartFill } from "../ui/svg/HeartFill";
+import axios from "axios";
+import ApiRoute from "../../apiRoutes";
 
-const hotelInfoData = [
-  {
-    image:
-      "https://galago-assets.s3.ap-southeast-1.amazonaws.com/Galago-v2-Assets/HotelResults+Assets/hotelresult1.png",
-    propertyName: "Property Name 1",
-    description: "2 nights, July 24 - 26, Baguio City",
-  },
-  {
-    image:
-      "https://galago-assets.s3.ap-southeast-1.amazonaws.com/Galago-v2-Assets/HotelResults+Assets/hotelresult2.png",
-    propertyName: "Property Name 2",
-    description: "2 nights, July 24 - 26, Baguio City",
-  },
-  {
-    image:
-      "https://galago-assets.s3.ap-southeast-1.amazonaws.com/Galago-v2-Assets/HotelResults+Assets/hotelresult3.png",
-    propertyName: "Property Name 3",
-    description: "2 nights, July 24 - 26, Baguio City",
-  },
-  {
-    image:
-      "https://galago-assets.s3.ap-southeast-1.amazonaws.com/Galago-v2-Assets/HotelResults+Assets/hotelresult4.png",
-    propertyName: "Property Name 4",
-    description: "2 nights, July 24 - 26, Baguio City",
-  },
-  {
-    image:
-      "https://galago-assets.s3.ap-southeast-1.amazonaws.com/Galago-v2-Assets/HotelResults+Assets/hotelresult5.png",
-    propertyName: "Property Name 5",
-    description: "2 nights, July 24 - 26, Baguio City",
-  },
-  {
-    image:
-      "https://galago-assets.s3.ap-southeast-1.amazonaws.com/Galago-v2-Assets/HotelResults+Assets/hotelresult6.png",
-    propertyName: "Property Name 6",
-    description: "2 nights, July 24 - 26, Baguio City",
-  },
-  {
-    image:
-      "https://galago-assets.s3.ap-southeast-1.amazonaws.com/Galago-v2-Assets/HotelResults+Assets/hotelresult2.png",
-    propertyName: "Property Name 7",
-    description: "2 nights, July 24 - 26, Baguio City",
-  },
-  {
-    image:
-      "https://galago-assets.s3.ap-southeast-1.amazonaws.com/Galago-v2-Assets/HotelResults+Assets/hotelresult5.png",
-    propertyName: "Property Name 8",
-    description: "2 nights, July 24 - 26, Baguio City",
-  },
-];
+
 function HotelInfoCard() {
+
+  const [hotels, setHotels] = useState<any>();
+  
+  useEffect(() => {
+    axios.post(ApiRoute.searchHotelList,{
+      location: 'manila',
+      checkInDate: '2024/05/01',
+      checkOutDate: '2024/05/02',
+      adults: 1,
+      rooms: 1
+    }).then((response)=>{
+      setHotels(response.data.data.tbo)
+      console.log(hotels)
+    })
+  },[])
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -65,8 +33,9 @@ function HotelInfoCard() {
   };
   return (
     <>
-      {hotelInfoData.map((hotelInfo, index) => (
-        <div className="hotel-card-wrapper">
+      {hotels?.map((hotel: any, index: React.Key) => {
+        return (
+        <div className="hotel-card-wrapper" key={index}>
           {index === 0 && (
             <div className="galago-picks body-semibold">
               <div className="galago-picks-logo">
@@ -77,7 +46,7 @@ function HotelInfoCard() {
           )}
           <div className="hotel-info-card-container">
             <div className="hotel-card-img">
-              <img src={hotelInfo.image} alt="" />
+              <img src={hotel.Images[0]} alt="" loading="lazy"/>
               <div className="heart-fill">
                 <HeartFill />
               </div>
@@ -86,7 +55,7 @@ function HotelInfoCard() {
             <div className="hotel-info-card">
               <div className="hotel-info-property">
                 <h1 className="ticket-large-semibold">
-                  {hotelInfo.propertyName}
+                  {hotel.HotelName}
                 </h1>
                 <p className="py-1 callout-medium">
                   2 nights, July 24 - 26, Baguio City
@@ -109,13 +78,19 @@ function HotelInfoCard() {
                   <ButtonComponent
                     buttonText="See Availability"
                     className="default-btn"
+                    onClick={() => {
+                      localStorage.setItem("hotel", JSON.stringify(hotel));
+                    }}
                   />
                 </Link>
               </div>
             </div>
           </div>
         </div>
-      ))}
+        )
+      }
+        
+      )}
     </>
   );
 }

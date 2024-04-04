@@ -36,12 +36,12 @@ const Homepage = () => {
             Trot the globe or discover the beauty of the Philippines <br />
             islands. Your next adventure starts here!
 
-            {airports?.tag.map((value:any, index: React.Key) => {
+            {/* {airports?.tag.map((value:any, index: React.Key) => {
               
               return (
                 <p key={index}>{value.airportName}</p>
               )
-            })}
+            })} */}
 
           </p>
         </div>

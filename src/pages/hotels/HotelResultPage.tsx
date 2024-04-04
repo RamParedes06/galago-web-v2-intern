@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import NavigationBar from "../../components/ui/NavigationBar";
 import { Container } from "react-bootstrap";
 import "../../styles/hotelresult.scss";
@@ -6,7 +6,24 @@ import FloatingBanner from "../../components/flightresult/FloatingBanner";
 import SearchFilter from "../../components/flightresult/SearchFilter";
 import HotelInfoCard from "../../components/hotelresult/HotelInfoCard";
 import FooterComponent from "../../components/ui/FooterComponent";
+import axios from "axios";
+import ApiRoute from "../../apiRoutes";
 const HotelResultPage = () => {
+  // const [hotel, setHotel] = useState<any>();
+  
+  // useEffect(() => {
+  //   axios.post(ApiRoute.searchHotelList,{
+  //     location: 'manila',
+  //     checkInDate: '2024/05/01',
+  //     checkOutDate: '2024/05/02',
+  //     adults: 1,
+  //     rooms: 1
+  //   }).then((response)=>{
+  //     setHotel(response.data.data.tbo)
+  //     console.log(hotel)
+  //   })
+  // },[])
+
   return (
     <div>
       <NavigationBar />
