@@ -33,18 +33,21 @@ const HotelProfile = () => {
   );
 
   const hotel = localStorage.getItem("hotel");
-  
 
-console.log(hotel, "pwet ni gelo")
+  console.log(hotel, "pwet ni gelo");
 
+  const [modalOpen, setModalOpen] = useState(false);
+  const handleShowModal = (isOpen: boolean) => {
+    setModalOpen(isOpen);
+  };
   return (
     <div className="hotel-profile-bg">
       <NavigationBarWhite />
       <CustomModal />
 
       <Container className="hotel-profile-container">
-        <div className="property-container">     
-          <h1  className="title-large-bold">asdasd</h1>
+        <div className="property-container">
+          <h1 className="title-large-bold">asdasd</h1>
           <div className="property-subheader d-flex justify-content-between mt-2 align-items-center">
             <div className="property-subheader1 d-flex gap-3 align-items-center">
               <div className="property-stars d-flex gap-1">
@@ -121,7 +124,11 @@ console.log(hotel, "pwet ni gelo")
             <p className="text-secondary">
               Prices might change. You'll see the final price on the next page.
             </p>
-            <HotelRooms setReservedRoom={setReservedRoom} />
+            <p>Modal is {modalOpen ? "open" : "closed"}</p>
+            <HotelRooms
+              setReservedRoom={setReservedRoom}
+              handleShowModal={handleShowModal}
+            />
           </div>
 
           <center>
@@ -198,7 +205,7 @@ console.log(hotel, "pwet ni gelo")
           </div>
         </div>
 
-        <SelectedHotel reservedRoom={reservedRoom} />
+        {modalOpen && <SelectedHotel reservedRoom={reservedRoom} />}
       </Container>
       <FooterComponent />
     </div>

@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Homepage from "./Homepage";
 import HelpCenter from "./HelpCenter";
 import BookAndTrip from "./BookAndTrip";
@@ -11,9 +11,6 @@ import ApiRoute from "../apiRoutes";
 import axios from "axios";
 
 const index = () => {
-
- 
-
   // axios.post(ApiRoute.searchOneWayFlights,{
   //   departureDate: '2024/05/01',
   //   originCode: 'MNL',

@@ -3,6 +3,8 @@ import { Button, Form } from "react-bootstrap";
 import { SwitchArrow } from "../ui/svg/SwitchArrow";
 import { Search } from "../ui/svg/Search";
 import { Link } from "react-router-dom";
+import InputText from "../ui/InputText";
+import { MapBorder } from "../ui/svg/MapBorder";
 
 function Hotels() {
   const [selectedCheckIn, setSelectedCheckIn] = useState("");
@@ -25,8 +27,12 @@ function Hotels() {
       {" "}
       <div className="hotels-row-1 footnote-medium">
         <div className="hotels-col">
-          <p>Destination or Hotel Name</p>
-          <Form.Control type="text" placeholder="City or Property Name" />
+          <InputText
+            id={"hotel-name-txt"}
+            label={"Destination or Hotel Name"}
+            placeholder={"Country, City, or Airport"}
+            icon={<MapBorder _color="#d9d9d9" _width={16} _height={16} />}
+          />
         </div>
         <div className="hotels-col">
           <p>Check-in Date</p>

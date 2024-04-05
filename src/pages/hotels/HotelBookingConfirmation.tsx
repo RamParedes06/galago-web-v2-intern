@@ -1,6 +1,5 @@
 import { Container } from "react-bootstrap";
 import ButtonComponent from "../../components/ui/ButtonComponent";
-import NavigationBar from "../../components/ui/NavigationBar";
 import FooterComponent from "../../components/ui/FooterComponent";
 import "../../styles/bookingsummary.scss";
 import check_icon from "../../resources/check-icon.png";
