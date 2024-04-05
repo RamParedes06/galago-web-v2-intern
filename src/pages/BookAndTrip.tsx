@@ -1,5 +1,5 @@
-import NavigationBarWhite from "../components/ui/NavigationBarWhite";
 import "../styles/bookandtrip.scss";
+import NavigationBarWhite from "../components/ui/NavigationBarWhite";
 
 const upcoming = [
   {

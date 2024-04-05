@@ -19,8 +19,7 @@ const FooterComponent = () => {
               <div className="cols">
                 <h3>Company</h3>
                 <Link
-                  to="/"
-                  onClick={scrollToTop}
+                  to="https://www.walktheplanet.com/"
                   style={{ textDecoration: "none" }}
                 >
                   <p>About Us</p>

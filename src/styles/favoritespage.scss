@@ -261,7 +261,9 @@
 // FAVORITES
 .fav-page {
   padding: 60px 104px 60px 104px;
-  position: relative;
+  // position: relative;
+  padding-top: 150px;
+
   .alert {
     padding: 14px;
     position: fixed;
@@ -299,7 +301,7 @@
     border: 1px solid #4fa2b4;
     border-radius: 8px;
     background-color: #ffffff;
-    top: 145px;
+    top: 235px;
     right: 100px;
     display: flex;
     flex-direction: column;
@@ -467,4 +469,18 @@
     font-size: 10px;
     color: #217c38;
   }
+}
+
+.copyLinkAlert {
+  padding: 14px;
+  position: fixed;
+  left: 118px;
+  bottom: 44.5px;
+  background-color: #f9f9f9;
+  border: 1px solid #d9d9d9;
+  border-radius: 12px;
+  font-family: "General Sans", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  z-index: 99999 !important;
 }

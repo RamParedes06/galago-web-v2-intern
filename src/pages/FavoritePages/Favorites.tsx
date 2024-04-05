@@ -135,6 +135,7 @@ const Favorites = () => {
   const [deleteFavModal, setDeleteFavModal] = useState(false);
   const [showSortDropdown, setShowSortDropdown] = useState(false);
   const [alert, setAlert] = useState(false);
+  const [copyLinkAlert, setCopyLinkAlert] = useState(false);
   return (
     <>
       <NavigationBarWhite />
@@ -166,7 +167,11 @@ const Favorites = () => {
               <Chevron _color="#000" _width={16} _height={16} />
             </div>
             {showSortDropdown && (
-              <div className="sort-dropdown">
+              <div
+                className="sort-dropdown"
+                onClick={() => setShowSortDropdown(false)}
+                onMouseLeave={() => setShowSortDropdown(false)}
+              >
                 <div
                   className="sort-dropdown-item"
                   onClick={() => setShowSortDropdown(false)}
@@ -279,7 +284,15 @@ const Favorites = () => {
               )}
 
               <div className="fav-btngroup">
-                <button>
+                <button
+                  onClick={() => {
+                    setCopyLinkAlert(false);
+                    setAlert(true);
+                    setTimeout(() => {
+                      setAlert(false);
+                    }, 2000);
+                  }}
+                >
                   <CopyLink _color={"transparent"} _width={24} _height={24} />
                   <p>Copy Link</p>
                 </button>
@@ -355,6 +368,11 @@ const Favorites = () => {
         {alert && (
           <div className="alert">
             <Success /> Property removed successfully!
+          </div>
+        )}
+        {copyLinkAlert && (
+          <div className="alert-modal">
+            <Success /> Link copied successfully!
           </div>
         )}
       </div>

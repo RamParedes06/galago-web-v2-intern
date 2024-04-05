@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
 import "../styles/termsconditions.scss";
+import { Link } from "react-router-dom";
 import { useRef } from "react";
 import { useState } from "react";
 import FooterComponent from "../components/ui/FooterComponent";

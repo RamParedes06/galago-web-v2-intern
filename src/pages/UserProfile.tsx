@@ -52,11 +52,11 @@ const UserProfile = () => {
   }, [showTimer, seconds]);
 
   const legalRef = useRef<any>();
-  const emailRef = useRef();
-  const contactRef = useRef();
-  const nationalityRef = useRef();
-  const travelRef = useRef();
-  const passwordRef = useRef();
+  // const emailRef = useRef();
+  // const contactRef = useRef();
+  // const nationalityRef = useRef();
+  // const travelRef = useRef();
+  // const passwordRef = useRef();
   const grayOutEditButtonSiblings = () => {};
 
   return (
@@ -133,7 +133,7 @@ const UserProfile = () => {
                         <body>Legal Name</body>
                         <p className="m-0 pb-2">Christian Mae Marichan</p>
                       </div>
-                      <a
+                      <p
                         className="edit-btn"
                         ref={legalRef}
                         data-text={cancelEdit.legal}
@@ -147,7 +147,7 @@ const UserProfile = () => {
                         }}
                       >
                         {cancelEdit.legal}
-                      </a>
+                      </p>
                     </div>
                     {showLegal && (
                       <>
@@ -208,7 +208,7 @@ const UserProfile = () => {
                         <body>Email Address</body>
                         <p className="m-0 pb-2">christiachan@gmail.com</p>
                       </div>
-                      <a
+                      <p
                         className="edit-btn"
                         data-text={
                           cancelEdit.email === "Cancel"
@@ -224,7 +224,7 @@ const UserProfile = () => {
                         }}
                       >
                         {cancelEdit.email}
-                      </a>
+                      </p>
                     </div>
                     {showEmail && (
                       <>
@@ -312,7 +312,7 @@ const UserProfile = () => {
                         <body>Contact Number</body>
                         <p className="m-0 pb-2">+63 917 123 4567</p>
                       </div>
-                      <a
+                      <p
                         className="edit-btn"
                         onClick={() => {
                           setShowContact((prev) => !prev);
@@ -324,7 +324,7 @@ const UserProfile = () => {
                         }}
                       >
                         {cancelEdit.contact}
-                      </a>
+                      </p>
                     </div>
                     {showContact && (
                       <>
@@ -370,7 +370,7 @@ const UserProfile = () => {
                         <body>Nationality</body>
                         <p className="m-0 mb-3">Philippines</p>
                       </div>
-                      <a
+                      <p
                         className="edit-btn"
                         onClick={() => {
                           setShowNationality((prev) => !prev);
@@ -382,7 +382,7 @@ const UserProfile = () => {
                         }}
                       >
                         {cancelEdit.nationality}
-                      </a>
+                      </p>
                     </div>
                     {showNationality && (
                       <>
@@ -430,7 +430,7 @@ const UserProfile = () => {
                           1234-5678-9123 • August 14, 2025
                         </p>
                       </div>
-                      <a
+                      <p
                         className="edit-btn"
                         onClick={() => {
                           setShowDocuments((prev) => !prev);
@@ -442,7 +442,7 @@ const UserProfile = () => {
                         }}
                       >
                         {cancelEdit.travel}
-                      </a>
+                      </p>
                     </div>
                     {showDocuments && (
                       <>
@@ -493,7 +493,7 @@ const UserProfile = () => {
                         <body>Password</body>
                         <p className="m-0 mb-3">Last updated 2 months ago</p>
                       </div>
-                      <a
+                      <p
                         className="edit-btn"
                         onClick={() => {
                           setShowPassword((prev) => !prev);
@@ -505,7 +505,7 @@ const UserProfile = () => {
                         }}
                       >
                         {cancelEdit.password}
-                      </a>
+                      </p>
                     </div>
                     {showPassword && (
                       <>
