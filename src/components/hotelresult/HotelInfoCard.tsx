@@ -7,6 +7,7 @@ import HotelPrice from "./HotelPrice";
 import { HeartFill } from "../ui/svg/HeartFill";
 import axios from "axios";
 import ApiRoute from "../../apiRoutes";
+import { Info } from "../ui/svg/Info";
 
 
 function HotelInfoCard() {
@@ -22,9 +23,19 @@ function HotelInfoCard() {
       rooms: 1
     }).then((response)=>{
       setHotels(response.data.data.tbo)
-      console.log(hotels)
-    })
+    }) 
+    .catch((error) => {
+      console.error('Error fetching hotel data:', error);
+    });
   },[])
+useEffect(() => {
+    console.log(hotels);
+  }, [hotels]);
+
+
+
+  
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -33,6 +44,8 @@ function HotelInfoCard() {
   };
   return (
     <>
+
+    
       {hotels?.map((hotel: any, index: React.Key) => {
         return (
         <div className="hotel-card-wrapper" key={index}>
@@ -52,6 +65,17 @@ function HotelInfoCard() {
               </div>
             </div>
 
+             {/* {
+              hotel.Rooms.map((room: any, index: React.Key) => {
+                return (
+                  <div>
+                    {room.Name[0]}
+                  </div>
+                )
+            })} */}
+
+
+           
             <div className="hotel-info-card">
               <div className="hotel-info-property">
                 <h1 className="ticket-large-semibold">
@@ -69,7 +93,16 @@ function HotelInfoCard() {
                   <p className="callout-medium">★ 4.6</p>
                 </div>
                 <p className="mt-1 footnote-medium mb-1 mt-2">Total Price</p>
-                <HotelPrice />
+
+                
+                
+                <div className="hotel-price">
+                    <h1>{hotel.Currency}{hotel.Rooms[0].TotalFare}</h1>
+                    <div className="hotel-discount">
+                      <p>17% OFF</p>
+                    </div>
+                    <Info _width={20} _height={20} _color="#016e7f" />
+                  </div>
                 <p className="text-secondary mb-3 mt-1 footnote-medium">
                   Tax included
                 </p>
@@ -79,7 +112,7 @@ function HotelInfoCard() {
                     buttonText="See Availability"
                     className="default-btn"
                     onClick={() => {
-                      localStorage.setItem("hotel", JSON.stringify(hotel));
+                      localStorage.setItem("hotels", JSON.stringify(hotels));
                     }}
                   />
                 </Link>

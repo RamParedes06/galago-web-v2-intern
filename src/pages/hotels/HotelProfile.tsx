@@ -5,7 +5,6 @@ import { Heart } from "../../components/ui/svg/Heart";
 import { Map } from "../../components/ui/svg/Map";
 import HotelGallery from "../../components/hotelprofile/HotelGallery";
 import Offers from "../../components/hotelprofile/Offers";
-
 import "../../styles/hotelprofile.scss";
 import "../../styles/modalgallery.scss";
 import FooterComponent from "../../components/ui/FooterComponent";
@@ -17,10 +16,26 @@ import CustomModal from "../../components/hotelprofile/CustomModal";
 import SelectedHotel from "../../components/hotelprofile/SelectedHotel";
 import { useEffect, useState } from "react";
 import NavigationBarWhite from "../../components/ui/NavigationBarWhite";
-import axios from "axios";
-import ApiRoute from "../../apiRoutes";
+
+
 
 const HotelProfile = () => {
+
+  const [hotels, setHotels] = useState<any[]>([]);
+
+  useEffect(() => {
+    // Retrieve data from localStorage
+    const hotelData = localStorage.getItem("hotels");
+    if (hotelData) {
+      // Parse the data if it's in JSON format
+      const parsedData = JSON.parse(hotelData);
+      setHotels(parsedData);
+    }
+  }, []);
+
+  console.log(hotels, 'tae ni stephen');
+
+
   const handleScroll = (targetId: string) => {
     const targetElement = document.getElementById(targetId);
     if (targetElement) {
@@ -32,22 +47,21 @@ const HotelProfile = () => {
     {}
   );
 
-  const hotel = localStorage.getItem("hotel");
-
-  console.log(hotel, "pwet ni gelo");
+ 
 
   const [modalOpen, setModalOpen] = useState(false);
   const handleShowModal = (isOpen: boolean) => {
     setModalOpen(isOpen);
   };
+
   return (
     <div className="hotel-profile-bg">
-      <NavigationBarWhite />
+      {/* <NavigationBarWhite /> */}
       <CustomModal />
-
       <Container className="hotel-profile-container">
         <div className="property-container">
-          <h1 className="title-large-bold">asdasd</h1>
+
+          <h1 className="title-large-bold">Hotel / Property Name</h1>
           <div className="property-subheader d-flex justify-content-between mt-2 align-items-center">
             <div className="property-subheader1 d-flex gap-3 align-items-center">
               <div className="property-stars d-flex gap-1">
@@ -77,13 +91,7 @@ const HotelProfile = () => {
               July 24 - 26, 2023 | 1 room , 2 adults | Baguio
             </p>
             <p>
-              Make yourself at home in one of the 144 individually furnished
-              guestrooms, featuring refrigerators and LCD televisions. Cable
-              programming and iPod docking stations are provided for your
-              entertainment, while complimentary wireless Internet access keeps
-              you connected. Bathrooms feature showers with rainfall showerheads
-              and complimentary toiletries. Conveniences include phones, as well
-              as safes and desks.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, perspiciatis non odio facilis porro adipisci voluptatibus laboriosam esse omnis exercitationem quibusdam nihil reprehenderit accusamus ipsum autem inventore! Numquam esse nam, debitis natus doloremque in expedita, consectetur repellat distinctio commodi sequi quisquam autem possimus nemo dolore error. Consequatur numquam explicabo facere?
             </p>
 
             <a href="/#/hotel-profile" className="primary-0">
@@ -166,14 +174,14 @@ const HotelProfile = () => {
                   <Info _width={20} _height={20} _color="#016e7f" />{" "}
                   <span className="body-medium">Check-in time</span>
                 </div>
-                <p className="subheadline-regular">Starts at 2:00 PM</p>
+                <p className="subheadline-regular">Starts at  2:00 PM</p>
               </div>
               <div className="hotel-policy">
                 <div className=" d-flex align-items-center gap-2">
                   <Info _width={20} _height={20} _color="#016e7f" />{" "}
                   <span className="body-medium">Check-out time</span>
                 </div>
-                <p className="subheadline-regular">Until 11:59 AM</p>
+                <p className="subheadline-regular">Until  12:00 PM</p>
               </div>
               <div className="hotel-policy">
                 <div className=" d-flex align-items-center gap-2">
@@ -203,10 +211,15 @@ const HotelProfile = () => {
               </div>
             </div>
           </div>
-        </div>
+          
+          
 
-        {modalOpen && <SelectedHotel reservedRoom={reservedRoom} />}
-      </Container>
+</div>
+
+{modalOpen && <SelectedHotel reservedRoom={reservedRoom} />}
+</Container>
+
+      
       <FooterComponent />
     </div>
   );

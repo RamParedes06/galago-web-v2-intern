@@ -3,6 +3,7 @@ import "../../styles/hotelgallery.scss";
 import CustomModal from "./CustomModal";
 
 const HotelGallery = () => {
+  
   // const [modalShow, setModalShow] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
