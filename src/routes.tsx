@@ -21,7 +21,6 @@ import EmptyBookingsAndTrips from "./components/bookingsandtrips/EmptyBookingsAn
 import HotelBookingDetails from "./pages/hotels/HotelBookingDetails";
 import HotelBookingSummary from "./pages/hotels/HotelBookingSummary";
 import HotelBookingConfirmation from "./pages/hotels/HotelBookingConfirmation";
-
 const router = createHashRouter([
   {
     path: "/",

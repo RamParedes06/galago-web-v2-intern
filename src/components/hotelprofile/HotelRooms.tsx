@@ -6,9 +6,10 @@ import { useState } from "react";
 
 type HotelRoomTypes = {
   setReservedRoom: (arg: { [index: string]: any }) => void;
+  handleShowModal: (isOpen: boolean) => void;
 };
 
-const HotelRooms = ({ setReservedRoom }: HotelRoomTypes) => {
+const HotelRooms = ({ setReservedRoom, handleShowModal }: HotelRoomTypes) => {
   const hotelRoomsData = [
     {
       roomName: "Standard Double Room",
@@ -83,6 +84,7 @@ const HotelRooms = ({ setReservedRoom }: HotelRoomTypes) => {
                     onClick={() => {
                       setReservedRoom(hotelRooms);
                       handleRoomSelect(hotelRooms.roomName);
+                      handleShowModal(true);
                     }}
                     // onClick={() => handleRoomSelect(hotelRooms.roomName)}
                     // disabled={selectedRoom !== hotelRooms.roomName}

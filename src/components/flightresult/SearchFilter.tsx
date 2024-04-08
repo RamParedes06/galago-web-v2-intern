@@ -10,6 +10,7 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import "../../styles/searchfilter.scss";
 import RangeSliderComponent from "../ui/RangeSliderComponent";
+import RadioButtonGroup from "../ui/RadioButtonGroup";
 
 // Reference: https://mui.com/material-ui/react-slider/
 //! function for Time Slider using MUI
@@ -427,7 +428,10 @@ function SearchFilter({ showHotelContent }: any) {
           <div className="bed-preferences-container">
             <h1 className="ticket-large-semibold">Bed Preferences</h1>
             <div className="checkbox">
-              <CheckboxGroup name="bedPreferences" options={bedPreferences} />
+              <RadioButtonGroup
+                name="bedPreferences"
+                options={bedPreferences}
+              />
             </div>
             <a
               href="http://localhost:3000/#/hotel-result"

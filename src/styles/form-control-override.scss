@@ -24,3 +24,58 @@
   font-weight: 500;
   color: black !important;
 }
+
+.text-input {
+  position: relative;
+
+  label {
+    margin-bottom: 0.5rem;
+  }
+  .icon {
+    position: absolute;
+    display: inline-block;
+    left: 15px;
+    bottom: 20px;
+  }
+  input[type="text"] {
+    height: 56px;
+    width: 100%;
+    border: 1px solid #d9d9d9;
+    border-radius: 12px;
+    outline: none;
+    padding-left: 2.5rem;
+    position: inline-block;
+    background-color: white;
+  }
+}
+
+.select-input {
+  position: relative;
+
+  label {
+    margin-bottom: 0.5rem;
+  }
+  .icon {
+    position: absolute;
+    display: inline-block;
+    left: 15px;
+    bottom: 20px;
+  }
+  select {
+    height: 56px;
+    width: 100%;
+    border: 1px solid #d9d9d9;
+    border-radius: 12px;
+    outline: none;
+    padding: 0 1rem;
+    // position: inline-block;
+    background-color: white;
+    // -moz-appearance: none; /* Firefox */
+    // -webkit-appearance: none; /* Safari and Chrome */
+    // appearance: none;
+
+    option {
+      padding: 1rem;
+    }
+  }
+}
