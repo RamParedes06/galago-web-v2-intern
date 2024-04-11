@@ -18,7 +18,7 @@ const HelpCenter = () => {
       paragraphs.forEach((p) => {
         p.classList.remove("active");
       });
-      // this.classList.add("active");
+      paragraph.classList.add("active");
       e.currentTarget.classList.add("active");
     });
   });

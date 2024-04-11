@@ -9,20 +9,22 @@ import FooterComponent from "../../components/ui/FooterComponent";
 import axios from "axios";
 import ApiRoute from "../../apiRoutes";
 const HotelResultPage = () => {
-  // const [hotel, setHotel] = useState<any>();
-  
-  // useEffect(() => {
-  //   axios.post(ApiRoute.searchHotelList,{
-  //     location: 'manila',
-  //     checkInDate: '2024/05/01',
-  //     checkOutDate: '2024/05/02',
-  //     adults: 1,
-  //     rooms: 1
-  //   }).then((response)=>{
-  //     setHotel(response.data.data.tbo)
-  //     console.log(hotel)
-  //   })
-  // },[])
+  const [hotel, setHotel] = useState<any>();
+
+  useEffect(() => {
+    axios
+      .post(ApiRoute.searchHotelList, {
+        location: "manila",
+        checkInDate: "2024/05/01",
+        checkOutDate: "2024/05/02",
+        adults: 1,
+        rooms: 1,
+      })
+      .then((response) => {
+        setHotel(response.data.data.tbo);
+        console.log(hotel);
+      });
+  }, []);
 
   return (
     <div>
