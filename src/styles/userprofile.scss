@@ -68,6 +68,13 @@
     body {
       font-weight: 500;
     }
+    .edit-btn {
+      font-family: "General Sans", sans-serif;
+      font-weight: 500;
+      font-size: 13px;
+      color: #016e7f;
+      cursor: pointer;
+    }
   }
   .legal-name {
     padding: 12px 0px;
@@ -174,8 +181,8 @@ form {
 }
 
 .confirm-email-modal {
-  width: Fill (500px);
-  height: Hug (447.22px);
+  width: Fill (400px);
+  height: 447.22px;
   padding: 34px;
   gap: 10px;
 }
@@ -187,6 +194,18 @@ form {
   border-radius: 12px;
   margin-bottom: 34px;
 }
+.confirm-email-modal {
+  width: Fill (500px);
+  height: Hug (447.22px);
+  padding: 34px;
+  gap: 10px;
+}
+
+.password-modal {
+  width: 400px;
+  height: 400px;
+}
+
 .upload-profileimg {
   height: 60px;
   // width: 432px;

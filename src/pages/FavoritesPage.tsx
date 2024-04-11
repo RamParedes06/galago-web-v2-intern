@@ -70,8 +70,6 @@ const FavoritesPage = () => {
   const [createFav, setCreateFav] = useState(false);
 
   const handleChange = (e: { target: { value: any } }) => {
-    const data = e.target.value.split("");
-    console.log(data);
     setInputCount(e.target.value);
   };
 
@@ -113,18 +111,22 @@ const FavoritesPage = () => {
                   type="text"
                   placeholder="Favorites Name"
                   value={inputCount}
-                  onChange={handleChange}
+                  onChange={(e) => handleChange(e)}
                 ></input>
-                {showInputCount && (
+                <p className="footnote-medium p-0">
+                  {" "}
+                  {inputCount.length} / 50 characters
+                </p>
+                {/* {showInputCount && (
                   <>
                     <p>{inputCount.length} /50 characters</p>
                   </>
-                )}
+                )} */}
               </Row>
               <Row>
                 <button
                   // type="submit"
-                  // disabled={!inputCount}
+                  disabled={!inputCount}
                   onClick={() => {
                     setShowCreateFavModal(false);
                     setCreateFav(true);

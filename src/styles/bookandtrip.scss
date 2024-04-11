@@ -9,8 +9,7 @@
 .booking-container {
   display: flex;
   flex-direction: column;
-  padding: 160px 104px 60px 104px;
-
+  padding: 160px 104px 0 104px;
   h1 {
     margin-bottom: 32px;
     font-weight: 700;
@@ -47,7 +46,6 @@
   grid-template-columns: 1fr 1fr;
   row-gap: 16px;
   column-gap: 42px;
-  border-bottom: 1px solid #e7eaeb;
   margin-top: 42px;
   padding-bottom: 60px;
 }

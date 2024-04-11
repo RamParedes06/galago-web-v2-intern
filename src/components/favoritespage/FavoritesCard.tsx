@@ -30,7 +30,6 @@ const FavoritesCard = ({
   };
 
   const handleChange = (e: { target: { value: any } }) => {
-    // const data = e.target.value.split("");
     setInputCount(e.target.value);
   };
   // const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -91,8 +90,8 @@ const FavoritesCard = ({
                     value={inputCount}
                     onChange={(e) => handleChange(e)}
                   ></input>
-                  <p className="footnote-medium">
-                    {inputCount.length} /50 characters
+                  <p className="footnote-medium p-0">
+                    {inputCount.length} / 50 characters
                   </p>
                 </Row>
                 <Row>

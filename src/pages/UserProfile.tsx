@@ -12,6 +12,7 @@ import { FormControl, FormSelect } from "react-bootstrap";
 import { EmailConfirmation } from "../components/ui/svg/EmailConfirmation";
 import { UploadProfileImg } from "../components/ui/svg/UploadProfileImg";
 import { DropImage } from "../components/ui/svg/DropImage";
+import { Successful } from "../components/ui/svg/Successful";
 
 const UserProfile = () => {
   const [showLegal, setShowLegal] = useState(false);
@@ -21,6 +22,7 @@ const UserProfile = () => {
   const [showDocuments, setShowDocuments] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [modal_, setShowModal] = useState(false);
+  const [showPasswordModal, setShowPasswordModal] = useState(false);
   const [seconds, setSeconds] = useState(13);
   const [showTimer, setShowTimer] = useState(false);
   const [imgModal, setShowImgModal] = useState(false);
@@ -248,6 +250,7 @@ const UserProfile = () => {
                             onClick={() => {
                               setShowModal(true);
                             }}
+                            disabled={!FormControl}
                           >
                             Send Link
                           </button>
@@ -547,11 +550,15 @@ const UserProfile = () => {
                             className="submit-btn"
                             onClick={() => {
                               setShowPassword(false);
+                              setShowPasswordModal(true);
                               setCancelEdit((prev) => ({
                                 ...prev,
                                 password:
                                   prev.password === "Edit" ? "Cancel" : "Edit",
                               }));
+                              setTimeout(() => {
+                                setShowPasswordModal(false);
+                              }, 2000);
                             }}
                           >
                             Save
@@ -565,6 +572,20 @@ const UserProfile = () => {
             </div>
           </div>
         </div>
+        {showPasswordModal && (
+          <Modal
+            show={showPasswordModal}
+            onHide={() => {
+              setShowPasswordModal(false);
+            }}
+            className="password-modal"
+          >
+            <Modal.Body>
+              <Successful _width={100} _height={100} />
+              <p className="">Password updated successfully!</p>
+            </Modal.Body>
+          </Modal>
+        )}
       </div>
       <FooterComponent />
     </>
