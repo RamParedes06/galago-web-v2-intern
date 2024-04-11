@@ -51,9 +51,21 @@ function HotelInfoCard() {
                 <p>Gally's Top Pick!</p>
               </div>
             )}
-            <div className="hotel-info-card-container">
-              <div className="hotel-card-img">
-                <img src={hotel.Images[0]} alt="" loading="lazy" />
+            <div
+              className="hotel-info-card-container"
+              style={{
+                borderTopLeftRadius: index === 0 ? 0 : 12,
+              }}
+            >
+              <div
+                className="hotel-card-img"
+                style={{
+                  maxWidth: 180,
+                  width: "100%",
+                  minHeight: 173,
+                  backgroundImage: `url(${hotel.Images[0]})`,
+                }}
+              >
                 <div className="heart-fill">
                   <HeartFill />
                 </div>
@@ -61,7 +73,12 @@ function HotelInfoCard() {
 
               <div className="hotel-info-card">
                 <div className="hotel-info-property">
-                  <h1 className="ticket-large-semibold">{hotel.HotelName}</h1>
+                  <h1
+                    className="ticket-large-semibold mb-1"
+                    style={{ maxWidth: 400, width: "100%" }}
+                  >
+                    {hotel.HotelName}
+                  </h1>
                   <p className="py-1 callout-medium">
                     2 nights, July 24 - 26, {hotel.CityName}
                   </p>
