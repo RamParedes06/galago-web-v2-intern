@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../../styles/hotelresult.scss";
 import ButtonComponent from "../ui/ButtonComponent";
 import galago_picks from "../../resources/flightresults/galago_logo.png";
-import { Link } from "react-router-dom";
-import HotelPrice from "./HotelPrice";
+import { Link, useLocation } from "react-router-dom";
 import { HeartFill } from "../ui/svg/HeartFill";
 import axios from "axios";
 import ApiRoute from "../../apiRoutes";
@@ -110,7 +109,7 @@ function HotelInfoCard() {
                       buttonText="See Availability"
                       className="default-btn"
                       onClick={() => {
-                        localStorage.setItem("hotels", JSON.stringify(hotels));
+                        localStorage.setItem("hotels", JSON.stringify(hotel));
                       }}
                     />
                   </Link>

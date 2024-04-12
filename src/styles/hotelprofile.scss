@@ -2,7 +2,7 @@
   background-color: white;
 }
 .hotel-profile-container {
-  padding-top: 3rem;
+  padding-top: 10rem;
 }
 
 .property-offers-container {
@@ -11,12 +11,21 @@
 }
 .offers-container {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(195px, 1fr));
+  gap: 1.5rem;
   .offer {
-    display: flex;
+    display: grid;
+    grid-template-columns: 0.1fr 1fr;
     justify-content: left;
-    align-items: center;
-    gap: 1rem;
+    align-items: first baseline;
+    gap: 0.3rem;
+    // width: 50%;
+
+    // svg {
+    //   // width: 20px;
+    //   width: auto;
+    //   height: 10px;
+    // }
   }
 }
 
