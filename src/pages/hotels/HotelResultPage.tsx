@@ -8,6 +8,7 @@ import HotelInfoCard from "../../components/hotelresult/HotelInfoCard";
 import FooterComponent from "../../components/ui/FooterComponent";
 import axios from "axios";
 import ApiRoute from "../../apiRoutes";
+import NavigationBarWhite from "../../components/ui/NavigationBarWhite";
 const HotelResultPage = () => {
   const [hotel, setHotel] = useState<any>();
 
@@ -28,7 +29,7 @@ const HotelResultPage = () => {
 
   return (
     <div>
-      <NavigationBar />
+      <NavigationBarWhite />
       <div className="hotel-result-container">
         <div className="floating-banner-header-container">
           <div className="floating-banner-header"></div>

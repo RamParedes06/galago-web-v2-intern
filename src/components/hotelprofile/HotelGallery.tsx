@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import "../../styles/hotelgallery.scss";
 import CustomModal from "./CustomModal";
 
-const HotelGallery = () => {
-  
+type HotelGalleryProps = {
+  images: string[];
+};
+const HotelGallery = ({ images }: HotelGalleryProps) => {
   // const [modalShow, setModalShow] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
@@ -25,7 +27,26 @@ const HotelGallery = () => {
 
   return (
     <div className="property-gallery mt-3">
-      <div className="property-img ">
+      {images &&
+        images.slice(2, 7).map((image, index) => {
+          return (
+            <div
+              className="property-img "
+              key={index}
+              onClick={index === 4 ? openModal : undefined}
+            >
+              <img src={image} alt="" />
+            </div>
+          );
+        })}
+      {/* <div className="property-img ">
+        <img
+          src="https://galago-assets.s3.ap-southeast-1.amazonaws.com/Galago-v2-Assets/HotelProfile+Assets/hotelprofile1.png"
+          alt=""
+        />
+      </div> */}
+
+      {/* <div className="property-img ">
         <img
           src="https://galago-assets.s3.ap-southeast-1.amazonaws.com/Galago-v2-Assets/HotelProfile+Assets/hotelprofile1.png"
           alt=""
@@ -48,16 +69,20 @@ const HotelGallery = () => {
           src="https://galago-assets.s3.ap-southeast-1.amazonaws.com/Galago-v2-Assets/HotelProfile+Assets/hotelprofile4.png"
           alt=""
         />
-      </div>
+      </div> */}
 
-      <div className="property-img  " onClick={openModal}>
+      {/* <div className="property-img  " onClick={openModal}>
         <img
           src="https://galago-assets.s3.ap-southeast-1.amazonaws.com/Galago-v2-Assets/HotelProfile+Assets/hotelprofile5.png"
           alt=""
         />
-      </div>
+      </div> */}
 
-      <CustomModal isOpen={modalIsOpen} toggleModal={toggleModal} />
+      <CustomModal
+        isOpen={modalIsOpen}
+        toggleModal={toggleModal}
+        images={images}
+      />
     </div>
   );
 };

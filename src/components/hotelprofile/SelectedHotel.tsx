@@ -12,10 +12,10 @@ const SelectedHotel = ({ reservedRoom }: HotelRoomTypes) => {
     <div className="selected-hotel-container shadow-light-400">
       <div className="selected-hotel-left-col">
         <h1 className="ticket-large-semibold primary-0">
-          {reservedRoom.pricePerNight} total
+          PHP {reservedRoom.TotalFare} total
         </h1>
         <p className="body-medium-new ">
-          {reservedRoom.pricePerNight} with taxes and fees
+          PHP {reservedRoom.TotalTax} with taxes and fees
         </p>
         <p className="body-medium-new text-secondary ">
           Price might change. You'll see the final price on the next page.

@@ -41,11 +41,6 @@
         align-items: center;
         gap: 0.5rem;
         color: #016e7f;
-        // &:hover {
-        //   background-color: #016e7f;
-        //   transition: 0.2s ease-in-out;
-        //   color: white;
-        // }
       }
 
       .header-tabs-toggled {
@@ -58,12 +53,6 @@
         gap: 0.5rem;
         background-color: #016e7f;
         color: white;
-
-        // &:hover {
-        //   background-color: white;
-        //   transition: 0.2s ease-in-out;
-        //   color: #016e7f;
-        // }
       }
     }
 
@@ -142,12 +131,14 @@
   .carousel ol,
   ul {
     padding-left: 0;
+    // transform: none !important;
+
     .thumb {
       width: 293px !important;
       object-fit: cover;
       border-radius: 12px;
       margin-right: 7px;
-
+      transform: none !important;
       img {
         object-fit: cover;
         max-height: 150px;
@@ -167,8 +158,4 @@
     width: 100%;
     border-radius: 12px;
   }
-}
-
-.thumbs animated {
-  transform: translate3d(100px, 0px, 0px);
 }

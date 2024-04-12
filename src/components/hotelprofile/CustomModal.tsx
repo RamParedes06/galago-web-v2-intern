@@ -6,8 +6,12 @@ import { CheckBorder } from "../ui/svg/CheckBorder";
 import { ImageIcon } from "../ui/svg/ImageIcon";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
-
-function CustomModal({ isOpen, toggleModal }: any) {
+type HotelGalleryModalProps = {
+  images: string[];
+  isOpen?: boolean;
+  toggleModal?: any;
+};
+function CustomModal({ isOpen, toggleModal, images }: HotelGalleryModalProps) {
   const closeModal = () => {
     toggleModal(false);
   };
@@ -28,14 +32,15 @@ function CustomModal({ isOpen, toggleModal }: any) {
     }
   }, [isOpen]);
 
-  const imageUrls = Array.from(
-    { length: 12 },
-    (_, index) =>
-      `https://galago-assets.s3.ap-southeast-1.amazonaws.com/Galago-v2-Assets/HotelGallery+Asssets/hotelgallery${
-        index + 1
-      }.png`
-  );
+  // const imageUrls = Array.from(
+  //   { length: 12 },
+  //   (_, index) =>
+  //     `https://galago-assets.s3.ap-southeast-1.amazonaws.com/Galago-v2-Assets/HotelGallery+Asssets/hotelgallery${
+  //       index + 1
+  //     }.png`
+  // );
 
+  const imageUrls = images;
   const hotelData = [
     {
       hotelName: "Sample Hotel",
@@ -70,22 +75,18 @@ function CustomModal({ isOpen, toggleModal }: any) {
   ];
   console.log(hotelData[0]);
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const handleSlideChange = (index: number) => {
+  const [currentIndex, setCurrentIndex] = useState(-1);
+  useEffect(() => {
+    setCurrentIndex(0);
+  }, [isOpen]);
+  const handleSlideChange = (index: any) => {
     setCurrentIndex(index);
 
     const thumbsWrapper = document.querySelector(
       ".thumbs-wrapper"
     ) as HTMLElement;
     if (thumbsWrapper) {
-      const thumb = thumbsWrapper.querySelector(".thumb") as HTMLElement;
-      if (thumb) {
-        const thumbWidth = 300;
-        const scrollPosition = thumbWidth * index;
-
-        // Scroll the thumbnails wrapper
-        thumbsWrapper.scrollTo({ left: scrollPosition, behavior: "smooth" });
-      }
+      thumbsWrapper.scrollTo({ left: 0, behavior: "smooth" });
     }
   };
 
@@ -106,7 +107,7 @@ function CustomModal({ isOpen, toggleModal }: any) {
               {!slideshow ? (
                 <div>
                   <div className="gallery-images">
-                    {imageUrls.map((url, index) => (
+                    {imageUrls?.map((url, index) => (
                       <img
                         key={index}
                         src={url}
@@ -125,9 +126,12 @@ function CustomModal({ isOpen, toggleModal }: any) {
                       interval={5000}
                       transitionTime={1000}
                       infiniteLoop
+                      selectedItem={currentIndex}
                       onChange={handleSlideChange}
+                      showIndicators={false}
+                      thumbWidth={300}
                     >
-                      {imageUrls.map((url, index) => (
+                      {imageUrls?.map((url, index) => (
                         <div className="carousel-imgs">
                           <img
                             key={index}
@@ -135,6 +139,7 @@ function CustomModal({ isOpen, toggleModal }: any) {
                             alt={`Gallery ${index + 1}`}
                             loading="lazy"
                           />
+
                           <p className="legend">Hotel Area Name {index + 1}</p>
                         </div>
                       ))}
@@ -176,3 +181,6 @@ function CustomModal({ isOpen, toggleModal }: any) {
 }
 
 export default CustomModal;
+function setSelectedIndex(index: any) {
+  throw new Error("Function not implemented.");
+}
